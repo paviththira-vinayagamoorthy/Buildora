@@ -1,0 +1,411 @@
+.rc-section {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid #e4d5c9;
+}
+
+.rc-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.rc-heading h3 {
+  margin: 0;
+  color: #392d40;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+.rc-heading p {
+  margin: 9px 0 0;
+  color: #7b6b77;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.rc-count {
+  display: grid;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  place-items: center;
+  border-radius: 9px;
+  background: #eee4ef;
+  color: #735579;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rc-list {
+  display: grid;
+  gap: 22px;
+}
+
+.rc-comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.rc-avatar {
+  display: grid;
+  flex: 0 0 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9ddec;
+  color: #735079;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rc-comment-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.rc-author-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.rc-author-line strong {
+  color: #49394f;
+  font-size: 13px;
+}
+
+.rc-author-line time {
+  color: #877581;
+  font-size: 11px;
+}
+
+.rc-comment-body > p {
+  margin: 9px 0 0;
+  color: #6c5e69;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.rc-status {
+  margin: 16px 0;
+  color: #7d6c78;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.rc-form {
+  margin-top: 26px;
+  padding: 20px;
+  border: 1px solid #e4d4c7;
+  border-radius: 12px;
+  background: #f8eee5;
+}
+
+.rc-form .ct-field {
+  margin-bottom: 12px;
+}
+
+.rc-form textarea {
+  min-height: 100px;
+}
+
+.rc-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.rc-form-footer > span {
+  color: #89747e;
+  font-size: 11px;
+}
+
+.rc-error,
+.rc-success {
+  margin: 0 0 14px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.rc-error {
+  color: #a04435;
+}
+
+.rc-success {
+  color: #4f7350;
+}
+
+@media (max-width: 600px) {
+  .rc-form {
+    padding: 16px;
+  }
+
+  .rc-heading h3 {
+    font-size: 17px;
+  }
+}
+
+/* ==========================================
+   BUILDORA — REPORT DISCUSSION
+   ========================================== */
+
+.rc-section {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid #e3d6ca;
+}
+
+/* Heading */
+
+.rc-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.rc-heading h3 {
+  margin: 0;
+  color: #352a3d;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.rc-heading p {
+  margin: 5px 0 0;
+  color: #786d76;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.rc-count {
+  display: grid;
+  flex: 0 0 auto;
+  min-width: 28px;
+  height: 26px;
+  padding: 0 8px;
+  place-items: center;
+  border: 1px solid #e3d6ca;
+  border-radius: 7px;
+  background: #fffcf8;
+  color: #352a3d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Conversation */
+
+.rc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #e9e1da;
+  border-radius: 10px;
+  background: #faf8f6;
+}
+
+.rc-comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.rc-avatar {
+  display: grid;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid #e3d6ca;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #805140;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rc-comment-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.rc-message-bubble {
+  display: inline-block;
+  max-width: min(100%, 760px);
+  padding: 12px 15px;
+  border: 1px solid #e3d6ca;
+  border-radius: 4px 12px 12px 12px;
+  background: #ffffff;
+  vertical-align: top;
+}
+
+.rc-author-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.rc-author-line strong {
+  color: #352a3d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rc-author-line time {
+  color: #8a7d86;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.rc-message-bubble > p {
+  margin: 7px 0 0;
+  color: #5f5560;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Empty, loading, read-only states */
+
+.rc-status {
+  margin: 12px 0;
+  color: #786d76;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Comment composer */
+
+.rc-form {
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid #e3d6ca;
+  border-radius: 10px;
+  background: #fffcf8;
+}
+
+.rc-form .ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: #352a3d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rc-form textarea {
+  display: block;
+  width: 100%;
+  min-height: 84px;
+  padding: 11px 12px;
+  border: 1px solid #d9c8ba;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #352a3d;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+}
+
+.rc-form textarea::placeholder {
+  color: #968a92;
+}
+
+.rc-form textarea:focus {
+  border-color: #805140;
+  box-shadow: 0 0 0 3px rgba(128, 81, 64, 0.1);
+}
+
+.rc-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.rc-form-footer > span {
+  color: #897d85;
+  font-size: 11px;
+}
+
+.rc-form-footer .ct-button {
+  min-height: 34px;
+  padding: 7px 14px;
+  border: 1px solid #352a3d;
+  border-radius: 7px;
+  background: #352a3d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rc-form-footer .ct-button:hover:not(:disabled) {
+  background: #49394f;
+}
+
+.rc-form-footer .ct-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Feedback */
+
+.rc-error,
+.rc-success {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.rc-error {
+  color: #a04435;
+}
+
+.rc-success {
+  color: #4f7350;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .rc-list {
+    padding: 12px;
+  }
+
+  .rc-message-bubble {
+    padding: 10px 12px;
+  }
+
+  .rc-heading h3 {
+    font-size: 15px;
+  }
+
+  .rc-form {
+    padding: 12px;
+  }
+
+  .rc-author-line {
+    gap: 3px 8px;
+  }
+}

@@ -1,0 +1,1017 @@
+@import "./CertificatesPage.css";
+
+.dc-page .dc-upload-panel {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.dc-page .dc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.dc-page .dc-search {
+  display: flex;
+  align-items: center;
+  flex: 1 1 260px;
+  gap: 10px;
+  min-width: 0;
+  padding: 0 14px;
+  border: 1px solid #ddcbbf;
+  border-radius: 10px;
+  background: #fffdf9;
+  color: #846e88;
+}
+
+.dc-page .dc-search input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: #352b3e;
+  font-size: 13px;
+}
+
+.dc-page .dc-filters > select {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #ddcbbf;
+  border-radius: 10px;
+  background: #fffdf9;
+  color: #59485d;
+  font-size: 13px;
+}
+
+.dc-page .dc-count {
+  color: #7b697c;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dc-page .dc-category {
+  border-color: #e0d2e4;
+  background: #eee5ef;
+  color: #73567c;
+}
+
+.dc-page .dc-table td.dc-document-cell {
+  min-width: 240px;
+  max-width: 440px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.dc-page .dc-description {
+  margin: 9px 0 0;
+  color: #7c6c77;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.dc-page .dc-download {
+  min-height: 36px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.dc-page .dc-file-field {
+  padding: 20px;
+  border: 1px dashed #cdb6cf;
+  border-radius: 12px;
+  background: #f5eef5;
+}
+
+.dc-page .dc-file-field input[type="file"] {
+  padding: 10px;
+  background: #fffaf4;
+}
+
+.dc-page .dc-file-field input::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: #e8dceb;
+  color: #5e4368;
+  font: inherit;
+  cursor: pointer;
+}
+
+.dc-page .dc-file-field small {
+  color: #7c6c77;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.dc-page .dc-selected-file {
+  color: #5f4866;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .dc-page .dc-filters > select {
+    width: 100%;
+  }
+
+  .dc-page .dc-file-field {
+    padding: 16px;
+  }
+}
+
+.ct-page.dc-page.dc-embedded {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.dc-page.dc-embedded .ct-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dc-page.dc-embedded .ct-toolbar {
+  justify-content: flex-end;
+}
+
+.dc-page.dc-embedded .ct-panel {
+  background: #fffaf5;
+  border-color: #ead6c6;
+}
+
+
+/* DOCUMENTS — COMPACT PAGE HEADER */
+
+.dc-page.dc-embedded .dc-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.dc-page.dc-embedded .dc-heading > div {
+  min-width: 0;
+}
+
+.dc-page.dc-embedded .dc-heading .ct-button {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.dc-page.dc-embedded .ct-toolbar {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.dc-page.dc-embedded .ct-toolbar:has(
+  > .ct-project-control[style*="display: none"]
+) {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .dc-page.dc-embedded .dc-heading {
+    align-items: flex-start;
+  }
+}
+
+
+/* DOCUMENTS — FINAL VISUAL POLISH */
+
+.dc-page.dc-embedded .dc-heading h1 {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.7px !important;
+  color: #35283d !important;
+}
+
+.dc-page.dc-embedded .dc-heading p {
+  margin-top: 8px !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: #786b7d !important;
+}
+
+/* Smaller upload button */
+.dc-page.dc-embedded .dc-heading .ct-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  min-height: 38px !important;
+  padding: 9px 14px !important;
+  border-radius: 9px !important;
+
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+.dc-page.dc-embedded .dc-heading .ct-button svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+/* Document library heading */
+.dc-page.dc-embedded .ct-panel .ct-section-heading h2 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #35283d !important;
+}
+
+.dc-page.dc-embedded .ct-panel .ct-section-heading p {
+  font-size: 12px !important;
+  color: #786b7d !important;
+}
+
+/* Search and filter */
+.dc-page.dc-embedded .dc-search,
+.dc-page.dc-embedded .dc-filters > select {
+  background: #ffffff !important;
+  border-color: #e4dce5 !important;
+}
+
+.dc-page.dc-embedded .dc-search input,
+.dc-page.dc-embedded .dc-filters > select {
+  font-size: 12px !important;
+  color: #493b50 !important;
+}
+
+/* Table typography */
+.dc-page.dc-embedded .dc-table th {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #624b69 !important;
+}
+
+.dc-page.dc-embedded .dc-table td {
+  font-size: 12px !important;
+  color: #493b50 !important;
+}
+
+.dc-page.dc-embedded .dc-table td strong {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #35283d !important;
+}
+
+/* Smaller download button */
+.dc-page.dc-embedded .dc-download {
+  min-height: 32px !important;
+  padding: 6px 10px !important;
+  font-size: 11px !important;
+}
+
+
+/* DOCUMENTS — REMOVE PINK / LAVENDER COLOURS */
+
+.dc-page.dc-embedded .ct-panel {
+  background: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+.dc-page.dc-embedded .dc-table thead,
+.dc-page.dc-embedded .dc-table th {
+  background: #f3f4f6 !important;
+  color: #475569 !important;
+}
+
+.dc-page.dc-embedded .dc-table td {
+  background: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+.dc-page.dc-embedded .dc-category {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+.dc-page.dc-embedded .dc-search,
+.dc-page.dc-embedded .dc-filters > select {
+  background: #ffffff !important;
+  border-color: #dfe3e8 !important;
+}
+
+.dc-page.dc-embedded .ct-table-wrap {
+  border-color: #e5e7eb !important;
+}
+
+
+/* DOCUMENT LIBRARY — HEADER ACTIONS */
+
+.dc-page.dc-embedded .dc-library-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dc-page.dc-embedded .dc-library-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dc-page.dc-embedded .dc-library-actions .ct-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .dc-page.dc-embedded .dc-library-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .dc-page.dc-embedded .dc-library-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* DOCUMENT FILE ICONS */
+
+.dc-page .dc-file-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dc-page .dc-file-name svg {
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+.dc-page .dc-file-name span {
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   DOCUMENT UPLOAD DRAWER
+========================================= */
+
+.dc-page .dc-drawer-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.dc-page .dc-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.38);
+}
+
+.dc-page .dc-upload-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: min(480px, 100%);
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.12);
+  animation: dcDrawerIn 0.22s ease-out;
+}
+
+@keyframes dcDrawerIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Header */
+
+.dc-page .dc-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+
+  padding: 26px 28px 22px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dc-page .dc-drawer-header h2 {
+  margin: 8px 0 5px;
+  font-size: 21px;
+  font-weight: 650;
+  color: #1e293b;
+}
+
+.dc-page .dc-drawer-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.dc-page .dc-drawer-close {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+
+  cursor: pointer;
+}
+
+.dc-page .dc-drawer-close:hover {
+  background: #f8fafc;
+}
+
+/* Scrollable form */
+
+.dc-page .dc-drawer-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+
+  padding: 24px 28px 30px;
+  overscroll-behavior: contain;
+}
+
+.dc-page .dc-drawer-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Stack fields vertically inside drawer */
+
+.dc-page .dc-drawer-body .ct-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.dc-page .dc-drawer-body .ct-field {
+  min-width: 0;
+}
+
+.dc-page .dc-drawer-body input,
+.dc-page .dc-drawer-body select,
+.dc-page .dc-drawer-body textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dc-page .dc-drawer-body textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+
+/* Neutral file chooser */
+
+.dc-page .dc-drawer-body .dc-file-field {
+  padding: 18px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.dc-page .dc-drawer-body input[type="file"] {
+  width: 100%;
+}
+
+/* Footer actions */
+
+.dc-page .dc-drawer-body .ct-footnote {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dc-page .dc-drawer-body .ct-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 4px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 600px) {
+  .dc-page .dc-drawer-header {
+    padding: 20px;
+  }
+
+  .dc-page .dc-drawer-body {
+    padding: 20px;
+  }
+
+  .dc-page .dc-drawer-body .ct-actions {
+    flex-direction: column-reverse;
+  }
+
+  .dc-page .dc-drawer-body .ct-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-page .dc-upload-drawer {
+    animation: none;
+  }
+}
+
+
+/* ==========================================
+   DOCUMENT LIBRARY HEADER
+========================================== */
+
+.dc-page .dc-library-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dc-page .dc-library-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.dc-page .dc-upload-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 13px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dc-page .dc-document-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.dc-page .dc-document-title svg {
+  flex: none;
+  color: #64748b;
+}
+
+/* ==========================================
+   UPLOAD DRAWER OVERLAY
+========================================== */
+
+.dc-page .dc-drawer-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.dc-page .dc-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.36);
+}
+
+/* ==========================================
+   DRAWER PANEL
+========================================== */
+
+.dc-page .dc-upload-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: min(480px, 100%);
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.12);
+  animation: dcDrawerIn 0.22s ease-out;
+}
+
+@keyframes dcDrawerIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================
+   DRAWER HEADER
+========================================== */
+
+.dc-page .dc-drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 26px 28px 22px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dc-page .dc-drawer-header h2 {
+  margin: 8px 0 5px;
+  font-size: 21px;
+  font-weight: 650;
+  color: #1e293b;
+}
+
+.dc-page .dc-drawer-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.dc-page .dc-drawer-close {
+  width: 34px;
+  height: 34px;
+  flex: none;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+}
+
+.dc-page .dc-drawer-close:hover {
+  background: #f8fafc;
+}
+
+.dc-page .dc-drawer-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   DRAWER BODY
+========================================== */
+
+.dc-page .dc-drawer-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+
+  padding: 24px 28px 30px;
+  overscroll-behavior: contain;
+}
+
+.dc-page .dc-drawer-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dc-page .dc-drawer-body .ct-form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+
+.dc-page .dc-drawer-body .ct-field {
+  min-width: 0;
+}
+
+.dc-page .dc-drawer-body input,
+.dc-page .dc-drawer-body select,
+.dc-page .dc-drawer-body textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dc-page .dc-drawer-body textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+
+/* ==========================================
+   FILE UPLOAD FIELD
+========================================== */
+
+.dc-page .dc-drawer-body .dc-file-field {
+  padding: 18px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.dc-page .dc-drawer-body input[type="file"] {
+  width: 100%;
+}
+
+.dc-page .dc-drawer-body .dc-selected-file {
+  display: block;
+  margin-top: 10px;
+  color: #334155;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   INVOICE AI EXTRACTION
+========================================== */
+
+.dc-page .dc-invoice-extraction {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.dc-page .dc-invoice-extraction small {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dc-page .dc-invoice-extraction p {
+  margin: 6px 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   FOOTNOTE AND ACTIONS
+========================================== */
+
+.dc-page .dc-drawer-body .ct-footnote {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dc-page .dc-drawer-body .ct-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 4px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .dc-page .dc-drawer-header {
+    padding: 20px;
+  }
+
+  .dc-page .dc-drawer-body {
+    padding: 20px;
+  }
+
+  .dc-page .dc-drawer-body .ct-actions {
+    flex-direction: column-reverse;
+  }
+
+  .dc-page .dc-drawer-body .ct-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dc-page .dc-library-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-page .dc-upload-drawer {
+    animation: none;
+  }
+}
+
+
+/* ==========================================
+   COMPACT UPLOAD DRAWER - FINAL OVERRIDES
+========================================== */
+
+/* Drawer width */
+.dc-page .dc-upload-drawer {
+  width: min(420px, 100%);
+  max-height: 100dvh;
+  background: #ffffff;
+}
+
+/* Compact header */
+.dc-page .dc-drawer-header {
+  padding: 18px 22px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dc-page .dc-drawer-header h2 {
+  margin: 5px 0 3px;
+  font-size: 18px;
+  font-weight: 650;
+  color: #1e293b;
+}
+
+.dc-page .dc-drawer-header p {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Compact form */
+.dc-page .dc-drawer-body {
+  padding: 18px 22px 22px;
+  background: #ffffff;
+}
+
+.dc-page .dc-drawer-body form {
+  gap: 14px;
+}
+
+.dc-page .dc-drawer-body .ct-form-grid {
+  gap: 12px;
+}
+
+.dc-page .dc-drawer-body .ct-field {
+  gap: 6px;
+  font-size: 12px;
+  color: #334155;
+}
+
+/* Neutral inputs - no pink */
+.dc-page .dc-drawer-body input:not([type="file"]),
+.dc-page .dc-drawer-body select,
+.dc-page .dc-drawer-body textarea {
+  width: 100%;
+  min-height: 39px;
+  padding: 9px 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: none;
+}
+
+.dc-page .dc-drawer-body input:focus,
+.dc-page .dc-drawer-body select:focus,
+.dc-page .dc-drawer-body textarea:focus {
+  border-color: #64748b;
+  outline: 2px solid rgba(100, 116, 139, 0.15);
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+/* Neutral file chooser */
+.dc-page .dc-drawer-body .dc-file-field {
+  padding: 13px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.dc-page .dc-drawer-body input[type="file"] {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  padding: 7px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.dc-page .dc-drawer-body input[type="file"]::file-selector-button {
+  padding: 7px 10px;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #e2e8f0;
+  color: #334155;
+  cursor: pointer;
+}
+
+/* Smaller description */
+.dc-page .dc-drawer-body textarea {
+  min-height: 72px;
+  max-height: 120px;
+  resize: vertical;
+}
+
+/* Neutral footnote */
+.dc-page .dc-drawer-body .ct-footnote {
+  padding-top: 11px;
+  font-size: 11px;
+  color: #64748b;
+  border-color: #e5e7eb;
+}
+
+/* Compact action buttons */
+.dc-page .dc-drawer-body .ct-actions {
+  gap: 9px;
+  padding-top: 12px;
+  margin-top: 0;
+}
+
+.dc-page .dc-drawer-body .ct-actions .ct-button {
+  min-height: 38px;
+  padding: 8px 13px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+/* Primary button - dark neutral */
+.dc-page .dc-drawer-body .ct-actions .ct-primary {
+  background: #334155;
+  border-color: #334155;
+  color: #ffffff;
+}
+
+.dc-page .dc-drawer-body .ct-actions .ct-primary:hover:not(:disabled) {
+  background: #1e293b;
+  border-color: #1e293b;
+}
+
+/* Cancel button */
+.dc-page .dc-drawer-body .ct-actions .ct-button:not(.ct-primary) {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #334155;
+}
+
+/* Remove pink from eyebrow */
+.dc-page .dc-drawer-header .ct-eyebrow {
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dc-page .dc-upload-drawer {
+    width: 100%;
+  }
+
+  .dc-page .dc-drawer-header {
+    padding: 16px 18px;
+  }
+
+  .dc-page .dc-drawer-body {
+    padding: 16px 18px;
+  }
+}
+
+
+

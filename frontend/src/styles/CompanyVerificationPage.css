@@ -1,0 +1,777 @@
+
+/* =====================================================
+   BUILDORA — COMPANY VERIFICATION
+   Unified Platform Admin Visual Theme
+   Full CSS replacement — existing JSX/API unchanged
+   ===================================================== */
+
+.company-verification {
+  --cv-plum: #3c2c43;
+  --cv-ink: #352a3d;
+  --cv-accent: #79516f;
+  --cv-bg: #f7f7fa;
+  --cv-border: #e7d9cf;
+  --cv-soft: #f5eff5;
+  --cv-muted: #817287;
+
+  min-height: 100dvh;
+  padding: 22px 24px 42px;
+  background: var(--cv-bg);
+  color: var(--cv-ink);
+  font-family: inherit;
+}
+
+.company-verification *,
+.company-verification *::before,
+.company-verification *::after {
+  box-sizing: border-box;
+}
+
+.company-verification .cv-container {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.company-verification p {
+  color: var(--cv-muted);
+  line-height: 1.55;
+}
+
+/* ---------- BACK LINK ---------- */
+
+.company-verification .cv-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 8px 13px;
+  border: 1px solid #e7dfe9;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--cv-plum);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+
+.company-verification .cv-back:hover {
+  background: #f5eff5;
+  border-color: #c9b3c8;
+}
+
+/* ---------- PAGE HEADER ---------- */
+
+.company-verification .cv-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 18px 0 22px;
+}
+
+.company-verification .cv-eyebrow {
+  display: none;
+}
+
+.company-verification .cv-heading h1 {
+  margin: 0 0 7px;
+  color: var(--cv-ink);
+  font-size: clamp(26px, 2.6vw, 32px);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+.company-verification .cv-heading p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.company-verification .cv-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 35px;
+  padding: 7px 13px;
+  border: 1px solid #e7dfe9;
+  border-radius: 999px;
+  background: #fff;
+  color: #6d5a73;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.company-verification .cv-status-pending {
+  background: #fff7ef;
+  border-color: #efd9c6;
+  color: #985a35;
+}
+
+.company-verification .cv-status-approved {
+  background: #eef8f1;
+  border-color: #c9e3d0;
+  color: #287047;
+}
+
+.company-verification .cv-status-rejected {
+  background: #fff2f1;
+  border-color: #ebc9c5;
+  color: #9a4141;
+}
+
+/* ---------- STEPPER ---------- */
+
+.company-verification .cv-step-count {
+  margin: 0 0 10px;
+  color: var(--cv-accent);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .01em;
+}
+
+.company-verification .cv-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0;
+  padding: 9px;
+  list-style: none;
+  border: 1px solid #e7dfe9;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, .025);
+}
+
+.company-verification .cv-steps li {
+  min-width: 0;
+}
+
+.company-verification .cv-steps button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 47px;
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #6c5e73;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+
+.company-verification .cv-steps button > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1edf2;
+  color: #79516f;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.company-verification .cv-steps button[aria-current="step"] {
+  background: #f3edf4;
+  border-color: #e0d0df;
+  color: var(--cv-plum);
+}
+
+.company-verification .cv-steps button[aria-current="step"] > span {
+  background: var(--cv-plum);
+  color: #fff;
+}
+
+.company-verification .cv-steps button:not(:disabled):hover {
+  background: #f5eff5;
+}
+
+.company-verification .cv-steps button:disabled {
+  opacity: .58;
+  cursor: not-allowed;
+}
+
+/* ---------- MAIN CONTENT PANEL ---------- */
+
+.company-verification .cv-panel {
+  margin-top: 16px;
+  padding: 25px 28px;
+  border: 1px solid var(--cv-border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(60, 44, 67, .035);
+}
+
+.company-verification .cv-panel[hidden] {
+  display: none !important;
+}
+
+.company-verification .cv-panel h2 {
+  margin: 0 0 7px;
+  color: var(--cv-ink);
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -.025em;
+}
+
+.company-verification .cv-panel > p {
+  margin: 0 0 16px;
+  font-size: 12px;
+}
+
+.company-verification fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* ---------- COMPANY DETAILS FORM ---------- */
+
+.company-verification .cv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  margin: 18px 0;
+}
+
+.company-verification .cv-field {
+  display: grid;
+  min-width: 0;
+  gap: 7px;
+  color: var(--cv-ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.company-verification .cv-field input,
+.company-verification .cv-field select,
+.company-verification .cv-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #e1d7e2;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--cv-ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 450;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.company-verification .cv-field input:focus,
+.company-verification .cv-field select:focus,
+.company-verification .cv-field textarea:focus {
+  outline: none;
+  border-color: #a584a2;
+  box-shadow: 0 0 0 3px rgba(121, 81, 111, .10);
+}
+
+.company-verification .cv-field input:disabled {
+  background: #f6f3f7;
+  color: #827686;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.company-verification .cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 40px;
+  margin: 0;
+  padding: 9px 15px;
+  border: 1px solid #ded0df;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--cv-plum);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background .15s,
+    border-color .15s,
+    transform .15s;
+}
+
+.company-verification .cv-button:not(:disabled):hover {
+  background: #f5eff5;
+  border-color: #bfa7bd;
+}
+
+.company-verification .cv-button.cv-primary,
+.company-verification .cv-grid + button[type="submit"] {
+  border-color: var(--cv-plum);
+  background: var(--cv-plum);
+  color: #fff;
+}
+
+.company-verification .cv-button.cv-primary:not(:disabled):hover,
+.company-verification .cv-grid + button[type="submit"]:not(:disabled):hover {
+  background: #594260;
+  border-color: #594260;
+}
+
+.company-verification .cv-button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.company-verification .cv-grid + button[type="submit"] {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.company-verification .cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-verification :is(button, a, input):focus-visible {
+  outline: 2px solid var(--cv-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- FEEDBACK ---------- */
+
+.company-verification .cv-message {
+  margin: 12px 0;
+  padding: 11px 13px;
+  border: 1px solid #e7d9cf;
+  border-radius: 9px;
+  background: #faf8fb;
+  color: var(--cv-ink);
+  font-size: 12px;
+}
+
+.company-verification .cv-error {
+  background: #fff2f1;
+  border-color: #ebc9c5;
+  color: #953f3f;
+}
+
+.company-verification .cv-success {
+  background: #eef8f1;
+  border-color: #c9e3d0;
+  color: #287047;
+}
+
+.company-verification .cv-hint {
+  margin: 8px 0;
+  color: var(--cv-muted);
+  font-size: 12px;
+}
+
+/* ---------- CERTIFICATE UPLOAD ---------- */
+
+.company-verification .cv-certificate .cv-field {
+  margin: 15px 0;
+  padding: 18px;
+  border: 1px dashed #cdb9cb;
+  border-radius: 12px;
+  background: #faf8fb;
+}
+
+.company-verification .cv-field input[type="file"] {
+  padding: 7px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.company-verification .cv-field input::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 13px;
+  border: 1px solid #ded0df;
+  border-radius: 8px;
+  background: #f3edf4;
+  color: var(--cv-plum);
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.company-verification .cv-field input::file-selector-button:hover {
+  background: #eae0eb;
+}
+
+.company-verification .cv-certificate form + p {
+  margin: 12px 0;
+  font-size: 12px;
+}
+
+.company-verification .cv-certificate > .cv-primary {
+  display: flex;
+  width: fit-content;
+  margin: 16px 0 0 auto;
+}
+
+/* ---------- UPLOADED DOCUMENTS ---------- */
+
+.company-verification .cv-files {
+  display: grid;
+  gap: 9px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.company-verification .cv-files li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid #e8e0e9;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.company-verification .cv-files li:hover {
+  background: #fcfafc;
+  border-color: #d7c7d7;
+}
+
+.company-verification .cv-files strong {
+  display: block;
+  color: var(--cv-ink);
+  font-size: 12px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.company-verification .cv-files small {
+  display: block;
+  margin-top: 5px;
+  color: var(--cv-muted);
+  font-size: 11px;
+}
+
+.company-verification .cv-files .cv-button {
+  min-height: 35px;
+  padding: 7px 12px;
+}
+
+/* ---------- EMAIL VERIFICATION ---------- */
+
+.company-verification .cv-email-panel {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.company-verification .cv-email-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.company-verification .cv-email-heading h2 {
+  margin: 0;
+}
+
+.company-verification .cv-email-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.company-verification .cv-email-badge.is-pending {
+  background: #fff7ef;
+  border: 1px solid #efd9c6;
+  color: #985a35;
+}
+
+.company-verification .cv-email-badge.is-verified {
+  background: #eef8f1;
+  border: 1px solid #c9e3d0;
+  color: #287047;
+}
+
+.company-verification .cv-email-identity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid #e8e0e9;
+  border-radius: 11px;
+  background: #faf8fb;
+}
+
+.company-verification .cv-email-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #efe7f0;
+  color: var(--cv-accent);
+}
+
+.company-verification .cv-email-identity strong {
+  display: block;
+  color: var(--cv-ink);
+  font-size: 13px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.company-verification .cv-email-identity p {
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.company-verification .cv-email-verification-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 19px 0;
+}
+
+.company-verification .cv-email-check {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.company-verification .cv-email-check .cv-hint {
+  margin: 0;
+}
+
+.company-verification .cv-email-check-button {
+  min-height: 37px;
+  padding: 8px 13px;
+}
+
+.company-verification .cv-email-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e0e9;
+}
+
+.company-verification .cv-email-next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.company-verification .cv-email-next .cv-button:disabled,
+.company-verification .cv-email-verification-actions .cv-primary:disabled {
+  opacity: 1;
+  background: #eee7ef;
+  border-color: #e0d4e1;
+  color: #806e84;
+}
+
+.company-verification .cv-email-next-hint {
+  color: var(--cv-muted);
+  font-size: 11px;
+}
+
+.company-verification .cv-email-sent-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 14px;
+  padding: 11px 13px;
+  border: 1px solid #c9e3d0;
+  border-radius: 9px;
+  background: #eef8f1;
+  color: #287047;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* ---------- REVIEW & SUBMIT ---------- */
+
+.company-verification .cv-review {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.company-verification .cv-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin: 16px 0;
+  padding: 0;
+}
+
+.company-verification .cv-review-grid > div {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #e8e0e9;
+  border-radius: 10px;
+  background: #faf8fb;
+}
+
+.company-verification .cv-review-grid dt {
+  color: var(--cv-muted);
+  font-size: 11px;
+}
+
+.company-verification .cv-review-grid dd {
+  margin: 6px 0 0;
+  color: var(--cv-ink);
+  font-size: 12px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.company-verification .cv-declaration {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 16px 0;
+  padding: 14px;
+  border: 1px solid #e8e0e9;
+  border-radius: 10px;
+  background: #faf8fb;
+  color: var(--cv-ink);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.company-verification .cv-declaration input {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  margin: 1px 0 0;
+  accent-color: var(--cv-plum);
+}
+
+/* ---------- DESKTOP COMPACT SPACING ---------- */
+
+@media (min-width: 1024px) and (min-height: 760px) {
+  .company-verification {
+    padding-top: 18px;
+    padding-bottom: 22px;
+  }
+
+  .company-verification .cv-heading {
+    margin: 15px 0 18px;
+  }
+
+  .company-verification .cv-panel {
+    padding: 22px 26px;
+  }
+
+  .company-verification .cv-grid {
+    gap: 11px 16px;
+    margin: 15px 0;
+  }
+
+  .company-verification .cv-field input {
+    min-height: 40px;
+  }
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+  .company-verification .cv-review-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .company-verification .cv-steps {
+    gap: 6px;
+  }
+
+  .company-verification .cv-steps button {
+    gap: 7px;
+    padding: 8px;
+    font-size: 11px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 640px) {
+  .company-verification {
+    padding: 18px 14px 30px;
+  }
+
+  .company-verification .cv-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .company-verification .cv-heading h1 {
+    font-size: 26px;
+  }
+
+  .company-verification .cv-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .company-verification .cv-steps button {
+    min-height: 43px;
+    font-size: 11px;
+  }
+
+  .company-verification .cv-panel {
+    padding: 19px 16px;
+  }
+
+  .company-verification .cv-grid,
+  .company-verification .cv-review-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .company-verification .cv-email-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-verification .cv-email-footer {
+    flex-wrap: wrap;
+  }
+
+  .company-verification .cv-email-next {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .company-verification .cv-files li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .company-verification .cv-certificate > .cv-primary {
+    width: 100%;
+  }
+}

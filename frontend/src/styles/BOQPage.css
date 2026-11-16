@@ -1,0 +1,74 @@
+@import "./ProjectsPage.css";
+
+/* BOQ-specific adjustments */
+
+.boq-page .pr-header h1 {
+  font-size: clamp(27px, 3vw, 37px);
+}
+
+.boq-page .pr-library-heading h2 {
+  font-weight: 700;
+}
+
+.boq-page .pr-card-footer .boq-open-label {
+  color: #795482;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Softer BOQ page colours */
+
+.pr-page.boq-page {
+  background: #faf7f2;
+}
+
+.boq-page .pr-header.pr-banner {
+  border-color: #e9e0d7;
+  background: #fcf8f3;
+}
+
+.boq-page .pr-banner-photo {
+  opacity: 0.32;
+  filter: saturate(0.3);
+}
+
+.boq-page .pr-banner-photo::after {
+  background: rgb(252 248 243 / 30%);
+}
+
+.boq-page .pr-library,
+.boq-page .pr-card-surface {
+  border-color: #e9e0d7;
+  background: #fffdfa;
+}
+
+.boq-page .pr-search {
+  border-color: #e8dfd6;
+  background: #f7f4ef;
+}
+
+.boq-page .pr-search:focus-within {
+  border-color: #b597b8;
+  background: #fffdfa;
+}
+
+.boq-page .pr-result-count {
+  border-color: #e8e0e9;
+  background: #f4eff5;
+  color: #795482;
+}
+
+.boq-page .pr-card-footer {
+  border-color: #eee6de;
+  background: #f8f5f0;
+}
+
+@media (hover: hover) {
+  .boq-page .pr-card:hover .pr-card-surface {
+    border-color: #b597b8;
+  }
+
+  .boq-page .pr-card:hover .pr-card-footer {
+    background: #f4edf5;
+  }
+}

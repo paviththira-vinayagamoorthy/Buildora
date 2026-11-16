@@ -1,0 +1,268 @@
+@import "./CertificatesPage.css";
+
+.po-page .po-project-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 26px;
+  border: 1px solid #e4cfc0;
+  border-radius: 16px;
+  background: #efdfd2;
+}
+
+.po-page .po-project-heading h2 {
+  margin: 0;
+  font-size: clamp(23px, 2.5vw, 32px);
+  letter-spacing: -0.035em;
+}
+
+.po-page .po-project-heading p {
+  margin: 10px 0 0;
+  color: #78616c;
+  font-size: 13px;
+}
+
+.po-page .po-project-heading > span {
+  color: #846c77;
+  font-size: 11px;
+}
+
+.po-page .po-financials {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin: 0 0 24px;
+}
+
+.po-page .po-financials > div {
+  min-width: 0;
+  padding: 8px 0 18px;
+  border-bottom: 2px solid #cdb8d3;
+}
+
+.po-page .po-financials > div:nth-child(2) {
+  border-color: #c9b293;
+}
+
+.po-page .po-financials > div:nth-child(3) {
+  border-color: #a8bea5;
+}
+
+.po-page .po-financials > div:nth-child(4) {
+  border-color: #d2a38e;
+}
+
+.po-page .po-financials dt {
+  color: #756471;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.po-page .po-financials dd {
+  margin: 12px 0 8px;
+  font-size: clamp(18px, 1.8vw, 25px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.po-page .po-financials small {
+  color: #8a7580;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.po-page .po-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.po-page .po-main-grid > * {
+  min-width: 0;
+}
+
+.po-page .po-progress {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.po-page .po-progress strong {
+  font-size: 36px;
+  letter-spacing: -0.04em;
+}
+
+.po-page .po-progress span {
+  color: #807080;
+  font-size: 12px;
+}
+
+.po-page progress {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 20px;
+  background: #e4d7e6;
+  accent-color: #98759f;
+}
+
+.po-page progress::-webkit-progress-bar {
+  background: #e4d7e6;
+  border-radius: 20px;
+}
+
+.po-page progress::-webkit-progress-value {
+  background: #98759f;
+  border-radius: 20px;
+}
+
+.po-page progress::-moz-progress-bar {
+  background: #98759f;
+  border-radius: 20px;
+}
+
+.po-page .po-subheading,
+.po-page .po-note h3 {
+  margin: 0 0 10px;
+  color: #65466e;
+  font-size: 14px;
+}
+
+.po-page .po-text,
+.po-page .po-note p,
+.po-page .po-report-excerpt {
+  margin: 0;
+  color: #766571;
+  font-size: 13px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.po-page .po-note {
+  margin-top: 22px;
+}
+
+.po-page .po-report-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 6;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.po-page .po-link {
+  margin-top: 22px;
+  text-decoration: none;
+}
+
+.po-page .po-section {
+  margin-top: 24px;
+}
+
+.po-page .po-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.po-page .po-photo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #e4d5c8;
+  border-radius: 12px;
+  background: #f7eee5;
+}
+
+.po-page .po-photo img,
+.po-page .po-photo-placeholder {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.po-page .po-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #8c728e;
+  font-size: 12px;
+}
+
+.po-page .po-photo figcaption {
+  padding: 12px;
+  color: #705a76;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.po-page .po-document {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e8dbd0;
+}
+
+.po-page .po-document:last-child {
+  border-bottom: 0;
+}
+
+.po-page .po-document > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.po-page .po-document strong {
+  font-size: 13px;
+}
+
+.po-page .po-document small {
+  display: block;
+  margin-top: 8px;
+  color: #88727f;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.po-page .po-document button {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1000px) {
+  .po-page .po-financials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .po-page .po-main-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .po-page .po-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .po-page .po-financials,
+  .po-page .po-photo-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .po-page .po-document {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,2802 @@
+.vl-page {
+  min-height: 100%;
+  padding: 30px;
+  background: #eee7de;
+  color: #302438;
+}
+
+.vl-page * {
+  box-sizing: border-box;
+}
+
+.vl-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.vl-page button,
+.vl-page input,
+.vl-page select,
+.vl-page textarea {
+  font: inherit;
+}
+
+.vl-page button {
+  cursor: pointer;
+}
+
+.vl-page button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.vl-page :is(button, input, select, textarea):focus-visible {
+  outline: 3px solid #9974a5;
+  outline-offset: 3px;
+}
+
+.vl-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 32px;
+  border: 1px solid #dcc5b2;
+  border-radius: 22px;
+  background: #eadbcb;
+}
+
+.vl-eyebrow {
+  color: #974a35;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.vl-hero h1 {
+  margin: 10px 0;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.vl-hero p {
+  margin: 0;
+  color: #615461;
+  line-height: 1.65;
+}
+
+.vl-hero-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  border: 1px solid #d8c6de;
+  border-radius: 20px;
+  background: #efe8f2;
+  color: #73517c;
+}
+
+.vl-project-picker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.vl-project-picker label {
+  font-weight: 700;
+}
+
+.vl-project-picker select {
+  width: min(100%, 420px);
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid #d7c9bd;
+  border-radius: 11px;
+  background: #fffaf3;
+  color: #302438;
+}
+
+.vl-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 17px;
+  border: 1px solid #d6c6ba;
+  border-radius: 11px;
+  background: #fffaf3;
+  color: #49364f;
+  font-weight: 700;
+}
+
+.vl-primary {
+  border-color: #392d40;
+  background: #392d40;
+  color: #fff;
+}
+
+.vl-primary:hover:not(:disabled) {
+  background: #4c3b55;
+}
+
+.vl-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid #dfd2e0;
+  border-radius: 16px;
+}
+
+.vl-stats > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  min-height: 96px;
+  padding: 18px 24px;
+  background: #eae0ef;
+}
+
+.vl-stats > div + div {
+  border-left: 1px solid rgb(57 45 64 / 9%);
+}
+
+.vl-stats > div:nth-child(2) {
+  background: #dfe8dc;
+}
+
+.vl-stats > div:nth-child(3) {
+  background: #f4ddcb;
+}
+
+.vl-stats span {
+  color: #584b5b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vl-stats strong {
+  font-size: clamp(20px, 2vw, 27px);
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.vl-panel {
+  padding: 26px;
+  border: 1px solid #dfd0c3;
+  border-radius: 20px;
+  background: #fffaf3;
+}
+
+.vl-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.vl-section-heading h2 {
+  margin: 0 0 8px;
+  font-size: 23px;
+  letter-spacing: -0.03em;
+}
+
+.vl-section-heading p {
+  margin: 0;
+  color: #685d69;
+}
+
+.vl-state {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 48px 24px;
+  border: 1px solid #dfd0c3;
+  border-radius: 18px;
+  background: #fffaf3;
+  text-align: center;
+}
+
+.vl-state h2,
+.vl-state h3,
+.vl-state p {
+  margin: 0;
+}
+
+.vl-state p {
+  max-width: 520px;
+  color: #685d69;
+  line-height: 1.7;
+}
+
+.vl-state-inner {
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+
+.vl-notice {
+  padding: 14px 16px;
+  border: 1px solid #dfd2e5;
+  border-radius: 11px;
+  background: #efe8f2;
+  color: #55465b;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.vl-history {
+  display: grid;
+  gap: 12px;
+}
+
+.vl-history-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto 20px;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #e0d3c7;
+  border-radius: 14px;
+  background: #f5ecdf;
+  color: #302438;
+  text-align: left;
+}
+
+.vl-history-row:hover {
+  border-color: #a98bb1;
+}
+
+.vl-history-row > div {
+  display: grid;
+  gap: 8px;
+}
+
+.vl-history-row > div > span {
+  color: #685d69;
+  font-size: 14px;
+}
+
+.vl-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 7px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.vl-draft {
+  border-color: #dbc9a9;
+  background: #f4e7cb;
+  color: #77521f;
+}
+
+.vl-published {
+  border-color: #c2d7c8;
+  background: #e4eee6;
+  color: #356446;
+}
+
+.vl-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.vl-form-grid label,
+.vl-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #514456;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.vl-form-grid input,
+.vl-notes textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9c9bc;
+  border-radius: 10px;
+  background: #fffdf9;
+  color: #302438;
+}
+
+.vl-notes {
+  margin-top: 22px;
+}
+
+.vl-notes textarea {
+  resize: vertical;
+}
+
+.vl-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.vl-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  margin-bottom: 22px;
+  border: 0;
+  background: transparent;
+  color: #73517c;
+  font-weight: 700;
+}
+
+.vl-table-help {
+  color: #685d69;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vl-table-scroll {
+  overflow-x: auto;
+  border: 1px solid #dfd3c8;
+  border-radius: 12px;
+}
+
+.vl-table {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.vl-table th {
+  padding: 15px 12px;
+  background: #efe8f2;
+  color: #514056;
+  text-align: left;
+  font-size: 12px;
+}
+
+.vl-table td {
+  padding: 16px 12px;
+  border-top: 1px solid #e8ddd3;
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+
+.vl-table th:first-child,
+.vl-table td:first-child {
+  min-width: 230px;
+  max-width: 350px;
+}
+
+.vl-description {
+  display: block;
+  margin-top: 6px;
+  color: #685d69;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.vl-quantity {
+  width: 110px;
+  padding: 10px;
+  border: 1px solid #d7c8bc;
+  border-radius: 8px;
+  background: #fff;
+  color: #302438;
+}
+
+.vl-changed {
+  border-color: #9974a5;
+  background: #f4edf7;
+}
+
+.vl-save-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 11px;
+  border: 1px solid #d5c1dd;
+  border-radius: 8px;
+  background: #efe8f2;
+  color: #5c3d69;
+  font-weight: 700;
+}
+
+.vl-total-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 24px;
+}
+
+.vl-total-footer > div {
+  display: grid;
+  gap: 8px;
+}
+
+.vl-total-footer span {
+  color: #685d69;
+  font-size: 14px;
+}
+
+.vl-total-footer strong {
+  font-size: 27px;
+}
+
+.vl-total-footer small {
+  color: #865b29;
+  font-size: 13px;
+}
+
+.vl-feedback:empty {
+  display: none;
+}
+
+.vl-error,
+.vl-success {
+  padding: 14px 16px;
+  border: 1px solid;
+  border-radius: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.vl-error {
+  border-color: #e0b7aa;
+  background: #f8e6de;
+  color: #8a3828;
+}
+
+.vl-success {
+  border-color: #c0d4c6;
+  background: #e4eee6;
+  color: #356446;
+}
+
+@media (max-width: 1000px) {
+  .vl-history-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px;
+  }
+
+  .vl-history-row > svg {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 640px) {
+  .vl-page {
+    padding: 18px;
+  }
+
+  .vl-hero,
+  .vl-panel {
+    padding: 22px;
+  }
+
+  .vl-hero-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .vl-stats,
+  .vl-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vl-project-picker select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .vl-project-picker label {
+    width: 100%;
+  }
+
+  .vl-total-footer .vl-button {
+    width: 100%;
+  }
+
+  .vl-history-row {
+    padding: 16px;
+  }
+}
+
+.vl-heading {
+  margin: 0 0 26px;
+}
+
+.vl-heading h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+
+.vl-heading p {
+  margin: 0;
+  color: #685d69;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.vl-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.vl-project-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-width: 0;
+  padding: 8px 14px;
+  border: 1px solid #d6c7ba;
+  border-radius: 12px;
+  background: #fffaf3;
+}
+
+.vl-project-control label {
+  padding-right: 12px;
+  border-right: 1px solid #dfd3c8;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.vl-project-control select {
+  width: 240px;
+  max-width: 100%;
+  min-height: 30px;
+  padding: 3px 22px 3px 0;
+  border: 0;
+  background: transparent;
+  color: #302438;
+}
+
+.vl-role-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e9deef;
+  color: #654571;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.vl-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vl-panel .vl-section-heading h2 {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.vl-history-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vl-history-filters input,
+.vl-history-filters select {
+  min-height: 42px;
+  padding: 10px 13px;
+  border: 1px solid #d9cbd0;
+  border-radius: 10px;
+  background: #fffdf9;
+  color: #302438;
+  font-size: 14px;
+}
+
+.vl-history-filters input {
+  width: 245px;
+  max-width: 100%;
+}
+
+.vl-history-scroll {
+  overflow-x: auto;
+  border: 1px solid #dfd3d1;
+  border-radius: 12px;
+}
+
+.vl-history-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.vl-history-table th {
+  padding: 14px 18px;
+  background: #eee7e2;
+  color: #55465b;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.vl-history-table td {
+  padding: 15px 18px;
+  border-top: 1px solid #e7ddd5;
+}
+
+.vl-history-table tbody tr:hover {
+  background: #f5eef5;
+}
+
+.vl-record-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: #49334f;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.vl-record-link:hover {
+  text-decoration: underline;
+}
+
+.vl-history-money {
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.vl-open-record {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #49334f;
+}
+
+.vl-open-record:hover {
+  background: #e9deef;
+}
+
+.vl-history-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 20px 0 0;
+  padding-top: 17px;
+  border-top: 1px solid #e2d6cb;
+  color: #6a5c6b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.vl-history-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.vl-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .vl-project-control {
+    width: 100%;
+  }
+
+  .vl-project-control select {
+    flex: 1;
+    width: auto;
+    min-width: 120px;
+  }
+
+  .vl-toolbar-actions {
+    width: 100%;
+  }
+
+  .vl-toolbar-actions .vl-primary {
+    flex: 1;
+  }
+
+  .vl-stats > div + div {
+    border-left: 0;
+    border-top: 1px solid rgb(57 45 64 / 9%);
+  }
+
+  .vl-stats > div {
+    min-height: 82px;
+    padding: 16px 20px;
+  }
+
+  .vl-history-filters {
+    width: 100%;
+  }
+
+  .vl-history-filters input,
+  .vl-history-filters select {
+    width: 100%;
+  }
+}
+
+/* Illustration welcome and empty states */
+
+.vl-toolbar-welcome {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 22px;
+  min-height: 285px;
+  padding: 34px;
+  overflow: hidden;
+  border: 1px solid #ead8cb;
+  border-radius: 20px;
+  background: #f5e9df;
+}
+
+.vl-welcome-copy {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  align-self: end;
+}
+
+.vl-welcome-label {
+  color: #a9533d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.vl-welcome-copy h2 {
+  max-width: 470px;
+  margin: 13px 0;
+  color: #392d40;
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+
+.vl-welcome-copy p {
+  max-width: 440px;
+  margin: 0;
+  color: #70615e;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.vl-welcome-image {
+  position: absolute;
+  z-index: -1;
+  right: 16px;
+  bottom: 0;
+  width: 45%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+}
+
+.vl-toolbar-welcome .vl-project-control {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  width: fit-content;
+  max-width: 100%;
+  align-self: start;
+  background: #fffaf4;
+  border-color: #dcc7b8;
+}
+
+.vl-toolbar-welcome .vl-toolbar-actions {
+  display: none;
+}
+
+.vl-intro-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 22px 4px;
+}
+
+.vl-intro-steps > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.vl-intro-steps > div > span {
+  display: grid;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: #f5e5db;
+  color: #ad5841;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.vl-intro-steps strong {
+  color: #392d40;
+  font-size: 14px;
+}
+
+.vl-intro-steps p {
+  margin: 7px 0 0;
+  color: #746762;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.vl-empty-history {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: center;
+  gap: 32px;
+  min-height: 245px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.vl-empty-history > div {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.vl-empty-history img {
+  display: block;
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+}
+
+.vl-empty-history h3 {
+  margin: 0 0 12px;
+  color: #392d40;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.vl-empty-history p {
+  max-width: 460px;
+  margin: 0;
+  color: #70615e;
+  font-size: 15px;
+  line-height: 1.8;
+}
+@media (max-width: 800px) {
+  .vl-toolbar-welcome {
+    padding: 26px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vl-welcome-copy,
+  .vl-toolbar-welcome .vl-project-control {
+    max-width: 65%;
+  }
+
+  .vl-welcome-image {
+    right: -15px;
+    width: 38%;
+    opacity: 0.8;
+  }
+
+  .vl-intro-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .vl-empty-history {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    min-height: auto;
+    padding: 16px 0;
+  }
+
+  .vl-empty-history > div {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .vl-empty-history img {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    width: min(100%, 280px);
+    height: 190px;
+  }
+
+  .vl-empty-history h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 540px) {
+  .vl-toolbar-welcome {
+    gap: 20px;
+    padding: 22px;
+  }
+
+  .vl-welcome-copy,
+  .vl-toolbar-welcome .vl-project-control {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .vl-welcome-image {
+    position: static;
+    z-index: 0;
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 160px;
+    opacity: 1;
+  }
+
+  .vl-toolbar-welcome .vl-project-control {
+    grid-row: 3;
+  }
+}
+
+/* Valuations — compact overview layout */
+
+.vl-page {
+  background: #f3eee7;
+}
+
+.vl-heading {
+  margin-bottom: 24px;
+}
+
+.vl-heading h1 {
+  margin: 0 0 8px;
+  color: #342a3d;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.vl-heading p {
+  margin: 0;
+  color: #776e73;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.vl-toolbar {
+  margin-bottom: 24px;
+}
+
+.vl-project-control {
+  border-color: #e0d5cb;
+  border-radius: 10px;
+  background: #fffaf5;
+}
+
+.vl-role-chip {
+  background: #eee5ed;
+  color: #715b76;
+}
+
+/* Overview: history on the left, summary on the right */
+.vl-container:has(> .vl-stats):has(.vl-empty-history) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 24px;
+  align-items: start;
+}
+
+.vl-container:has(> .vl-stats):has(.vl-empty-history)
+  > :not(.vl-stats):not(.vl-panel) {
+  grid-column: 1 / -1;
+}
+
+.vl-container:has(> .vl-stats):has(.vl-empty-history)
+  > .vl-heading,
+.vl-container:has(> .vl-stats):has(.vl-empty-history)
+  > .vl-toolbar {
+  margin-bottom: 0;
+}
+
+.vl-container:has(> .vl-stats):has(.vl-empty-history)
+  > .vl-panel {
+  grid-column: 1;
+  grid-row: 3;
+  min-width: 0;
+  margin: 0;
+}
+
+.vl-container:has(> .vl-stats):has(.vl-empty-history)
+  > .vl-stats {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* Quiet, separate summary cards */
+.vl-stats {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.vl-stats > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-height: 116px;
+  padding: 22px;
+  border: 1px solid #e0d4df;
+  border-radius: 14px;
+  background: #ede5ee;
+}
+
+.vl-stats > div + div {
+  border-left: 1px solid #d8e1d7;
+}
+
+.vl-stats > div:nth-child(2) {
+  border-color: #d8e1d7;
+  background: #e8eee5;
+}
+
+.vl-stats > div:nth-child(3) {
+  border-color: #ead8ca;
+  background: #f4e6da;
+}
+
+.vl-stats span {
+  color: #70656d;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.vl-stats strong {
+  color: #382d40;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+/* History panel */
+.vl-panel {
+  padding: 26px;
+  border: 1px solid #e3d9d0;
+  border-radius: 16px;
+  background: #fffaf5;
+  box-shadow: 0 4px 18px rgb(57 45 64 / 2%);
+}
+
+.vl-section-heading {
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.vl-section-heading h2 {
+  margin: 0 0 7px;
+  color: #382d40;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.vl-section-heading p {
+  margin: 0;
+  color: #80747a;
+  font-size: 13px;
+}
+
+/* Balanced empty state */
+.vl-empty-history {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-content: center;
+  gap: 18px;
+  min-height: 290px;
+  padding: 20px 24px 30px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+}
+
+.vl-empty-history img {
+  position: static;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  width: 180px;
+  max-width: 100%;
+  height: 130px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.vl-empty-history > div {
+  grid-column: 1;
+  grid-row: 2;
+  max-width: 400px;
+}
+
+.vl-empty-history h3 {
+  margin: 0 0 10px;
+  color: #423447;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.vl-empty-history p {
+  max-width: 380px;
+  margin: 0 auto;
+  color: #84777d;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.vl-history-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 12px;
+  padding-top: 17px;
+  border-top: 1px solid #ece2d9;
+  color: #84777d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.vl-history-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #849585;
+}
+
+/* Tablet and mobile */
+@media (max-width: 1050px) {
+  .vl-container:has(> .vl-stats):has(.vl-empty-history) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .vl-container:has(> .vl-stats):has(.vl-empty-history)
+    > .vl-stats {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .vl-container:has(> .vl-stats):has(.vl-empty-history)
+    > .vl-panel {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .vl-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .vl-stats > div {
+    min-height: 104px;
+    padding: 18px;
+  }
+
+  .vl-stats strong {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vl-stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .vl-stats > div {
+    min-height: 86px;
+    gap: 8px;
+  }
+
+  .vl-panel {
+    padding: 20px;
+  }
+
+  .vl-empty-history {
+    min-height: 260px;
+    padding: 18px 0 24px;
+  }
+
+  .vl-empty-history img {
+    width: 160px;
+    height: 115px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .vl-container:has(> .vl-stats):has(.vl-empty-history) {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 20px 24px;
+  }
+
+  .vl-container:has(> .vl-stats):has(.vl-empty-history)
+    > .vl-heading {
+    grid-column: 1;
+    grid-row: 1;
+    padding-right: 640px;
+    min-height: 76px;
+    margin: 0;
+  }
+
+  .vl-container:has(> .vl-stats):has(.vl-empty-history)
+    > .vl-toolbar {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    gap: 14px;
+    margin: 0;
+  }
+
+  .vl-container:has(> .vl-stats):has(.vl-empty-history)
+    > .vl-heading {
+    grid-column: 1 / -1;
+  }
+
+  .vl-container:has(> .vl-stats):has(.vl-empty-history)
+    > .vl-panel {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .vl-container:has(> .vl-stats):has(.vl-empty-history)
+    > .vl-stats {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .vl-heading h1 {
+    font-size: 30px;
+  }
+
+  .vl-heading p {
+    font-size: 13px;
+  }
+
+  .vl-project-control {
+    gap: 8px;
+    padding: 7px 10px;
+  }
+
+  .vl-project-control select {
+    width: 210px;
+    min-width: 0;
+    font-size: 14px;
+  }
+
+  .vl-role-chip {
+    font-size: 11px;
+  }
+
+  .vl-toolbar .vl-button {
+    min-height: 42px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Valuations — project overview */
+
+.vl-page {
+  background: #eee7de;
+}
+
+.vl-page .vl-container:has(> .vl-summary) {
+  display: block;
+}
+
+.vl-page .vl-heading {
+  margin: 0 0 24px;
+  padding: 0;
+  min-height: 0;
+}
+
+.vl-page .vl-heading h1 {
+  margin: 0 0 8px;
+  color: #342a3d;
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.vl-page .vl-heading p {
+  margin: 0;
+  color: #746b72;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Selected project — no photograph */
+.vl-project-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 142px;
+  margin-bottom: 20px;
+  padding: 26px 30px;
+  border: 1px solid #ddcbbb;
+  border-radius: 14px;
+  background: #e9d9c8;
+}
+
+.vl-project-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #8d5641;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.vl-project-banner h2 {
+  margin: 0 0 12px;
+  color: #392d40;
+  font-size: clamp(23px, 2.2vw, 30px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+  overflow-wrap: anywhere;
+}
+
+.vl-project-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  color: #71636a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.vl-project-details > span + span {
+  padding-left: 18px;
+  border-left: 1px solid #cdbbaa;
+}
+
+.vl-project-banner-icon {
+  display: grid;
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border: 1px solid #d3bfad;
+  border-radius: 14px;
+  background: #f3e8dc;
+  color: #80617e;
+}
+
+/* Project selector and existing action */
+.vl-page .vl-toolbar:not(.vl-toolbar-welcome) {
+  display: flex;
+  position: static;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  width: 100%;
+  margin: 0 0 22px;
+}
+
+.vl-page .vl-project-control {
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid #dccfc3;
+  border-radius: 10px;
+  background: #fffaf4;
+}
+
+.vl-page .vl-project-control select {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+.vl-page .vl-role-chip {
+  background: #ece3ed;
+  color: #745b7e;
+  font-size: 11px;
+}
+
+.vl-page .vl-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vl-page .vl-toolbar-actions .vl-button {
+  min-height: 43px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+/* One compact summary surface */
+.vl-summary {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.2fr)
+    minmax(0, 1fr);
+  gap: 0;
+  margin: 0;
+  padding: 22px 8px;
+  border: 1px solid #dfd3c8;
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+  background: #fffaf4;
+}
+
+.vl-summary-item {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 24px;
+}
+
+.vl-summary-item + .vl-summary-item {
+  border-left: 1px solid #e2d7ce;
+}
+
+.vl-summary-label {
+  color: #766b73;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.vl-summary-item strong {
+  color: #392d40;
+  font-size: clamp(23px, 2vw, 29px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  overflow-wrap: anywhere;
+}
+
+.vl-summary-draft {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vl-summary-draft-badge {
+  padding: 5px 10px;
+  border: 1px solid #ead3ad;
+  border-radius: 6px;
+  background: #f7e6c9;
+  color: #8b591b;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Join the content panel to the summary */
+.vl-container:has(> .vl-summary) > .vl-panel {
+  margin-top: 0;
+  padding: 26px 30px;
+  border: 1px solid #dfd3c8;
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+  background: #fffaf4;
+  box-shadow: none;
+}
+
+.vl-container:has(> .vl-summary)
+  > .vl-panel
+  > .vl-section-heading {
+  padding-top: 22px;
+  border-top: 1px solid #e2d7ce;
+}
+
+.vl-page .vl-section-heading h2 {
+  color: #392d40;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.vl-page .vl-section-heading p {
+  color: #80727a;
+  font-size: 13px;
+}
+
+/* History search and table */
+.vl-history-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vl-history-filters input,
+.vl-history-filters select {
+  min-height: 42px;
+  padding: 10px 13px;
+  border: 1px solid #dccfc8;
+  border-radius: 9px;
+  background: #fffdf9;
+  color: #493b50;
+  font-size: 13px;
+}
+
+.vl-history-filters input {
+  width: 250px;
+  max-width: 100%;
+}
+
+.vl-history-scroll {
+  overflow-x: auto;
+  border: 1px solid #e2d7ce;
+  border-radius: 10px;
+}
+
+.vl-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.vl-history-table th {
+  padding: 14px 16px;
+  border: 0;
+  background: #e9e1e9;
+  color: #5b4863;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.vl-history-table td {
+  padding: 18px 16px;
+  border: 0;
+  border-bottom: 1px solid #ece2d9;
+  background: #fffaf4;
+  color: #493b50;
+  vertical-align: middle;
+}
+
+.vl-history-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.vl-history-table tbody tr:hover td {
+  background: #f5eee9;
+}
+
+/* Work value column */
+.vl-history-table th:nth-child(4),
+.vl-history-table td:nth-child(4) {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.vl-history-table td:nth-child(4) {
+  font-weight: 700;
+}
+
+.vl-history-note {
+  margin-top: 18px;
+  padding-top: 0;
+  border-top: 0;
+  color: #80727a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .vl-project-banner {
+    padding: 24px;
+  }
+
+  .vl-summary-item {
+    padding: 0 16px;
+  }
+
+  .vl-summary-item strong {
+    font-size: 23px;
+  }
+
+  .vl-history-filters input {
+    width: 210px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vl-project-banner {
+    min-height: 0;
+    gap: 16px;
+    padding: 22px;
+  }
+
+  .vl-project-banner h2 {
+    font-size: 23px;
+  }
+
+  .vl-project-banner-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .vl-project-banner-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .vl-project-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .vl-project-details > span + span {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .vl-summary {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 8px 20px;
+  }
+
+  .vl-summary-item {
+    gap: 7px;
+    padding: 16px 0;
+  }
+
+  .vl-summary-item + .vl-summary-item {
+    border-left: 0;
+    border-top: 1px solid #e2d7ce;
+  }
+
+  .vl-container:has(> .vl-summary) > .vl-panel {
+    padding: 20px;
+  }
+
+  .vl-history-filters {
+    width: 100%;
+  }
+
+  .vl-history-filters input {
+    flex: 1 1 180px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .vl-history-filters select {
+    flex: 1 1 130px;
+  }
+}
+
+.vl-page.vl-embedded {
+  min-height: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.vl-page.vl-embedded .vl-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ==========================================
+   VALUATIONS — CLEAN UI REFINEMENT
+   Scoped to Valuations only
+   ========================================== */
+
+/* Keep the project workspace background */
+.vl-page.vl-embedded {
+  background: transparent;
+}
+
+/* Compact page heading */
+.vl-page .vl-heading {
+  margin-bottom: 16px;
+}
+
+.vl-page .vl-heading h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+}
+
+.vl-page .vl-heading p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Reduce unnecessary space before content */
+.vl-page .vl-toolbar:not(.vl-toolbar-welcome) {
+  margin-bottom: 14px;
+}
+
+/* Clean white summary */
+.vl-page .vl-summary {
+  padding: 18px 8px;
+  border-color: #e4e5e9;
+  background: #ffffff;
+}
+
+.vl-page .vl-summary-item {
+  gap: 7px;
+}
+
+.vl-page .vl-summary-item + .vl-summary-item {
+  border-color: #e8e9ed;
+}
+
+.vl-page .vl-summary-label {
+  color: #727782;
+  font-size: 12px;
+}
+
+.vl-page .vl-summary-item strong {
+  color: #30283a;
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+/* History panel: remove warm cream */
+.vl-page .vl-container:has(> .vl-summary)
+  > .vl-panel {
+  padding: 20px 26px 24px;
+  border-color: #e4e5e9;
+  background: #ffffff;
+}
+
+.vl-page .vl-container:has(> .vl-summary)
+  > .vl-panel
+  > .vl-section-heading {
+  padding-top: 18px;
+  border-color: #e8e9ed;
+}
+
+.vl-page .vl-section-heading {
+  margin-bottom: 16px;
+}
+
+.vl-page .vl-section-heading h2 {
+  font-size: 20px;
+}
+
+.vl-page .vl-section-heading p {
+  color: #7b808b;
+}
+
+/* Search and filter */
+.vl-page .vl-history-filters input,
+.vl-page .vl-history-filters select {
+  min-height: 40px;
+  border: 1px solid #e0e2e7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #30283a;
+}
+
+/* Neutral table */
+.vl-page .vl-history-scroll {
+  border-color: #e3e5e9;
+  border-radius: 9px;
+}
+
+.vl-page .vl-history-table th {
+  padding: 13px 16px;
+  background: #f5f6f8;
+  color: #525866;
+  font-size: 12px;
+}
+
+.vl-page .vl-history-table td {
+  padding: 15px 16px;
+  border-bottom-color: #eceef1;
+  background: #ffffff;
+}
+
+.vl-page .vl-history-table tbody tr:hover td {
+  background: #f8f9fb;
+}
+
+/* Keep financial figures aligned */
+.vl-page .vl-history-table th:nth-child(4),
+.vl-page .vl-history-table td:nth-child(4) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Read-only information */
+.vl-page .vl-history-note {
+  margin-top: 14px;
+  color: #7b808b;
+}
+
+/* Responsive: preserve existing mobile layout */
+@media (max-width: 600px) {
+  .vl-page .vl-heading h1 {
+    font-size: 27px;
+  }
+
+  .vl-page .vl-summary {
+    padding: 8px 18px;
+  }
+
+  .vl-page .vl-summary-item {
+    padding: 14px 0;
+  }
+
+  .vl-page .vl-summary-item + .vl-summary-item {
+    border-left: 0;
+    border-top: 1px solid #e8e9ed;
+  }
+
+  .vl-page .vl-container:has(> .vl-summary)
+    > .vl-panel {
+    padding: 18px;
+  }
+}
+
+
+/* Valuations — final spacing refinement */
+.vl-page .vl-heading {
+  margin-bottom: 8px !important;
+}
+
+.vl-page .vl-heading + .vl-container {
+  margin-top: 0 !important;
+}
+
+.vl-page .vl-summary {
+  margin-top: 0 !important;
+}
+
+
+
+/* VALUATIONS — Single white workspace like BOQ */
+
+.vl-page.vl-embedded:has(.vl-summary) {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 24px 26px !important;
+  box-shadow: 0 2px 12px rgb(20 20 30 / 3%) !important;
+}
+
+/* Heading now visually inside the workspace */
+.vl-page.vl-embedded:has(.vl-summary) .vl-heading {
+  margin: 0 0 18px !important;
+  padding: 0 0 16px !important;
+  border-bottom: 1px solid #e8e9ed;
+}
+
+.vl-page.vl-embedded:has(.vl-summary) .vl-heading h1 {
+  font-size: 24px !important;
+  letter-spacing: -0.5px;
+}
+
+/* Remove the second card border */
+.vl-page.vl-embedded:has(.vl-summary) .vl-summary {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.vl-page.vl-embedded:has(.vl-summary)
+  .vl-container > .vl-panel {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep summary and history visually separated */
+.vl-page.vl-embedded:has(.vl-summary) .vl-summary {
+  padding: 12px 0 20px !important;
+}
+
+.vl-page.vl-embedded:has(.vl-summary)
+  .vl-container > .vl-panel {
+  padding: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .vl-page.vl-embedded:has(.vl-summary) {
+    padding: 16px !important;
+  }
+}
+
+
+/* =========================================
+   VALUATIONS — FINAL UI POLISH
+   ========================================= */
+
+/* Heading and action */
+.vl-page .vl-heading-with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.vl-page .vl-heading-with-action > div {
+  min-width: 0;
+}
+
+.vl-page .vl-heading-with-action .vl-primary {
+  min-height: 38px;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Three subtle tinted statistic cards */
+.vl-page .vl-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 0 20px !important;
+}
+
+.vl-page .vl-summary-item {
+  min-width: 0;
+  padding: 16px 18px !important;
+  border: 1px solid #e8e5ec !important;
+  border-radius: 9px;
+  background: #f8f6fa;
+}
+
+.vl-page .vl-summary-item:nth-child(2) {
+  background: #f3f7f5;
+  border-color: #e3ece7 !important;
+}
+
+.vl-page .vl-summary-item:nth-child(3) {
+  background: #f7f8fa;
+  border-color: #e8eaee !important;
+}
+
+.vl-page .vl-summary-item strong {
+  font-size: 22px !important;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+.vl-page .vl-summary-item:nth-child(3)
+  .vl-summary-draft strong {
+  color: #7c828d;
+}
+
+/* History heading */
+.vl-page .vl-section-heading {
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* Fixed, balanced table */
+.vl-page .vl-history-table {
+  width: 100%;
+  min-width: 800px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.vl-page .vl-history-table th:nth-child(1) {
+  width: 19%;
+}
+
+.vl-page .vl-history-table th:nth-child(2) {
+  width: 26%;
+}
+
+.vl-page .vl-history-table th:nth-child(3) {
+  width: 14%;
+}
+
+.vl-page .vl-history-table th:nth-child(4) {
+  width: 19%;
+}
+
+.vl-page .vl-history-table th:nth-child(5) {
+  width: 17%;
+}
+
+.vl-page .vl-history-table th:nth-child(6) {
+  width: 5%;
+}
+
+.vl-page .vl-history-table th,
+.vl-page .vl-history-table td {
+  padding: 13px 14px;
+  vertical-align: middle;
+}
+
+.vl-page .vl-history-table th:nth-child(4),
+.vl-page .vl-history-table td:nth-child(4) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.vl-page .vl-history-table th:nth-child(5),
+.vl-page .vl-history-table td:nth-child(5) {
+  padding-left: 24px;
+}
+
+.vl-page .vl-history-table th:last-child,
+.vl-page .vl-history-table td:last-child {
+  text-align: center;
+}
+
+/* Entire row opens valuation */
+.vl-page .vl-clickable-row {
+  cursor: pointer;
+}
+
+.vl-page .vl-clickable-row:hover td {
+  background: #f8f9fb;
+}
+
+.vl-page .vl-clickable-row:focus-visible {
+  outline: 2px solid #79516f;
+  outline-offset: -2px;
+}
+
+.vl-page .vl-row-chevron {
+  color: #9297a1;
+}
+
+.vl-page .vl-clickable-row:hover .vl-row-chevron {
+  color: #3c2c43;
+}
+
+/* Footer note */
+.vl-page .vl-history-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #818792;
+  font-size: 12px;
+}
+
+.vl-page .vl-history-note svg {
+  color: #858b96;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .vl-page .vl-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .vl-page .vl-heading-with-action {
+    align-items: flex-start;
+  }
+}
+
+
+/* =====================================
+   VALUATIONS — COMPACT SPACING FIX
+   ===================================== */
+
+/* White card overall spacing */
+.vl-page.vl-embedded:has(.vl-summary) {
+  padding: 22px 28px !important;
+}
+
+/* Heading to stats */
+.vl-page .vl-heading {
+  margin-bottom: 16px !important;
+  padding-bottom: 14px !important;
+}
+
+/* Remove empty toolbar space in embedded mode */
+.vl-page.vl-embedded .vl-toolbar:not(.vl-toolbar-welcome) {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  gap: 0 !important;
+}
+
+.vl-page.vl-embedded .vl-toolbar:not(.vl-toolbar-welcome)
+  .vl-project-control {
+  display: none !important;
+}
+
+/* Stats closer to heading and history */
+.vl-page .vl-summary {
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 14px !important;
+  gap: 12px !important;
+}
+
+.vl-page .vl-summary-item {
+  min-height: 76px !important;
+  padding: 13px 18px !important;
+  gap: 5px !important;
+}
+
+/* History heading and table closer */
+.vl-page .vl-section-heading {
+  margin-bottom: 12px !important;
+}
+
+.vl-page .vl-section-heading h2 {
+  margin-bottom: 0 !important;
+}
+
+/* Remove extra inner panel space */
+.vl-page.vl-embedded .vl-container > .vl-panel {
+  padding-top: 4px !important;
+  padding-bottom: 0 !important;
+}
+
+/* Compact table rows */
+.vl-page .vl-history-table th {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+
+.vl-page .vl-history-table td {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+/* Footer closer to table */
+.vl-page .vl-history-note {
+  margin-top: 12px !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+
+/* ==============================================
+   BUILDORA — VALUATIONS BOQ-STYLE FINAL POLISH
+   ============================================== */
+
+/* Main white workspace */
+.vl-page.vl-embedded:has(.vl-summary) {
+  padding: 22px 28px 20px !important;
+  border: 1px solid #e6e7ec !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: 0 2px 12px rgba(24, 24, 35, 0.025) !important;
+}
+
+/* Heading */
+.vl-page.vl-embedded .vl-heading {
+  margin: 0 0 16px !important;
+  padding: 0 0 16px !important;
+  border-bottom: 1px solid #e9eaf0;
+}
+
+.vl-page.vl-embedded .vl-heading h1 {
+  margin: 0 0 5px !important;
+  font-size: 25px !important;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+  line-height: 1.25;
+}
+
+.vl-page.vl-embedded .vl-heading p {
+  margin: 0 !important;
+  font-size: 13px;
+  color: #7b7f8c;
+}
+
+/* Remove invisible project toolbar space */
+.vl-page.vl-embedded .vl-toolbar:not(.vl-toolbar-welcome) {
+  display: none !important;
+}
+
+/* Stats row */
+.vl-page.vl-embedded .vl-summary {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px !important;
+  margin: 0 0 18px !important;
+  padding: 0 0 18px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #e9eaf0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.vl-page.vl-embedded .vl-summary-item {
+  min-height: 82px !important;
+  padding: 15px 18px !important;
+  border: 1px solid #e8e5ec !important;
+  border-radius: 9px !important;
+  background: #f8f6fa !important;
+  gap: 6px !important;
+}
+
+.vl-page.vl-embedded .vl-summary-item:nth-child(2) {
+  background: #f2f7f4 !important;
+  border-color: #e2ebe5 !important;
+}
+
+.vl-page.vl-embedded .vl-summary-item:nth-child(3) {
+  background: #f7f8fa !important;
+  border-color: #e8eaee !important;
+}
+
+.vl-page.vl-embedded .vl-summary-label {
+  color: #747986;
+  font-size: 12px !important;
+  font-weight: 500;
+}
+
+.vl-page.vl-embedded .vl-summary-item strong {
+  font-size: 22px !important;
+  line-height: 1.3;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.vl-page.vl-embedded .vl-summary-item:nth-child(3)
+  .vl-summary-draft strong {
+  color: #878d98 !important;
+}
+
+/* Remove nested history card */
+.vl-page.vl-embedded .vl-container > .vl-panel {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* History heading */
+.vl-page.vl-embedded .vl-section-heading {
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+}
+
+.vl-page.vl-embedded .vl-section-heading h2 {
+  margin: 0 !important;
+  font-size: 19px !important;
+  font-weight: 750;
+  letter-spacing: -0.35px;
+}
+
+/* Table container */
+.vl-page.vl-embedded .vl-history-scroll {
+  border: 1px solid #e6e8ed !important;
+  border-radius: 9px !important;
+  overflow-x: auto;
+}
+
+/* Balanced table */
+.vl-page.vl-embedded .vl-history-table {
+  width: 100%;
+  min-width: 800px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.vl-page.vl-embedded .vl-history-table th {
+  padding: 12px 14px !important;
+  background: #f5f6f8 !important;
+  color: #626977;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.vl-page.vl-embedded .vl-history-table td {
+  padding: 14px !important;
+  border-top: 1px solid #eef0f3;
+  background: #fff;
+  vertical-align: middle;
+}
+
+.vl-page.vl-embedded .vl-history-table th:nth-child(1) {
+  width: 19%;
+}
+
+.vl-page.vl-embedded .vl-history-table th:nth-child(2) {
+  width: 26%;
+}
+
+.vl-page.vl-embedded .vl-history-table th:nth-child(3) {
+  width: 14%;
+}
+
+.vl-page.vl-embedded .vl-history-table th:nth-child(4) {
+  width: 19%;
+}
+
+.vl-page.vl-embedded .vl-history-table th:nth-child(5) {
+  width: 17%;
+}
+
+.vl-page.vl-embedded .vl-history-table th:nth-child(6) {
+  width: 5%;
+}
+
+/* Work value right aligned */
+.vl-page.vl-embedded .vl-history-table th:nth-child(4),
+.vl-page.vl-embedded .vl-history-table td:nth-child(4) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Status spacing */
+.vl-page.vl-embedded .vl-history-table th:nth-child(5),
+.vl-page.vl-embedded .vl-history-table td:nth-child(5) {
+  padding-left: 24px !important;
+}
+
+/* Clickable row */
+.vl-page.vl-embedded .vl-clickable-row {
+  cursor: pointer;
+}
+
+.vl-page.vl-embedded .vl-clickable-row:hover td {
+  background: #faf9fc !important;
+}
+
+.vl-page.vl-embedded .vl-row-chevron {
+  color: #a1a6b0;
+  text-align: center;
+}
+
+/* Footer */
+.vl-page.vl-embedded .vl-history-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 13px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: #858b97;
+  font-size: 12px;
+}
+
+.vl-page.vl-embedded .vl-history-note svg {
+  color: #858b97;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .vl-page.vl-embedded:has(.vl-summary) {
+    padding: 18px !important;
+  }
+
+  .vl-page.vl-embedded .vl-summary {
+    grid-template-columns: 1fr !important;
+  }
+
+  .vl-page.vl-embedded .vl-summary-item {
+    min-height: 72px !important;
+  }
+}
+
+
+/* VALUATIONS — BOQ-LIKE COMPACT RHYTHM */
+
+.vl-page.vl-embedded .vl-heading {
+  margin-bottom: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.vl-page.vl-embedded .vl-summary {
+  margin-bottom: 12px !important;
+  padding-bottom: 12px !important;
+  gap: 12px !important;
+}
+
+.vl-page.vl-embedded .vl-summary-item {
+  min-height: 72px !important;
+  padding: 12px 16px !important;
+}
+
+.vl-page.vl-embedded .vl-section-heading {
+  margin-bottom: 10px !important;
+}
+
+.vl-page.vl-embedded .vl-history-table th {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.vl-page.vl-embedded .vl-history-table td {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+
+.vl-page.vl-embedded .vl-history-note {
+  margin-top: 10px !important;
+}
+
+
+/* VALUATIONS — REDUCE GAP ABOVE 3 STATS CARDS */
+
+.vl-page.vl-embedded:has(.vl-summary) .vl-heading {
+  margin-bottom: 0 !important;
+  padding-bottom: 12px !important;
+}
+
+.vl-page.vl-embedded:has(.vl-summary) .vl-summary {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+
+/* VALUATIONS — SPACE BELOW DIVIDER */
+
+.vl-page.vl-embedded:has(.vl-summary) .vl-heading {
+  margin-bottom: 0 !important;
+  padding-bottom: 12px !important;
+}
+
+.vl-page.vl-embedded:has(.vl-summary) .vl-summary {
+  margin-top: 0 !important;
+  padding-top: 18px !important;
+}
+
+
+/* COMPACT SUMMARY CARDS */
+
+/* Valuations */
+.vl-page .vl-stats > div,
+
+/* Certificates */
+.ct-page .ct-summary > div,
+
+/* Payments */
+.ct-page.pm-embedded .ct-summary > div {
+  min-height: 62px !important;
+  height: auto !important;
+  padding: 8px 12px !important;
+  gap: 3px !important;
+}
+
+/* Small labels */
+.vl-page .vl-stats span,
+.ct-page .ct-summary dt {
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+}
+
+/* Small amounts */
+.vl-page .vl-stats strong,
+.ct-page .ct-summary dd {
+  font-size: 19px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+/* Less space below cards */
+.vl-page .vl-stats,
+.ct-page .ct-summary {
+  margin-bottom: 12px !important;
+}
+
+
+/* VALUATIONS — INLINE SUMMARY, NO CARDS */
+
+.vl-page .vl-inline-summary {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px 28px !important;
+
+  margin: 0 0 16px !important;
+  padding: 0 0 12px !important;
+
+  border: 0 !important;
+  border-bottom: 1px solid #e9eaf0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.vl-page .vl-inline-summary > .vl-summary-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+
+  flex: 0 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  gap: 7px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.vl-page .vl-inline-summary .vl-summary-label {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #777d89 !important;
+}
+
+.vl-page .vl-inline-summary .vl-summary-item strong {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0 !important;
+  color: #302438 !important;
+}
+
+.vl-page .vl-inline-summary .vl-summary-draft {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+.vl-page .vl-inline-summary .vl-summary-draft-badge {
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+}
+
+@media (max-width: 700px) {
+  .vl-page .vl-inline-summary {
+    gap: 8px 18px !important;
+  }
+}
+
+
+/* VALUATIONS — REMOVE ALL 3 SUMMARY CARDS */
+
+.vl-page .vl-summary.vl-inline-summary {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 10px 24px !important;
+
+  width: 100% !important;
+  margin: 0 0 14px !important;
+  padding: 0 0 12px !important;
+
+  border: none !important;
+  border-bottom: 1px solid #e9eaf0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.vl-page .vl-summary.vl-inline-summary > .vl-summary-item {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  justify-content: flex-start !important;
+
+  flex: 0 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.vl-page .vl-summary.vl-inline-summary
+  > .vl-summary-item + .vl-summary-item {
+  border-left: 0 !important;
+}
+
+.vl-page .vl-summary.vl-inline-summary .vl-summary-label {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #777d89 !important;
+}
+
+.vl-page .vl-summary.vl-inline-summary .vl-summary-item strong {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+
+/* BUILDORA — UNIFIED COST PAGE STYLING */
+
+/* Typography */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+table th {
+  padding: 12px 14px;
+  background: #F5F5F6;
+  color: #655D69;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table td {
+  padding: 13px 14px;
+  color: #352A3D;
+  font-size: 13px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ECE8E5;
+}
+
+/* Numeric alignment */
+table td,
+table th {
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* BUILDORA — VALUATIONS PAGE POLISH */
+
+.valuation-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 20px;
+}
+
+.valuation-summary-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  min-height: 82px;
+  padding: 13px 16px;
+  border: 1px solid #E5E1E6;
+  border-radius: 9px;
+  background: #FFFFFF;
+}
+
+.valuation-summary-label {
+  color: #746E78;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.valuation-summary-value {
+  display: block;
+  margin-top: 5px;
+  color: #352A3D;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.valuation-summary-card--primary
+.valuation-summary-value {
+  font-size: 23px;
+}
+
+.valuation-summary-value--muted {
+  color: #918B95;
+}
+
+@media (max-width: 700px) {
+  .valuation-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

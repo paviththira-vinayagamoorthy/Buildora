@@ -1,0 +1,409 @@
+@import "./CertificatesPage.css";
+
+.pm-page .pm-section + .pm-section {
+  margin-top: 24px;
+}
+
+.pm-page .pm-form-panel {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.pm-page .pm-small-button {
+  min-height: 34px;
+  padding: 8px 12px;
+  font-size: 11px;
+}
+
+.pm-page .ct-table td.pm-reference-cell {
+  min-width: 180px;
+  max-width: 340px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+
+.pm-page .pm-reference-cell small {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 700px) {
+  .pm-page .pm-section + .pm-section {
+    margin-top: 18px;
+  }
+}
+
+.ct-page.pm-embedded {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.ct-page.pm-embedded .ct-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ct-page.pm-embedded .ct-toolbar {
+  justify-content: flex-end;
+}
+
+
+
+/* PAYMENTS — MATCH VALUATIONS / CERTIFICATES */
+
+.ct-page.pm-embedded .ct-container:has(> .ct-summary) {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px 26px;
+  box-shadow: 0 2px 12px rgb(20 20 30 / 3%);
+}
+
+/* Page heading and subtitle */
+.ct-page.pm-embedded .ct-container > .ct-heading {
+  margin: 0 !important;
+  padding: 0 0 12px !important;
+  border-bottom: 1px solid #e8e9ed;
+}
+
+.ct-page.pm-embedded .ct-heading h1 {
+  margin: 0 0 8px !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.ct-page.pm-embedded .ct-heading p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: #776e73 !important;
+}
+
+/* Three summary cards */
+.ct-page.pm-embedded .ct-container > .ct-summary {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin: 18px 0 0 !important;
+  padding: 0 0 12px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #e8e9ed !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.ct-page.pm-embedded .ct-summary > div {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+  min-height: 84px !important;
+  margin: 0 !important;
+  padding: 12px 16px !important;
+  border-radius: 9px !important;
+}
+
+.ct-page.pm-embedded .ct-summary > div:nth-child(1) {
+  background: #f0e9f4 !important;
+  border: 1px solid #e6dbea !important;
+}
+
+.ct-page.pm-embedded .ct-summary > div:nth-child(2) {
+  background: #eaf2e9 !important;
+  border: 1px solid #dce9db !important;
+}
+
+.ct-page.pm-embedded .ct-summary > div:nth-child(3) {
+  background: #fbede2 !important;
+  border: 1px solid #f0dfd0 !important;
+}
+
+.ct-page.pm-embedded .ct-summary dt {
+  margin: 0 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  color: #707580 !important;
+}
+
+.ct-page.pm-embedded .ct-summary dd {
+  margin: 0 !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  color: #30283a !important;
+  overflow-wrap: anywhere;
+}
+
+/* Certificate balances and Payment history */
+.ct-page.pm-embedded .ct-container > .pm-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.ct-page.pm-embedded .pm-section > .ct-section-heading {
+  margin: 0 0 10px !important;
+  padding: 12px 0 0 !important;
+  border: 0 !important;
+}
+
+.ct-page.pm-embedded .ct-section-heading h2 {
+  margin: 0 !important;
+  font-size: 19px !important;
+  font-weight: 750 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.35px !important;
+}
+
+.ct-page.pm-embedded .pm-section:first-of-type
+  .ct-section-heading p {
+  display: none !important;
+}
+
+.ct-page.pm-embedded .ct-container > .pm-section + .pm-section {
+  margin-top: 18px !important;
+  border-top: 1px solid #e8e9ed !important;
+}
+
+/* Tables */
+.ct-page.pm-embedded .pm-section .ct-table-wrap {
+  margin: 0 !important;
+  border: 1px solid #e3e5e9 !important;
+  border-radius: 9px !important;
+  overflow-x: auto;
+}
+
+.ct-page.pm-embedded .pm-section .ct-table th {
+  padding: 10px 14px !important;
+  background: #f5f6f8 !important;
+  color: #626977 !important;
+  font-size: 11px !important;
+}
+
+.ct-page.pm-embedded .pm-section .ct-table td {
+  padding: 11px 14px !important;
+  background: #fff !important;
+  border-bottom: 1px solid #eef0f3 !important;
+  font-size: 13px !important;
+}
+
+.ct-page.pm-embedded .pm-section .ct-table
+  tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .ct-page.pm-embedded .ct-container:has(> .ct-summary) {
+    padding: 18px;
+  }
+
+  .ct-page.pm-embedded .ct-container > .ct-summary {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* PAYMENTS — NEUTRAL SUMMARY CARDS */
+.ct-page.pm-embedded .ct-summary > div:nth-child(1),
+.ct-page.pm-embedded .ct-summary > div:nth-child(2),
+.ct-page.pm-embedded .ct-summary > div:nth-child(3) {
+  background: #f8f9fb !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+
+/* Outstanding balance — subtle highlight */
+.ct-page.pm-embedded .ct-summary > div:nth-child(3) {
+  background: #fff8ed !important;
+  border: 1px solid #ead9bb !important;
+  border-left: 4px solid #c58a39 !important;
+}
+
+
+/* PAYMENTS — CERTIFICATES TYPOGRAPHY & RHYTHM */
+
+/* White workspace */
+.ct-page.pm-embedded .ct-container:has(> .ct-summary) {
+  padding: 22px 28px 20px !important;
+}
+
+/* Heading and subtitle */
+.ct-page.pm-embedded .ct-container > .ct-heading {
+  margin: 0 !important;
+  padding: 0 0 16px !important;
+  border-bottom: 1px solid #e9eaf0 !important;
+}
+
+.ct-page.pm-embedded .ct-heading h1 {
+  margin: 0 0 6px !important;
+  font-size: 25px !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.6px !important;
+  line-height: 1.2 !important;
+}
+
+.ct-page.pm-embedded .ct-heading p {
+  margin: 0 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: #7b7f8c !important;
+}
+
+/* Summary layout */
+.ct-page.pm-embedded .ct-container > .ct-summary {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin: 12px 0 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.ct-page.pm-embedded .ct-summary > div {
+  box-sizing: border-box !important;
+  height: 84px !important;
+  min-height: 84px !important;
+  padding: 12px 16px !important;
+  margin: 0 !important;
+}
+
+.ct-page.pm-embedded .ct-summary dt {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+.ct-page.pm-embedded .ct-summary dd {
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.4px !important;
+}
+
+/* Certificate history-style section heading */
+.ct-page.pm-embedded .pm-section > .ct-section-heading {
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.ct-page.pm-embedded .ct-section-heading h2 {
+  margin: 0 !important;
+  font-size: 19px !important;
+  font-weight: 750 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.35px !important;
+}
+
+@media (max-width: 760px) {
+  .ct-page.pm-embedded .ct-container > .ct-summary {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ct-page.pm-embedded .ct-summary > div {
+    height: auto !important;
+    min-height: 84px !important;
+  }
+}
+
+
+/* COMPACT SUMMARY CARDS */
+
+/* Valuations */
+.vl-page .vl-stats > div,
+
+/* Certificates */
+.ct-page .ct-summary > div,
+
+/* Payments */
+.ct-page.pm-embedded .ct-summary > div {
+  min-height: 62px !important;
+  height: auto !important;
+  padding: 8px 12px !important;
+  gap: 3px !important;
+}
+
+/* Small labels */
+.vl-page .vl-stats span,
+.ct-page .ct-summary dt {
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+}
+
+/* Small amounts */
+.vl-page .vl-stats strong,
+.ct-page .ct-summary dd {
+  font-size: 19px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+/* Less space below cards */
+.vl-page .vl-stats,
+.ct-page .ct-summary {
+  margin-bottom: 12px !important;
+}
+
+
+/* BUILDORA — UNIFIED COST PAGE STYLING */
+
+/* Typography */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+table th {
+  padding: 12px 14px;
+  background: #F5F5F6;
+  color: #655D69;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table td {
+  padding: 13px 14px;
+  color: #352A3D;
+  font-size: 13px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ECE8E5;
+}
+
+/* Numeric alignment */
+table td,
+table th {
+  font-variant-numeric: tabular-nums;
+}
+
+

@@ -1,0 +1,5799 @@
+
+.pa-page h1,
+.pa-page h2,
+.pa-page h3,
+.pa-page h4,
+.pa-page .pa-heading,
+.pa-page .pa-stat-value {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.pa-page button,
+.pa-page input,
+.pa-page select,
+.pa-page textarea,
+.pa-page table {
+  font-family: inherit;
+}
+
+.pa-page {
+  --pa-bg: #f5f0eb;
+  --pa-surface: #fffdfa;
+  --pa-soft: #f8f3ee;
+  --pa-text: #352a3d;
+  --pa-muted: #6d626c;
+  --pa-border: #e5d9cf;
+  --pa-accent: #98482f;
+  --pa-selected: #faebe3;
+
+  min-height: 100dvh;
+  background: var(--pa-bg);
+  color: var(--pa-text);
+}
+
+.pa-page * {
+  box-sizing: border-box;
+}
+
+.pa-page .pa-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px clamp(16px, 4vw, 48px);
+  border-bottom: 1px solid var(--pa-border);
+  background: var(--pa-surface);
+}
+
+.pa-page .pa-topbar > img {
+  width: 124px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.pa-page .pa-account {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.pa-page .pa-account strong,
+.pa-page .pa-account small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.pa-page .pa-account small {
+  margin-top: 3px;
+  color: var(--pa-muted);
+}
+
+.pa-page .pa-container {
+  width: 100%;
+  max-width: 1380px;
+  margin-inline: auto;
+  padding: clamp(18px, 4vw, 40px);
+}
+
+.pa-page .pa-heading {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--pa-border);
+}
+
+.pa-page .pa-eyebrow {
+  margin: 0;
+  color: var(--pa-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.pa-page h1 {
+  margin: 6px 0 8px;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.pa-page h2 {
+  margin: 0;
+  font-size: clamp(19px, 2.5vw, 24px);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.pa-page h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pa-page p {
+  line-height: 1.6;
+}
+
+.pa-page .pa-heading > p:last-child {
+  margin: 0;
+}
+
+.pa-page .pa-heading > p:last-child,
+.pa-page .pa-muted {
+  color: var(--pa-muted);
+  font-size: 14px;
+}
+
+.pa-page .pa-layout {
+  display: grid;
+  grid-template-columns: minmax(270px, 320px) minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.pa-page .pa-panel {
+  min-width: 0;
+  padding: clamp(16px, 2.5vw, 28px);
+  border: 1px solid var(--pa-border);
+  border-radius: 16px;
+  background: var(--pa-surface);
+  box-shadow: 0 4px 14px rgb(53 42 61 / 5%);
+}
+
+.pa-page .pa-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.pa-page .pa-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border: 1px solid #ebccbc;
+  border-radius: 999px;
+  background: var(--pa-selected);
+  color: #7f3d29;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pa-page .pa-field {
+  display: grid;
+  gap: 7px;
+  margin-block: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pa-page .pa-field select,
+.pa-page .pa-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--pa-border);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--pa-text);
+  font: inherit;
+  font-weight: 400;
+}
+
+.pa-page .pa-field textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.pa-page .pa-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid var(--pa-border);
+  border-radius: 9px;
+  background: var(--pa-surface);
+  color: var(--pa-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pa-page .pa-button:not(:disabled):hover {
+  background: var(--pa-soft);
+}
+
+.pa-page .pa-primary {
+  border-color: var(--pa-text);
+  background: var(--pa-text);
+  color: #fff;
+}
+
+.pa-page .pa-button.pa-primary:not(:disabled):hover {
+  background: #4a3951;
+}
+
+.pa-page .pa-reject {
+  border-color: #dfb7a9;
+  color: #8c3327;
+}
+
+.pa-page .pa-button.pa-reject:not(:disabled):hover {
+  background: #fff0eb;
+}
+
+.pa-page button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pa-page :is(button, select, textarea, a):focus-visible {
+  outline: 3px solid #bd725b;
+  outline-offset: 3px;
+}
+
+.pa-page .pa-company-list {
+  display: grid;
+  gap: 8px;
+}
+
+.pa-page .pa-company {
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--pa-border);
+  border-inline-start: 3px solid transparent;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--pa-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pa-page .pa-company:not(:disabled):hover {
+  background: var(--pa-soft);
+}
+
+.pa-page .pa-company.pa-company-selected {
+  border-color: #e9c8ba;
+  border-inline-start-color: var(--pa-accent);
+  background: var(--pa-selected);
+}
+
+.pa-page .pa-company strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.pa-page .pa-company span {
+  color: var(--pa-accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pa-page .pa-company small,
+.pa-page .pa-document-list small,
+.pa-page .pa-history small {
+  color: var(--pa-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pa-page .pa-pagination,
+.pa-page .pa-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.pa-page .pa-pagination {
+  padding-top: 14px;
+  border-top: 1px solid var(--pa-border);
+}
+
+.pa-page .pa-pagination .pa-button {
+  padding-inline: 10px;
+}
+
+.pa-page .pa-actions {
+  justify-content: flex-end;
+}
+
+.pa-page .pa-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0 0;
+}
+
+.pa-page .pa-details > div {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--pa-border);
+  border-radius: 10px;
+  background: var(--pa-soft);
+}
+
+.pa-page .pa-details dt {
+  margin-bottom: 4px;
+  color: var(--pa-muted);
+  font-size: 12px;
+}
+
+.pa-page .pa-details dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.pa-page .pa-divider {
+  height: 1px;
+  margin-block: 22px;
+  border: 0;
+  background: var(--pa-border);
+}
+
+.pa-page .pa-document-list,
+.pa-page .pa-history {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pa-page .pa-document-list li,
+.pa-page .pa-history li {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--pa-border);
+  border-radius: 10px;
+  background: var(--pa-soft);
+}
+
+.pa-page .pa-document-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pa-page .pa-document-list li > * {
+  min-width: 0;
+}
+
+.pa-page .pa-document-list strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.pa-page .pa-document-list small {
+  display: block;
+  margin-top: 4px;
+}
+
+.pa-page .pa-document-list button {
+  flex-shrink: 0;
+}
+
+.pa-page .pa-message {
+  margin: 14px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--pa-border);
+  border-radius: 9px;
+  background: var(--pa-soft);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.pa-page .pa-error {
+  border-color: #e4b5ab;
+  background: #fff0eb;
+  color: #8c3327;
+}
+
+.pa-page .pa-success {
+  border-color: #bdcdbf;
+  background: #edf3ed;
+  color: #3d6046;
+}
+
+.pa-page .pa-review-note {
+  margin-top: 18px;
+  padding: 14px;
+  border-inline-start: 3px solid var(--pa-accent);
+  border-radius: 8px;
+  background: var(--pa-selected);
+}
+
+.pa-page .pa-review-note p,
+.pa-page .pa-history p {
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.pa-page .pa-empty {
+  padding: clamp(24px, 5vw, 48px) 16px;
+  text-align: center;
+}
+
+.pa-page .pa-empty p {
+  color: var(--pa-muted);
+}
+
+.pa-page .pa-access-panel {
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+@media (max-width: 860px) {
+  .pa-page .pa-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pa-page .pa-topbar,
+  .pa-page .pa-account {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pa-page .pa-container {
+    padding: 20px 14px;
+  }
+
+  .pa-page .pa-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pa-page .pa-document-list li {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .pa-page .pa-actions > .pa-button {
+    flex: 1 1 120px;
+  }
+}
+
+.pa-page .pa-shell {
+  display: grid;
+  grid-template-columns: 228px minmax(0, 1fr);
+  min-height: calc(100dvh - 71px);
+}
+
+.pa-page .pa-sidebar {
+  padding: 24px 14px;
+  background: #352a3d;
+}
+
+.pa-page .pa-sidebar ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pa-page .pa-sidebar :is(a, button) {
+  display: block;
+  width: 100%;
+  padding: 11px 12px;
+  border: 0;
+  border-inline-start: 3px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff4ee;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.pa-page .pa-sidebar [aria-current="location"] {
+  border-inline-start-color: #eda38e;
+  background: #504055;
+  font-weight: 700;
+}
+
+.pa-page .pa-shell > .pa-container {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .pa-page .pa-shell .pa-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .pa-page .pa-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pa-page .pa-sidebar {
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .pa-page .pa-sidebar ul {
+    display: flex;
+    width: max-content;
+  }
+}
+
+.pa-page .pa-topbar {
+  padding: 14px clamp(18px, 3vw, 42px);
+}
+
+.pa-page .pa-account-menu {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.pa-page .pa-account-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px 4px 4px;
+  border: 1px solid #e3d6ca;
+  border-radius: 999px;
+  background: #fffcf8;
+  cursor: pointer;
+  list-style: none;
+}
+
+.pa-page .pa-account-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.pa-page .pa-account-trigger:focus-visible {
+  outline: 3px solid #bd725b;
+  outline-offset: 3px;
+}
+
+.pa-page .pa-avatar {
+  display: grid;
+  flex: 0 0 36px;
+  height: 36px;
+  overflow: hidden;
+  place-items: center;
+  border-radius: 50%;
+  background: #352a3d;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pa-page .pa-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pa-page .pa-account-name {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pa-page .pa-account-name strong {
+  overflow: hidden;
+  max-width: 200px;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pa-page .pa-account-name small {
+  color: #6d646c;
+  font-size: 12px;
+}
+
+.pa-page .pa-account-chevron {
+  display: grid;
+  flex: 0 0 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: #efe6df;
+}
+
+.pa-page .pa-account-menu[open] .pa-account-chevron svg {
+  transform: rotate(180deg);
+}
+
+.pa-page .pa-account-card {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  inset-inline: 0;
+  padding: 6px;
+  border: 1px solid #e3d6ca;
+  border-radius: 12px;
+  background: #fffcf8;
+  box-shadow: 0 8px 24px rgb(53 42 61 / 14%);
+}
+
+.pa-page .pa-account-card .pa-button {
+  justify-content: flex-start;
+  width: 100%;
+  border: 0;
+  color: #8c3327;
+}
+
+@media (min-width: 721px) {
+  .pa-page .pa-shell {
+    grid-template-columns: clamp(220px, 18.25vw, 280px) minmax(0, 1fr);
+  }
+
+  .pa-page .pa-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  min-height: calc(100dvh - 71px);
+  padding: 26px 18px 0;
+
+  background-color: #352a3d;
+  background-image:
+    linear-gradient(
+      to bottom,
+      #352a3d 0%,
+      rgb(53 42 61 / 25%) 60%,
+      rgb(53 42 61 / 75%) 100%
+    ),
+    url("../assets/sidebar-building.png");
+  background-position: center bottom;
+  background-size: 100% 230px, 100% auto;
+  background-repeat: no-repeat;
+}
+}
+
+.pa-page .pa-sidebar-intro {
+  margin: 0 10px 22px;
+  color: #ddd0df;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.pa-page .pa-sidebar :is(a, button) {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 46px;
+  padding: 9px 12px;
+}
+
+.pa-page .pa-sidebar svg {
+  flex-shrink: 0;
+}
+
+.pa-page .pa-sidebar-footer {
+  display: grid;
+  gap: 6px;
+  margin-top: auto;
+  padding: 20px 10px;
+  color: #fff4ee;
+}
+
+.pa-page .pa-sidebar-footer strong {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.pa-page .pa-sidebar-footer small {
+  color: #ddd0df;
+}
+
+@media (max-width: 720px) {
+  .pa-page .pa-sidebar-intro,
+  .pa-page .pa-sidebar-footer {
+    display: none;
+  }
+
+  .pa-page .pa-account-name strong {
+    max-width: 140px;
+  }
+}
+
+.pa-page .pa-user-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  border: 1px solid #e7dcd1;
+  border-radius: 12px;
+  background: #fffcf8;
+}
+
+.pa-page .pa-user-row > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.pa-page .pa-user-row > :first-child {
+  flex: 1 1 10rem;
+}
+
+.pa-page .pa-user-row strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.pa-page .pa-user-row p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.pa-page .pa-user-status {
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.pa-page .pa-user-status.is-active {
+  border-color: #cddfcf;
+  background: #edf5ee;
+  color: #31583b;
+}
+
+.pa-page .pa-user-status.is-inactive {
+  border-color: #e8cfc5;
+  background: #fbefea;
+  color: #844533;
+}
+
+.pa-page:has(> .pa-shell) {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.pa-page > .pa-topbar {
+  flex-shrink: 0;
+}
+
+.pa-page > .pa-shell {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.pa-page > .pa-shell > .pa-sidebar {
+  position: relative;
+  top: auto;
+  align-self: stretch;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+}
+
+.pa-shell > .pa-container.pa-content {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.pa-profile-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  box-sizing: border-box;
+  width: min(440px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 28px;
+  overflow-y: auto;
+  border: 0;
+  background: #fffcf8;
+  color: #322638;
+  box-shadow: -12px 0 36px rgb(50 38 56 / 16%);
+}
+
+.pa-profile-drawer::backdrop {
+  background: rgb(35 26 40 / 38%);
+}
+
+.pa-profile-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pa-profile-heading h2 {
+  margin: 0;
+}
+
+.pa-profile-form,
+.pa-profile-form label {
+  display: grid;
+  gap: 10px;
+}
+
+.pa-profile-form {
+  gap: 20px;
+}
+
+.pa-profile-form input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #e3d5ca;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.pa-profile-form img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pa-profile-drawer {
+  width: min(460px, 100vw);
+  padding: clamp(20px, 5vw, 32px);
+  background: #fffcf8;
+}
+
+.pa-profile-heading {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e7dacf;
+}
+
+.pa-profile-heading h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pa-profile-form > label.pa-profile-photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e7dacf;
+  border-radius: 14px;
+  background: #f5eee8;
+  cursor: pointer;
+}
+
+.pa-profile-avatar {
+  display: grid;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #3c2c43;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.pa-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pa-profile-photo-copy {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+}
+
+.pa-profile-photo-copy small {
+  color: #635761;
+}
+
+.pa-profile-photo-action {
+  padding: 6px 10px;
+  border: 1px solid #cbbabf;
+  border-radius: 8px;
+  background: #fffcf8;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pa-profile-form input.pa-profile-file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.pa-profile-photo:focus-within {
+  outline: 2px solid #79516f;
+  outline-offset: 3px;
+}
+
+.pa-profile-form input[readonly] {
+  background: #f5eee8;
+  color: #635761;
+}
+
+.pa-profile-form .pa-button.pa-profile-save {
+  min-height: 44px;
+  border-color: #3c2c43;
+  background: #3c2c43;
+  color: #fff;
+}
+
+.pa-profile-form .pa-profile-save:disabled {
+  opacity: 0.65;
+}
+
+.pa-profile-drawer {
+  width: min(480px, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px 0 0 20px;
+  background: #fffcf8;
+}
+
+.pa-profile-drawer[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.pa-profile-drawer::backdrop {
+  background: rgb(35 26 40 / 32%);
+  backdrop-filter: blur(3px);
+}
+
+.pa-profile-heading {
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #dfd0dc;
+  background: #eee4ed;
+}
+
+.pa-profile-heading .pa-button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  min-height: 0;
+  padding: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: #fffcf8;
+  font-size: 1.25rem;
+}
+
+.pa-profile-form {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  gap: 0;
+}
+
+.pa-profile-body {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-height: 0;
+  padding: 20px 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.pa-profile-body > label {
+  gap: 7px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pa-profile-body > label.pa-profile-photo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.pa-profile-photo-action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #603d62;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pa-profile-section-title {
+  margin: 4px 0 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e7dacf;
+  font-size: 1.05rem;
+}
+
+.pa-profile-form input:not([type="file"]) {
+  min-height: 44px;
+  font-weight: 400;
+}
+
+.pa-profile-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 24px;
+  border-top: 1px solid #e7dacf;
+  background: #fffcf8;
+}
+
+.pa-profile-footer .pa-button {
+  min-height: 44px;
+}
+
+.pa-profile-error {
+  margin: 0;
+  color: #9a3526;
+}
+
+@media (max-width: 480px) {
+  .pa-profile-drawer {
+    border-radius: 0;
+  }
+
+  .pa-profile-heading,
+  .pa-profile-body,
+  .pa-profile-footer {
+    padding-inline: 16px;
+  }
+}
+
+.pa-profile-drawer .pa-profile-heading {
+  padding-block: 18px;
+  background: linear-gradient(135deg, #f2e8ef, #f9f2ee);
+}
+
+.pa-profile-drawer .pa-profile-body > label.pa-profile-photo {
+  padding: 14px;
+  border: 1px solid #e7d9cf;
+  border-radius: 16px;
+  background: #f7f0ea;
+  outline: none;
+}
+
+.pa-profile-drawer .pa-profile-avatar {
+  flex-basis: 64px;
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 0 0 2px #fffcf8, 0 0 0 3px #d8c6ce;
+}
+
+.pa-profile-drawer .pa-profile-photo-action {
+  display: inline-flex;
+  padding: 5px 10px;
+  border: 1px solid #ddccd6;
+  border-radius: 8px;
+  background: #fffcf8;
+  text-decoration: none;
+}
+
+.pa-profile-drawer .pa-profile-photo:hover .pa-profile-photo-action {
+  background: #eee2ec;
+}
+
+.pa-profile-drawer .pa-profile-photo:has(.pa-profile-file:focus-visible)
+  .pa-profile-photo-action {
+  outline: 2px solid #79516f;
+  outline-offset: 3px;
+}
+
+.pa-profile-drawer .pa-profile-footer {
+  box-shadow: 0 -8px 20px rgb(50 38 56 / 5%);
+}
+@media (max-width: 760px) {
+  .pa-page > .pa-topbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+
+  .pa-topbar > img {
+    flex: 0 0 auto;
+    width: clamp(68px, 21vw, 104px);
+    height: auto;
+  }
+
+  .pa-topbar > .pa-account-menu {
+    position: relative;
+    width: auto;
+    min-width: 0;
+    max-width: 66%;
+  }
+
+  .pa-topbar .pa-account-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 4px 6px;
+  }
+
+  .pa-topbar .pa-account-name {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pa-topbar .pa-account-name strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+
+  .pa-topbar .pa-account-name small {
+    font-size: 0.7rem;
+  }
+
+  .pa-topbar .pa-avatar,
+  .pa-topbar .pa-account-chevron {
+    flex-shrink: 0;
+  }
+
+  .pa-topbar .pa-account-card {
+    right: 0;
+    left: auto;
+    min-width: 0;
+    width: min(220px, calc(100vw - 28px));
+  }
+
+  .pa-page > .pa-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .pa-page > .pa-shell > .pa-sidebar {
+    grid-area: 1 / 1;
+    width: auto;
+    min-width: 0;
+    padding: 8px 12px;
+  }
+
+  .pa-sidebar .pa-sidebar-intro,
+  .pa-sidebar .pa-sidebar-footer {
+    display: none;
+  }
+
+  .pa-sidebar nav {
+    overflow: visible;
+  }
+
+  .pa-sidebar nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 8px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    list-style: none;
+  }
+
+  .pa-sidebar nav li {
+    min-width: 0;
+  }
+
+  .pa-sidebar nav button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 44px;
+    padding: 6px 8px;
+    text-align: left;
+    white-space: normal;
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .pa-sidebar nav button svg {
+    flex-shrink: 0;
+  }
+
+  .pa-shell > .pa-container.pa-content {
+    grid-area: 2 / 1;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 16px;
+    overflow-y: auto;
+  }
+
+  .pa-content .pa-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .pa-content .pa-layout > * {
+    min-width: 0;
+  }
+
+  .pa-content .pa-heading h1 {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+    line-height: 1.2;
+  }
+}
+
+.pa-mobile-nav-toggle,
+.pa-mobile-nav-backdrop {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .pa-page > .pa-topbar {
+    position: relative;
+    z-index: 30;
+    justify-content: flex-start;
+  }
+
+  .pa-topbar > .pa-account-menu {
+    margin-inline-start: auto;
+  }
+
+  .pa-mobile-nav-toggle {
+    display: grid;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #e7dacf;
+    border-radius: 10px;
+    background: #fffcf8;
+    color: #3c2c43;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .pa-page > .pa-shell {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .pa-shell > .pa-container.pa-content {
+    grid-area: 1 / 1;
+  }
+
+  .pa-page > .pa-shell > .pa-sidebar {
+    display: none;
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 50;
+    box-sizing: border-box;
+    width: min(280px, 82vw);
+    padding: 18px 14px;
+    overflow-y: auto;
+    background: #322638;
+    box-shadow: 8px 0 24px rgb(35 26 40 / 18%);
+  }
+
+  .pa-page > .pa-shell > .pa-sidebar.pa-sidebar-open {
+    display: block;
+  }
+
+  .pa-sidebar nav ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pa-mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: rgb(35 26 40 / 38%);
+  }
+}
+
+.pa-signout-dialog {
+  box-sizing: border-box;
+  width: min(400px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 24px;
+  overflow-y: auto;
+  border: 1px solid #e7d9cf;
+  border-radius: 18px;
+  background: #fffcf8;
+  color: #322638;
+  box-shadow: 0 20px 60px rgb(35 26 40 / 22%);
+}
+
+.pa-signout-dialog::backdrop {
+  background: rgb(35 26 40 / 38%);
+  backdrop-filter: blur(2px);
+}
+
+.pa-signout-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  place-items: center;
+  border-radius: 12px;
+  background: #f5e4dc;
+  color: #8d4335;
+}
+
+.pa-signout-dialog h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.pa-signout-dialog p {
+  margin: 0;
+  color: #655963;
+  line-height: 1.5;
+}
+
+.pa-signout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.pa-signout-actions .pa-button {
+  min-height: 44px;
+}
+
+.pa-signout-actions .pa-button.pa-signout-confirm {
+  border-color: #873e32;
+  background: #873e32;
+  color: #fff;
+}
+
+.pa-signout-actions .pa-button.pa-signout-confirm:hover {
+  border-color: #703126;
+  background: #703126;
+  color: #fff;
+}
+
+.pa-signout-dialog {
+  width: min(380px, calc(100vw - 32px));
+  padding: 26px clamp(18px, 5vw, 28px) 22px;
+  border: 1px solid #e7d5ca;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #f8ebe4, #fffcf8 55%);
+  box-shadow: 0 24px 64px rgb(35 26 40 / 24%);
+  text-align: center;
+}
+
+.pa-signout-dialog::backdrop {
+  background: rgb(35 26 40 / 44%);
+  backdrop-filter: blur(3px);
+}
+
+.pa-signout-dialog .pa-signout-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 14px;
+  border: 1px solid #e8c8ba;
+  border-radius: 16px;
+  background: #f4ded3;
+  color: #873e32;
+}
+
+.pa-signout-dialog h2 {
+  margin: 0 0 8px;
+  color: #322638;
+  font-size: 1.25rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.pa-signout-dialog p {
+  max-width: 28ch;
+  margin-inline: auto;
+  color: #655963;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.pa-signout-dialog .pa-signout-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #ecdfd6;
+}
+
+.pa-signout-dialog .pa-signout-actions .pa-button {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 650;
+}
+
+.pa-signout-dialog .pa-signout-actions .pa-button:focus-visible {
+  outline: 2px solid #79516f;
+  outline-offset: 3px;
+}
+
+.pa-users-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.pa-users-table-scroll:focus-visible {
+  outline: 2px solid #79516f;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+.pa-users-table {
+  width: 100%;
+  min-width: 530px;
+  border-collapse: separate;
+  border-spacing: 0 7px;
+  color: #322638;
+  font-size: 0.875rem;
+}
+
+.pa-users-table th,
+.pa-users-table td {
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.pa-users-table thead th {
+  background: #eee5ed;
+  color: #514253;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pa-users-table tbody tr > * {
+  border-block: 1px solid #e8dbd1;
+  background: #fffcf8;
+}
+
+.pa-users-table tbody tr:hover > * {
+  background: #f7efe9;
+}
+
+.pa-users-table tr > :first-child {
+  border-start-start-radius: 10px;
+  border-end-start-radius: 10px;
+}
+
+.pa-users-table tr > :last-child {
+  border-start-end-radius: 10px;
+  border-end-end-radius: 10px;
+}
+
+.pa-users-table tbody tr > :first-child {
+  border-inline-start: 1px solid #e8dbd1;
+}
+
+.pa-users-table tbody tr > :last-child {
+  border-inline-end: 1px solid #e8dbd1;
+}
+
+.pa-users-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pa-users-identity strong {
+  overflow-wrap: anywhere;
+}
+
+.pa-users-avatar {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #eee2ec;
+  color: #603d62;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.pa-users-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pa-panel.pa-users-panel {
+  min-width: 0;
+  padding: clamp(16px, 3vw, 28px);
+  background: #fffcf8;
+}
+
+.pa-users-heading h1 {
+  margin: 0 0 6px;
+  color: #322638;
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+.pa-users-heading p {
+  margin: 0;
+  color: #655963;
+  font-size: 0.9rem;
+}
+
+.pa-users-filters {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0 10px;
+  border-bottom: 1px solid #e8dbd1;
+}
+
+.pa-users-filters button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #655963;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pa-users-filters button:hover {
+  background: #f7f0f5;
+}
+
+.pa-users-filters button[aria-pressed="true"] {
+  border-bottom-color: #79516f;
+  color: #603d62;
+}
+
+.pa-users-filters button:focus-visible {
+  outline: 2px solid #79516f;
+  outline-offset: -3px;
+}
+
+@media (max-width: 480px) {
+  .pa-users-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+}
+
+.pa-panel.pa-users-panel {
+  padding: clamp(14px, 2vw, 22px);
+  background: #fcf8f5;
+}
+
+.pa-users-panel .pa-users-heading h1 {
+  margin: 0;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.pa-users-panel .pa-users-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 18px;
+  margin: 10px 0 4px;
+}
+
+.pa-users-panel .pa-users-filters button {
+  min-height: 40px;
+  padding: 6px 2px;
+  border-bottom-width: 2px;
+  font-size: 0.8125rem;
+}
+
+.pa-users-panel .pa-users-filters button[aria-pressed="true"] {
+  border-bottom-color: #79516f;
+  background: transparent;
+  color: #603d62;
+}
+
+@media (max-width: 480px) {
+  .pa-users-panel .pa-users-filters {
+    gap: 0 12px;
+  }
+
+  .pa-users-panel .pa-users-filters button {
+    min-height: 44px;
+  }
+}
+
+@keyframes pa-users-results-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pa-users-panel .pa-users-table-scroll,
+.pa-users-panel > p:not([role]) {
+  animation: pa-users-results-in 220ms ease-out both;
+}
+
+.pa-users-panel .pa-users-filters button {
+  transition: color 150ms ease, border-bottom-color 150ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pa-users-panel .pa-users-table-scroll,
+  .pa-users-panel > p:not([role]) {
+    animation: none;
+  }
+
+  .pa-users-panel .pa-users-filters button {
+    transition: none;
+  }
+}
+
+.pa-content .pa-verification-heading {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+.pa-content .pa-verification-heading h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.pa-verification-heading p {
+  max-width: 64ch;
+  margin: 8px 0 0;
+}
+
+.pa-content .pa-layout.pa-verification-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.pa-verification-layout > .pa-panel {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(16px, 2vw, 24px);
+  border-radius: 16px;
+  background: #fffcf8;
+}
+
+.pa-verification-layout .pa-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.pa-verification-layout .pa-section-heading h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.pa-verification-layout .pa-field select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.pa-verification-layout .pa-company-list {
+  display: grid;
+  gap: 8px;
+}
+
+.pa-verification-layout .pa-company {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e8dbd1;
+  border-radius: 10px;
+  background: #fbf7f3;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.pa-verification-layout .pa-company:hover {
+  background: #f4ece7;
+}
+
+.pa-verification-layout .pa-company[aria-pressed="true"] {
+  border-color: #a27b9a;
+  background: #f2e8f0;
+  box-shadow: inset 3px 0 #79516f;
+}
+
+.pa-verification-layout .pa-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pa-verification-layout .pa-panel.pa-empty {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-height: 180px;
+  gap: 8px;
+  text-align: center;
+}
+
+.pa-verification-layout .pa-empty h2,
+.pa-verification-layout .pa-empty p {
+  margin: 0;
+}
+
+.pa-verification-layout .pa-empty h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.pa-verification-layout .pa-details dd,
+.pa-verification-layout .pa-document-list strong {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1050px) {
+  .pa-content .pa-layout.pa-verification-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .pa-verification-layout .pa-panel.pa-empty {
+    min-height: 120px;
+  }
+}
+
+.pa-content .pa-layout.pa-verification-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pa-verification-layout .pa-company {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 8px 16px;
+  padding: 12px 14px;
+}
+
+.pa-verification-layout .pa-company > small {
+  text-align: right;
+}
+
+.pa-profile-drawer.pa-company-drawer {
+  width: min(640px, 100vw);
+}
+
+.pa-company-drawer-body {
+  min-height: 0;
+  padding: 16px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.pa-company-drawer .pa-company-drawer-body > .pa-panel {
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .pa-verification-layout .pa-company {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .pa-verification-layout .pa-company > small {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .pa-profile-drawer.pa-company-drawer {
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
+.pa-content .pa-verification-heading {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+}
+
+.pa-content .pa-verification-heading h1 {
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+}
+
+.pa-content .pa-verification-heading p {
+  max-width: 75ch;
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+/* Companies title, status filter and Refresh share one row. */
+.pa-verification-layout > .pa-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 210px) auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.pa-verification-layout > .pa-panel > .pa-section-heading {
+  display: contents;
+}
+
+.pa-verification-layout > .pa-panel > .pa-section-heading > h2 {
+  grid-area: 1 / 1;
+}
+
+.pa-verification-layout > .pa-panel > .pa-field {
+  grid-area: 1 / 2;
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  margin: 0;
+}
+
+.pa-verification-layout > .pa-panel > .pa-field > span {
+  font-size: 0.75rem;
+  color: #655963;
+}
+
+.pa-verification-layout > .pa-panel > .pa-section-heading > .pa-button {
+  grid-area: 1 / 3;
+  align-self: end;
+  white-space: nowrap;
+}
+
+.pa-verification-layout > .pa-panel > .pa-field select,
+.pa-verification-layout > .pa-panel > .pa-section-heading > .pa-button {
+  min-height: 44px;
+}
+
+.pa-verification-layout > .pa-panel > :not(.pa-section-heading, .pa-field) {
+  grid-column: 1 / -1;
+}
+
+.pa-verification-layout .pa-company {
+  min-height: 52px;
+  background: #fcf8f5;
+}
+
+.pa-verification-layout .pa-company-status {
+  justify-self: start;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #eee7e0;
+  color: #65564d;
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.pa-verification-layout .pa-company-status[data-status="pending"] {
+  background: #f6ead5;
+  color: #764d1b;
+}
+
+.pa-verification-layout .pa-company-status[data-status="approved"] {
+  background: #e6f1e9;
+  color: #26593b;
+}
+
+.pa-verification-layout .pa-company-status[data-status="rejected"] {
+  background: #f7e5e2;
+  color: #8b4034;
+}
+
+.pa-verification-layout .pa-pagination {
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .pa-verification-layout > .pa-panel {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .pa-verification-layout > .pa-panel > .pa-field {
+    grid-area: 2 / 1 / 3 / -1;
+  }
+
+  .pa-verification-layout > .pa-panel > .pa-section-heading > .pa-button {
+    grid-area: 1 / 2;
+  }
+
+  .pa-verification-layout .pa-pagination {
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+.pa-verification-layout .pa-company-search {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 5px;
+  color: #514253;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pa-company-search input {
+  box-sizing: border-box;
+  width: min(100%, 420px);
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #dacbc4;
+  border-radius: 9px;
+  background: #fffcf8;
+  color: #322638;
+  font: inherit;
+  font-weight: 400;
+}
+
+.pa-verification-layout .pa-company-identity,
+.pa-verification-layout .pa-company-meta {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+  color: #655963;
+  overflow-wrap: anywhere;
+}
+
+.pa-verification-layout .pa-company-identity strong {
+  color: #322638;
+}
+
+.pa-verification-layout .pa-company-meta {
+  text-align: right;
+}
+
+.pa-sidebar .pa-sidebar-intro {
+  color: #f5eaf3;
+}
+
+.pa-sidebar nav button[aria-current="page"] {
+  background: #53405b;
+  color: #fff;
+  box-shadow: inset 3px 0 #d7abc7;
+}
+
+.pa-page > .pa-topbar > img {
+  width: clamp(120px, 10vw, 150px);
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .pa-page > .pa-topbar > img {
+    width: clamp(74px, 23vw, 104px);
+  }
+}
+
+@media (max-width: 600px) {
+  .pa-verification-layout .pa-company-meta {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}
+
+/* Desktop toolbar: title, search, status filter, refresh. */
+.pa-verification-layout > .pa-panel {
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 320px) minmax(150px, 190px) auto;
+  align-items: end;
+  gap: 12px;
+}
+
+.pa-verification-layout > .pa-panel > .pa-company-search {
+  grid-area: 1 / 2;
+  margin: 0;
+}
+
+.pa-verification-layout .pa-company-search input {
+  width: 100%;
+}
+
+.pa-verification-layout > .pa-panel > .pa-field {
+  grid-area: 1 / 3;
+}
+
+.pa-verification-layout > .pa-panel > .pa-section-heading > h2 {
+  align-self: center;
+}
+
+.pa-verification-layout > .pa-panel > .pa-section-heading > .pa-button {
+  grid-area: 1 / 4;
+}
+
+/* Company row: details, registration, status, review. */
+.pa-verification-layout .pa-company {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) auto auto;
+  gap: 10px 16px;
+  padding: 14px;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.pa-verification-layout .pa-company:hover,
+.pa-verification-layout .pa-company[aria-pressed="true"] {
+  border-color: #a27b9a;
+  background: #f2e8f0;
+}
+
+.pa-verification-layout .pa-company:focus-visible {
+  outline: 2px solid #79516f;
+  outline-offset: 2px;
+}
+
+.pa-verification-layout .pa-company-meta {
+  text-align: left;
+}
+
+.pa-verification-layout .pa-company-missing {
+  color: #746970;
+  font-style: italic;
+}
+
+.pa-verification-layout .pa-company-meta .pa-company-no-docs {
+  color: #8a4b17;
+  font-weight: 650;
+}
+
+.pa-verification-layout .pa-company .pa-company-review {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid #d9c7d6;
+  border-radius: 8px;
+  background: #fffcf8;
+  color: #603d62;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pa-verification-layout .pa-company:hover .pa-company-review {
+  background: #603d62;
+  color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .pa-verification-layout > .pa-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(130px, auto);
+  }
+
+  .pa-verification-layout > .pa-panel > .pa-company-search {
+    grid-area: 2 / 1;
+  }
+
+  .pa-verification-layout > .pa-panel > .pa-field {
+    grid-area: 2 / 2;
+  }
+
+  .pa-verification-layout > .pa-panel > .pa-section-heading > .pa-button {
+    grid-area: 1 / 2;
+  }
+}
+
+@media (max-width: 760px) {
+  .pa-verification-layout .pa-company {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .pa-verification-layout .pa-company-identity,
+  .pa-verification-layout .pa-company-meta {
+    grid-column: 1 / -1;
+  }
+
+  .pa-verification-layout .pa-company-status {
+    grid-column: 1;
+  }
+
+  .pa-verification-layout .pa-company-review {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .pa-verification-layout > .pa-panel > .pa-company-search {
+    grid-area: 2 / 1 / 3 / -1;
+  }
+
+  .pa-verification-layout > .pa-panel > .pa-field {
+    grid-area: 3 / 1 / 4 / -1;
+  }
+}
+
+.pa-page.pa-access-screen {
+  display: grid;
+  box-sizing: border-box;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 20px;
+  background: #f4eee8;
+}
+
+.pa-access-screen .pa-access-card {
+  box-sizing: border-box;
+  width: min(100%, 400px);
+  padding: clamp(22px, 6vw, 36px);
+  border: 1px solid #e5d6cd;
+  border-radius: 22px;
+  background: #fffcf8;
+  box-shadow: 0 16px 44px rgb(50 38 56 / 10%);
+  text-align: center;
+}
+
+.pa-access-card .pa-access-logo {
+  display: block;
+  width: 124px;
+  height: auto;
+  margin: 0 auto 18px;
+}
+
+.pa-access-card h1 {
+  margin: 0 0 10px;
+  color: #322638;
+  font-size: clamp(1.35rem, 5vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.pa-access-card p {
+  margin: 0 0 22px;
+  color: #655963;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pa-access-card .pa-button.pa-access-action {
+  display: inline-flex;
+  box-sizing: border-box;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-color: #3c2c43;
+  background: #3c2c43;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pa-access-card .pa-button.pa-access-action:hover {
+  border-color: #513b58;
+  background: #513b58;
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  #pa-admin-sidebar.pa-sidebar-open {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  #pa-admin-sidebar.pa-sidebar-open nav {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  #pa-admin-sidebar.pa-sidebar-open nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  #pa-admin-sidebar.pa-sidebar-open nav li {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #pa-admin-sidebar.pa-sidebar-open nav button {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-align: left;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  #pa-admin-sidebar.pa-sidebar-open nav button svg {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .pa-page > .pa-topbar > .pa-mobile-nav-toggle,
+  .pa-page > .pa-shell > .pa-mobile-nav-backdrop {
+    display: none;
+  }
+
+  .pa-page > .pa-shell {
+    grid-template-columns: 54px minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .pa-page > .pa-shell > #pa-admin-sidebar,
+  .pa-page > .pa-shell > #pa-admin-sidebar.pa-sidebar-open {
+    display: block;
+    position: static;
+    inset: auto;
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 8px 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: none;
+  }
+
+  .pa-page #pa-admin-sidebar nav {
+    display: block;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .pa-page #pa-admin-sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pa-page #pa-admin-sidebar nav li {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pa-page #pa-admin-sidebar nav button {
+    display: grid;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0;
+    place-items: center;
+    justify-content: stretch;
+    gap: 0;
+    border-radius: 8px;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .pa-page #pa-admin-sidebar nav button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pa-page > .pa-shell > .pa-container.pa-content {
+    grid-area: 1 / 2;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+  }
+}
+
+.pa-verification-layout .pa-company-list {
+  container: company-list / inline-size;
+  min-width: 0;
+}
+
+@container company-list (max-width: 720px) {
+  .pa-verification-layout .pa-company {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 12px 16px;
+  }
+
+  .pa-verification-layout .pa-company-identity {
+    grid-area: 1 / 1;
+  }
+
+  .pa-verification-layout .pa-company-meta {
+    grid-area: 1 / 2;
+    text-align: left;
+  }
+
+  .pa-verification-layout .pa-company-status {
+    grid-area: 2 / 1;
+    align-self: center;
+  }
+
+  .pa-verification-layout .pa-company-review {
+    grid-area: 2 / 2;
+    justify-self: end;
+  }
+}
+
+@container company-list (max-width: 420px) {
+  .pa-verification-layout .pa-company {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .pa-verification-layout .pa-company-identity {
+    grid-area: 1 / 1 / 2 / -1;
+  }
+
+  .pa-verification-layout .pa-company-meta {
+    grid-area: 2 / 1 / 3 / -1;
+  }
+
+  .pa-verification-layout .pa-company-status {
+    grid-area: 3 / 1;
+  }
+
+  .pa-verification-layout .pa-company-review {
+    grid-area: 3 / 2;
+  }
+}
+
+.pa-signout-dialog.pa-review-dialog {
+  width: min(460px, calc(100vw - 32px));
+  text-align: left;
+}
+
+.pa-review-dialog p {
+  max-width: none;
+}
+
+.pa-review-confirm-reason {
+  max-height: 160px;
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  border: 1px solid #e7d9cf;
+  border-radius: 10px;
+  background: #f7f0ea;
+  color: #514253;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.pa-review-dialog .pa-button.pa-review-confirm-approve {
+  border-color: #3c2c43;
+  background: #3c2c43;
+  color: #fff;
+}
+
+.pa-review-dialog .pa-button.pa-review-confirm-approve:hover {
+  border-color: #513b58;
+  background: #513b58;
+  color: #fff;
+}
+
+@media (max-width: 360px) {
+  .pa-review-dialog .pa-signout-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.pa-panel.pa-plan-editor {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  width: min(100%, 800px);
+  box-sizing: border-box;
+  margin: 16px 0;
+  padding: clamp(14px, 3vw, 22px);
+  border: 1px solid #e5d7ce;
+  border-radius: 14px;
+  background: #fcf8f5;
+  box-shadow: none;
+}
+
+.pa-plan-editor > :is(h2, p, .pa-actions),
+.pa-plan-editor > label:has(textarea, input[type="checkbox"]) {
+  grid-column: 1 / -1;
+}
+
+.pa-plan-editor h2 {
+  margin: 0;
+  color: #322638;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.pa-plan-editor > .pa-field {
+  min-width: 0;
+  margin: 0;
+}
+
+.pa-plan-editor .pa-field > :is(input, select, textarea) {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #cdbdb3;
+  border-radius: 9px;
+  background: #fffdfb;
+  color: #322638;
+  font: inherit;
+}
+
+.pa-plan-editor .pa-field > textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.pa-plan-editor .pa-field > :is(input, select, textarea):focus-visible {
+  outline: 2px solid #79516f;
+  outline-offset: 2px;
+}
+
+.pa-plan-editor .pa-field > input[readonly] {
+  background: #f1eae4;
+}
+
+.pa-plan-editor > .pa-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid #e5d7ce;
+}
+
+@media (max-width: 760px) {
+  .pa-page > .pa-topbar > .pa-mobile-nav-toggle {
+    display: grid;
+  }
+
+  .pa-page > .pa-shell {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .pa-page > .pa-shell > #pa-admin-sidebar {
+    display: none;
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 50;
+    width: min(280px, 82vw);
+    height: 100dvh;
+    padding: 18px 14px;
+    overflow-y: auto;
+  }
+
+  .pa-page > .pa-shell > #pa-admin-sidebar.pa-sidebar-open {
+    display: block;
+  }
+
+  .pa-page #pa-admin-sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .pa-page #pa-admin-sidebar nav button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .pa-page > .pa-shell > .pa-mobile-nav-backdrop {
+    display: block;
+  }
+
+  .pa-page > .pa-shell > .pa-container.pa-content {
+    grid-area: 1 / 1;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+  }
+}
+.pa-section-heading.pa-plans-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pa-plans-heading h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700;
+}
+
+.pa-subscription-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.pa-subscription-summary > div {
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid #e7d9cf;
+  border-radius: 12px;
+  background: #fffcf8;
+}
+
+.pa-subscription-summary > div:last-child {
+  border-color: #ecd3c3;
+  background: #faf0e8;
+}
+
+.pa-subscription-summary dt {
+  color: #655963;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.pa-subscription-summary dd {
+  margin: 4px 0 0;
+  color: #322638;
+  font-size: 1.5rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+@media (max-width: 520px) {
+  .pa-subscription-summary {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .pa-subscription-summary > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 12px;
+  }
+
+  .pa-subscription-summary dd {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+}
+
+.pa-report-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.pa-report-stats > div {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e7d9cf;
+  border-radius: 12px;
+  background: #f8f2ed;
+}
+
+.pa-report-stats > div:first-child {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-color: #3c2c43;
+  background: #3c2c43;
+  color: #fff8f1;
+}
+
+.pa-report-stats dt {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pa-report-stats dd {
+  margin: 6px 0 0;
+  font-size: 1.75rem;
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+.pa-report-stats > div:first-child dd {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.pa-report-stats > [data-status="pending"] {
+  border-color: #e9cda8;
+  background: #fbf0df;
+  color: #704619;
+}
+
+.pa-report-stats > [data-status="approved"] {
+  border-color: #c9dfd0;
+  background: #eaf4ed;
+  color: #28533a;
+}
+
+.pa-report-stats > [data-status="rejected"] {
+  border-color: #ebccc5;
+  background: #faeeeb;
+  color: #813e33;
+}
+
+@media (max-width: 520px) {
+  .pa-report-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .pa-report-stats > div {
+    padding: 12px;
+  }
+}
+
+.pa-verification-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 128px), 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.pa-verification-summary button {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #e7d9cf;
+  border-radius: 10px;
+  background: #fffcf8;
+  color: #322638;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pa-verification-summary button:hover {
+  background: #f7eff5;
+}
+
+.pa-verification-summary button[aria-pressed="true"] {
+  border-color: #79516f;
+  background: #f2e8f0;
+}
+
+.pa-verification-summary button:focus-visible {
+  outline: 2px solid #79516f;
+  outline-offset: 2px;
+}
+
+.pa-verification-summary button span {
+  font-size: 0.8125rem;
+}
+
+.pa-verification-summary button strong {
+  font-size: 1.25rem;
+}
+
+.pa-verification-summary > p {
+  grid-column: 1 / -1;
+}
+
+.pa-sidebar nav li.pa-sidebar-group-heading {
+  margin-top: clamp(28px, 4vh, 48px);
+  padding: 14px 12px 4px;
+  border-top: 1px solid rgb(255 248 241 / 16%);
+  color: #e8d3e2;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+@media (max-width: 760px) {
+  .pa-sidebar nav li.pa-sidebar-group-heading {
+    margin-top: 4px;
+    padding: 0;
+  }
+
+  .pa-sidebar-group-heading > span {
+    display: none;
+  }
+}
+
+.pa-signup-chart {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pa-signup-row {
+  display: grid;
+  grid-template-columns: minmax(85px, 120px) minmax(0, 1fr) 3ch;
+  align-items: center;
+  gap: 12px;
+}
+
+.pa-signup-week {
+  display: grid;
+  gap: 2px;
+  font-size: 0.875rem;
+}
+
+.pa-signup-week small {
+  color: #655963;
+  font-size: 0.75rem;
+}
+
+.pa-signup-track {
+  display: block;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eee5ed;
+}
+
+.pa-signup-track > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #79516f;
+}
+
+.pa-signup-row:last-child .pa-signup-track > span {
+  background: #a75c48;
+}
+
+.pa-signup-row > strong {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+  .pa-signup-row {
+    grid-template-columns: 80px minmax(0, 1fr) 3ch;
+    gap: 8px;
+  }
+}
+
+.pa-signup-report {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.pa-signup-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.pa-signup-metrics > div {
+  padding: 16px;
+  border: 1px solid #e7d9cf;
+  border-radius: 14px;
+  background: #fffcf8;
+  color: #322638;
+}
+
+.pa-signup-metrics > div:nth-child(2) {
+  border-color: #e5cbbb;
+  background: #f6e7dd;
+}
+
+.pa-signup-metrics dt {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pa-signup-metrics dd {
+  margin: 6px 0 0;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+.pa-panel.pa-signup-chart-panel {
+  min-width: 0;
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.pa-signup-chart-panel h2 {
+  margin: 0;
+  color: #322638;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.pa-signup-chart-panel p {
+  margin: 4px 0 0;
+  color: #655963;
+  font-size: 0.8rem;
+}
+
+.pa-signup-columns {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: clamp(4px, 1.4vw, 16px);
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pa-signup-columns > li {
+  display: grid;
+  grid-template-rows: auto clamp(82px, 16vw, 160px) minmax(2.5em, auto);
+  gap: 6px;
+  min-width: 0;
+  color: #322638;
+  text-align: center;
+}
+
+.pa-signup-column-track {
+  display: flex;
+  width: 100%;
+  max-width: 44px;
+  align-items: flex-end;
+  justify-self: center;
+  border-bottom: 1px solid #e3d5dd;
+}
+
+.pa-signup-column-track > span {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  background: #79516f;
+}
+
+.pa-signup-current .pa-signup-column-track > span {
+  background: #a75c48;
+}
+
+.pa-signup-columns time {
+  color: #655963;
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.pa-signup-current time {
+  color: #873e32;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .pa-signup-metrics {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .pa-signup-metrics > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .pa-signup-metrics dd {
+    margin: 0;
+  }
+
+  .pa-signup-columns time {
+    font-size: 0.6875rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Platform Admin — complete typography */
+
+.buildora-platform-admin {
+  font-family: "DM Sans", sans-serif;
+}
+
+.buildora-platform-admin :where(
+  div, span, p, a, button, input, select,
+  textarea, label, table, th, td, small
+) {
+  font-family: "DM Sans", sans-serif;
+}
+
+.buildora-platform-admin :where(
+  h1, h2, h3, h4, h5, h6
+) {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.buildora-platform-admin :where(
+  button, input, select, textarea
+) {
+  font: inherit;
+}
+
+.buildora-platform-admin :where(th) {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.buildora-platform-admin :where(td) {
+  font-weight: 450;
+}
+
+/* BUILDORA PLATFORM ADMIN — FINAL TYPOGRAPHY */
+
+.buildora-platform-admin {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.buildora-platform-admin :is(
+  button, input, select, textarea, table, th, td,
+  p, span, label, a, small, strong, summary
+) {
+  font-family: "DM Sans", sans-serif;
+}
+
+.buildora-platform-admin :is(
+  h1, h2, h3, h4, h5, h6
+) {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.buildora-platform-admin :is(
+  button, input, select, textarea
+) {
+  font-size: inherit;
+}
+
+.buildora-platform-admin th {
+  font-weight: 700;
+}
+
+.buildora-platform-admin td {
+  font-weight: 400;
+}
+
+
+/* =========================================
+   BUILDORA PLATFORM ADMIN — DASHBOARD KPIs
+   ========================================= */
+
+.buildora-platform-admin .pa-dashboard-overview,
+.buildora-platform-admin .pa-dashboard-growth {
+  margin-top: 28px;
+}
+
+.buildora-platform-admin .pa-dashboard-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.buildora-platform-admin .pa-dashboard-section-heading h2 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #302337;
+}
+
+.buildora-platform-admin .pa-dashboard-section-heading span {
+  font-size: 12px;
+  color: #86798a;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e8dcd3;
+  border-radius: 16px;
+  background: #fffdfa;
+  box-shadow: 0 3px 12px rgba(48, 35, 55, 0.035);
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-label {
+  margin: 0 0 12px;
+  color: #65566b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-value {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(27px, 3vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+  color: #302337;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-detail {
+  margin: 12px 0 0;
+  color: #897b8c;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1050px) {
+  .buildora-platform-admin .pa-dashboard-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .buildora-platform-admin .pa-dashboard-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-platform-admin .pa-dashboard-kpi {
+    padding: 18px;
+  }
+}
+
+
+
+/* =========================================
+   BUILDORA — PROFESSIONAL ANALYTICS CARDS
+   ========================================= */
+
+.buildora-platform-admin .pa-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.buildora-platform-admin .pa-analytics-card {
+  min-width: 0;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #eae5ee;
+  border-radius: 18px;
+  box-shadow: 0 5px 24px rgba(39, 26, 52, 0.045);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.buildora-platform-admin .pa-analytics-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(39, 26, 52, 0.075);
+}
+
+.buildora-platform-admin .pa-analytics-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-card-header h2 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #302337;
+}
+
+.buildora-platform-admin .pa-analytics-card-header p {
+  margin: 7px 0 0;
+  font-size: 12px;
+  color: #8a7e90;
+  line-height: 1.5;
+}
+
+.buildora-platform-admin .pa-analytics-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: #f1faf4;
+  border: 1px solid #dcefe2;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #27744a;
+  white-space: nowrap;
+}
+
+.buildora-platform-admin .pa-analytics-live-dot {
+  width: 6px;
+  height: 6px;
+  background: #31a66b;
+  border-radius: 50%;
+}
+
+.buildora-platform-admin .pa-analytics-total {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.buildora-platform-admin .pa-analytics-total strong {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: #302337;
+}
+
+.buildora-platform-admin .pa-analytics-total > span {
+  font-size: 12px;
+  color: #94899a;
+}
+
+.buildora-platform-admin .pa-analytics-stacked-bar {
+  display: flex;
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  margin-top: 23px;
+  border-radius: 20px;
+  background: #f0edf2;
+}
+
+.buildora-platform-admin .pa-analytics-stacked-bar > span {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.buildora-platform-admin .pa-analytics-bar-purple {
+  background: #7653a5;
+}
+
+.buildora-platform-admin .pa-analytics-bar-green {
+  background: #40a67b;
+}
+
+.buildora-platform-admin .pa-analytics-bar-amber {
+  background: #e7ad58;
+}
+
+.buildora-platform-admin .pa-analytics-segments {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.buildora-platform-admin .pa-analytics-segment,
+.buildora-platform-admin .pa-analytics-segment-info,
+.buildora-platform-admin .pa-analytics-segment-values {
+  display: flex;
+  align-items: center;
+}
+
+.buildora-platform-admin .pa-analytics-segment {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-segment-info {
+  gap: 9px;
+  font-size: 13px;
+  color: #62586b;
+}
+
+.buildora-platform-admin .pa-analytics-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.buildora-platform-admin .pa-analytics-dot-purple {
+  background: #7653a5;
+}
+
+.buildora-platform-admin .pa-analytics-dot-green {
+  background: #40a67b;
+}
+
+.buildora-platform-admin .pa-analytics-dot-amber {
+  background: #e7ad58;
+}
+
+.buildora-platform-admin .pa-analytics-segment-values {
+  gap: 14px;
+}
+
+.buildora-platform-admin .pa-analytics-segment-values strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #302337;
+}
+
+.buildora-platform-admin .pa-analytics-segment-values > span {
+  min-width: 36px;
+  text-align: right;
+  font-size: 12px;
+  color: #93869a;
+}
+
+.buildora-platform-admin .pa-analytics-footnote {
+  margin: 23px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #f0ebf2;
+  font-size: 11px;
+  color: #a095a5;
+}
+
+@media (max-width: 850px) {
+  .buildora-platform-admin .pa-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .buildora-platform-admin .pa-analytics-card {
+    padding: 20px;
+  }
+}
+
+
+/* ============================================================
+   BUILDORA — PREMIUM PLATFORM ADMIN REDESIGN
+   Global shell + dashboard + analytics + admin components
+   Paste at the END of PlatformAdminPage.css
+   ============================================================ */
+
+/* 01 — DESIGN SYSTEM */
+
+.buildora-platform-admin {
+  --pa-bg: #f7f7fa;
+  --pa-surface: #ffffff;
+  --pa-soft: #f5f3f8;
+  --pa-text: #271d35;
+  --pa-muted: #82798e;
+  --pa-border: #e9e6ef;
+  --pa-accent: #7653a5;
+  --pa-selected: #f1ebf8;
+
+  font-family: "DM Sans", "Inter", sans-serif;
+  background: var(--pa-bg);
+  color: var(--pa-text);
+}
+
+.buildora-platform-admin h1,
+.buildora-platform-admin h2,
+.buildora-platform-admin h3,
+.buildora-platform-admin h4,
+.buildora-platform-admin .pa-stat-value {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.buildora-platform-admin button,
+.buildora-platform-admin input,
+.buildora-platform-admin select,
+.buildora-platform-admin textarea {
+  font-family: inherit;
+}
+
+/* 02 — TOP HEADER */
+
+.buildora-platform-admin > .pa-topbar {
+  position: relative;
+  z-index: 30;
+  min-height: 76px;
+  padding: 12px 34px;
+  border-bottom: 1px solid #ece9f0;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(39, 29, 53, 0.025);
+}
+
+.buildora-platform-admin .pa-topbar > img {
+  width: 130px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.buildora-platform-admin .pa-account-trigger {
+  min-height: 48px;
+  padding: 5px 12px 5px 5px;
+  border: 1px solid #e8e3ed;
+  border-radius: 14px;
+  background: #ffffff;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.buildora-platform-admin .pa-account-trigger:hover {
+  background: #faf8fc;
+  border-color: #d7c9e4;
+}
+
+.buildora-platform-admin .pa-avatar {
+  flex-basis: 38px;
+  height: 38px;
+  background: #473258;
+}
+
+.buildora-platform-admin .pa-account-name strong {
+  color: #30243e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.buildora-platform-admin .pa-account-name small {
+  color: #95899f;
+  font-size: 11px;
+}
+
+.buildora-platform-admin .pa-account-chevron {
+  background: #f4f1f7;
+  color: #665274;
+}
+
+.buildora-platform-admin .pa-account-card {
+  border-color: #e8e3ed;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(39, 29, 53, 0.12);
+}
+
+/* 03 — SIDEBAR */
+
+@media (min-width: 761px) {
+  .buildora-platform-admin .pa-shell {
+    grid-template-columns: 258px minmax(0, 1fr);
+  }
+}
+
+.buildora-platform-admin .pa-sidebar {
+  background-color: #271d35;
+  color: #f9f5ff;
+}
+
+@media (min-width: 761px) {
+  .buildora-platform-admin .pa-sidebar {
+    padding: 30px 15px 0;
+    background-image:
+      linear-gradient(
+        to bottom,
+        #271d35 0%,
+        #271d35 46%,
+        rgba(39, 29, 53, 0.65) 74%,
+        rgba(39, 29, 53, 0.75) 100%
+      ),
+      url("../assets/sidebar-building.png");
+    background-position: center bottom;
+    background-size: 100% 100%, 100% auto;
+    background-repeat: no-repeat;
+  }
+}
+
+.buildora-platform-admin .pa-sidebar-intro {
+  margin: 0 14px 28px;
+  color: #bfb3cd;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.buildora-platform-admin .pa-sidebar ul {
+  gap: 7px;
+}
+
+.buildora-platform-admin .pa-sidebar :is(a, button) {
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid transparent;
+  border-inline-start: 3px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #d8cfdf;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.buildora-platform-admin .pa-sidebar :is(a, button):hover {
+  background: rgba(255, 255, 255, 0.075);
+  color: #ffffff;
+}
+
+.buildora-platform-admin .pa-sidebar [aria-current="location"] {
+  border-color: rgba(200, 171, 220, 0.15);
+  border-inline-start-color: #d3a6e6;
+  background: #483653;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.buildora-platform-admin .pa-sidebar-footer strong {
+  color: #ffffff;
+  letter-spacing: 0.09em;
+}
+
+.buildora-platform-admin .pa-sidebar-footer small {
+  color: #c9bbd1;
+}
+
+/* 04 — MAIN PAGE CONTENT */
+
+.buildora-platform-admin .pa-shell > .pa-container.pa-content {
+  width: 100%;
+  max-width: none;
+  padding: 34px clamp(22px, 3vw, 48px) 56px;
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(118, 83, 165, 0.035),
+      transparent 42%
+    ),
+    #f7f7fa;
+  scrollbar-color: #d7cfdf transparent;
+}
+
+.buildora-platform-admin .pa-users-heading {
+  margin-bottom: 28px;
+}
+
+.buildora-platform-admin .pa-users-heading h1 {
+  margin: 0 0 9px;
+  color: #271d35;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.buildora-platform-admin .pa-users-heading p {
+  margin: 0;
+  color: #857a90;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 05 — DASHBOARD OVERVIEW */
+
+.buildora-platform-admin .pa-dashboard-overview {
+  margin-top: 28px;
+}
+
+.buildora-platform-admin .pa-dashboard-growth {
+  margin-top: 36px;
+}
+
+.buildora-platform-admin .pa-dashboard-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.buildora-platform-admin .pa-dashboard-section-heading h2 {
+  margin: 0;
+  color: #30243e;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin .pa-dashboard-section-heading > span {
+  padding: 6px 11px;
+  border: 1px solid #e9e4ef;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #887d93;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* 06 — PREMIUM KPI CARDS */
+
+.buildora-platform-admin .pa-dashboard-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi {
+  position: relative;
+  min-width: 0;
+  min-height: 164px;
+  padding: 23px 24px;
+  overflow: hidden;
+  border: 1px solid #eae6ef;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(39, 29, 53, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #7653a5;
+  opacity: 0.85;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(2)::before {
+  background: #4f86b6;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(3)::before {
+  background: #40a67b;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(4)::before {
+  background: #e7ad58;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(5)::before {
+  background: #6d9b8e;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(6)::before {
+  background: #9b789f;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi:hover {
+  transform: translateY(-3px);
+  border-color: #dcd1e6;
+  box-shadow: 0 12px 28px rgba(39, 29, 53, 0.075);
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-label {
+  margin: 0 0 14px;
+  color: #776b82;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-value {
+  display: block;
+  color: #271d35;
+  font-size: clamp(30px, 3vw, 39px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.055em;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-detail {
+  margin: 14px 0 0;
+  color: #978b9e;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* 07 — ANALYTICS GRID */
+
+.buildora-platform-admin .pa-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.buildora-platform-admin .pa-analytics-card {
+  min-width: 0;
+  padding: 25px 27px;
+  border: 1px solid #eae6ef;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 5px 22px rgba(39, 29, 53, 0.035);
+  transition: box-shadow 0.2s ease;
+}
+
+.buildora-platform-admin .pa-analytics-card:hover {
+  box-shadow: 0 10px 30px rgba(39, 29, 53, 0.065);
+}
+
+.buildora-platform-admin .pa-analytics-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-card-header h2 {
+  margin: 0;
+  color: #30243e;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin .pa-analytics-card-header p {
+  margin: 7px 0 0;
+  color: #94889c;
+  font-size: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid #dcefe4;
+  border-radius: 999px;
+  background: #f1faf4;
+  color: #28794e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.buildora-platform-admin .pa-analytics-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #32a66d;
+}
+
+.buildora-platform-admin .pa-analytics-total {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.buildora-platform-admin .pa-analytics-total strong {
+  color: #271d35;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.buildora-platform-admin .pa-analytics-total > span {
+  color: #9b8fa3;
+  font-size: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-stacked-bar {
+  display: flex;
+  width: 100%;
+  height: 11px;
+  margin-top: 24px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eeebf2;
+}
+
+.buildora-platform-admin .pa-analytics-stacked-bar > span {
+  height: 100%;
+  transition: width 0.35s ease;
+}
+
+.buildora-platform-admin .pa-analytics-bar-purple {
+  background: #7653a5;
+}
+
+.buildora-platform-admin .pa-analytics-bar-green {
+  background: #40a67b;
+}
+
+.buildora-platform-admin .pa-analytics-bar-amber {
+  background: #e7ad58;
+}
+
+.buildora-platform-admin .pa-analytics-segments {
+  display: grid;
+  gap: 15px;
+  margin-top: 23px;
+}
+
+.buildora-platform-admin .pa-analytics-segment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-segment-info,
+.buildora-platform-admin .pa-analytics-segment-values {
+  display: flex;
+  align-items: center;
+}
+
+.buildora-platform-admin .pa-analytics-segment-info {
+  gap: 9px;
+  color: #706579;
+  font-size: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-segment-values {
+  gap: 14px;
+}
+
+.buildora-platform-admin .pa-analytics-segment-values strong {
+  color: #30243e;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin .pa-analytics-segment-values > span {
+  min-width: 34px;
+  color: #a093aa;
+  font-size: 12px;
+  text-align: right;
+}
+
+.buildora-platform-admin .pa-analytics-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.buildora-platform-admin .pa-analytics-dot-purple {
+  background: #7653a5;
+}
+
+.buildora-platform-admin .pa-analytics-dot-green {
+  background: #40a67b;
+}
+
+.buildora-platform-admin .pa-analytics-dot-amber {
+  background: #e7ad58;
+}
+
+.buildora-platform-admin .pa-analytics-footnote {
+  margin: 22px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #f0edf3;
+  color: #a195a9;
+  font-size: 11px;
+}
+
+/* 08 — USER GROWTH METRICS */
+
+.buildora-platform-admin .pa-signup-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 18px;
+}
+
+.buildora-platform-admin .pa-signup-metrics > div {
+  min-width: 0;
+  padding: 18px 20px;
+  border: 1px solid #eae6ef;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(39, 29, 53, 0.025);
+}
+
+.buildora-platform-admin .pa-signup-metrics > div:nth-child(2) {
+  border-color: #e4d8ef;
+  background: #f6f1fa;
+}
+
+.buildora-platform-admin .pa-signup-metrics dt {
+  margin-bottom: 9px;
+  color: #756980;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.buildora-platform-admin .pa-signup-metrics dd {
+  margin: 0;
+  color: #30243e;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+/* 09 — WEEKLY BAR CHART */
+
+.buildora-platform-admin .pa-panel.pa-signup-chart-panel {
+  padding: 26px 28px 24px;
+  border: 1px solid #eae6ef;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 5px 22px rgba(39, 29, 53, 0.035);
+}
+
+.buildora-platform-admin .pa-signup-chart-panel > h2 {
+  margin: 0;
+  color: #30243e;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin .pa-signup-chart-panel > p {
+  margin: 7px 0 0;
+  color: #988da0;
+  font-size: 12px;
+}
+
+.buildora-platform-admin .pa-signup-columns {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: clamp(8px, 2vw, 24px);
+  align-items: end;
+  min-height: 265px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.buildora-platform-admin .pa-signup-columns li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  height: 265px;
+  gap: 9px;
+}
+
+.buildora-platform-admin .pa-signup-columns li > strong {
+  color: #43354f;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin .pa-signup-column-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 185px;
+  border-bottom: 1px solid #ebe6ef;
+}
+
+.buildora-platform-admin .pa-signup-column-track > span {
+  display: block;
+  width: min(100%, 44px);
+  min-height: 0;
+  border-radius: 7px 7px 0 0;
+  background: #79598c;
+  transition: height 0.35s ease;
+}
+
+.buildora-platform-admin .pa-signup-columns li.pa-signup-current
+  .pa-signup-column-track > span {
+  background: #b26c58;
+}
+
+.buildora-platform-admin .pa-signup-columns time {
+  color: #95899d;
+  font-size: 11px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.buildora-platform-admin .pa-signup-columns li.pa-signup-current time {
+  color: #9a5140;
+  font-weight: 750;
+}
+
+/* 10 — SHARED ADMIN PANELS */
+
+.buildora-platform-admin .pa-panel {
+  border-color: #eae6ef;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(39, 29, 53, 0.035);
+}
+
+.buildora-platform-admin .pa-users-panel,
+.buildora-platform-admin .pa-verification-layout > .pa-panel {
+  background: #ffffff;
+}
+
+.buildora-platform-admin .pa-section-heading h2 {
+  color: #30243e;
+  font-weight: 750;
+}
+
+/* 11 — BUTTONS AND INPUTS */
+
+.buildora-platform-admin .pa-button {
+  border-color: #e4dfeb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #493c57;
+  font-weight: 650;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.buildora-platform-admin .pa-button:not(:disabled):hover {
+  border-color: #cbbbd9;
+  background: #f7f3fa;
+}
+
+.buildora-platform-admin .pa-button.pa-primary {
+  border-color: #67448b;
+  background: #67448b;
+  color: #ffffff;
+}
+
+.buildora-platform-admin .pa-button.pa-primary:not(:disabled):hover {
+  border-color: #563675;
+  background: #563675;
+  color: #ffffff;
+}
+
+.buildora-platform-admin .pa-field select,
+.buildora-platform-admin .pa-field textarea,
+.buildora-platform-admin input:not([type="checkbox"]):not([type="radio"]) {
+  border-color: #e4dfeb;
+  border-radius: 10px;
+}
+
+.buildora-platform-admin :is(
+  button,
+  select,
+  textarea,
+  input,
+  a
+):focus-visible {
+  outline: 3px solid #b69bd1;
+  outline-offset: 2px;
+}
+
+/* 12 — USERS TABLE */
+
+.buildora-platform-admin .pa-users-table {
+  color: #352941;
+}
+
+.buildora-platform-admin .pa-users-table thead th {
+  background: #f1edf6;
+  color: #5e4b70;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin .pa-users-table tbody tr > * {
+  border-color: #eae6ef;
+  background: #ffffff;
+}
+
+.buildora-platform-admin .pa-users-table tbody tr:hover > * {
+  background: #faf8fc;
+}
+
+.buildora-platform-admin .pa-users-filters button[aria-pressed="true"] {
+  border-bottom-color: #7653a5;
+  color: #67448b;
+}
+
+/* 13 — COMPANY VERIFICATION */
+
+.buildora-platform-admin .pa-company {
+  border-color: #e8e3ed;
+  background: #ffffff;
+}
+
+.buildora-platform-admin .pa-company:not(:disabled):hover {
+  background: #f8f5fb;
+}
+
+.buildora-platform-admin .pa-company[aria-pressed="true"],
+.buildora-platform-admin .pa-company.pa-company-selected {
+  border-color: #cdbbdf;
+  border-inline-start-color: #7653a5;
+  background: #f3edf9;
+}
+
+.buildora-platform-admin .pa-details > div {
+  border-color: #e9e3ee;
+  background: #faf8fc;
+}
+
+/* 14 — RESPONSIVE LAYOUT */
+
+@media (max-width: 1100px) {
+  .buildora-platform-admin .pa-dashboard-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .buildora-platform-admin .pa-analytics-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .buildora-platform-admin .pa-analytics-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .buildora-platform-admin > .pa-topbar {
+    min-height: 64px;
+    padding: 10px 14px;
+  }
+
+  .buildora-platform-admin .pa-shell > .pa-container.pa-content {
+    padding: 22px 16px 38px;
+  }
+
+  .buildora-platform-admin .pa-sidebar {
+    background-image: none;
+    background-color: #271d35;
+  }
+}
+
+@media (max-width: 600px) {
+  .buildora-platform-admin .pa-dashboard-kpi-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .buildora-platform-admin .pa-dashboard-kpi {
+    min-height: 140px;
+    padding: 20px;
+  }
+
+  .buildora-platform-admin .pa-signup-metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .buildora-platform-admin .pa-signup-columns {
+    gap: 5px;
+  }
+
+  .buildora-platform-admin .pa-signup-chart-panel {
+    padding: 20px 12px;
+  }
+
+  .buildora-platform-admin .pa-signup-columns time {
+    font-size: 9px;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildora-platform-admin .pa-dashboard-kpi,
+  .buildora-platform-admin .pa-analytics-card,
+  .buildora-platform-admin .pa-signup-column-track > span,
+  .buildora-platform-admin .pa-sidebar :is(a, button) {
+    transition: none;
+  }
+}
+
+
+/* ==========================================
+   BUILDORA — COMPACT DASHBOARD SPACING FIX
+   ========================================== */
+
+/* Remove unnecessary gap below Dashboard heading */
+.buildora-platform-admin .pa-signup-report {
+  display: block;
+}
+
+.buildora-platform-admin .pa-signup-report > .pa-users-heading {
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  min-height: 0;
+}
+
+/* Pull platform overview closer to heading */
+.buildora-platform-admin .pa-signup-report > .pa-dashboard-overview {
+  margin-top: 0 !important;
+}
+
+/* Compact page padding */
+.buildora-platform-admin .pa-shell > .pa-container.pa-content {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+/* Tighter section headings */
+.buildora-platform-admin .pa-dashboard-section-heading {
+  margin-bottom: 13px;
+}
+
+/* Smaller, cleaner KPI cards */
+.buildora-platform-admin .pa-dashboard-kpi-grid {
+  gap: 13px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi {
+  min-height: 132px;
+  padding: 18px 21px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-label {
+  margin-bottom: 9px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-value {
+  font-size: 33px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-detail {
+  margin-top: 9px;
+}
+
+/* Less space between KPI cards and analytics */
+.buildora-platform-admin .pa-analytics-grid {
+  margin-top: 18px;
+  gap: 14px;
+}
+
+.buildora-platform-admin .pa-analytics-card {
+  padding: 21px 23px;
+}
+
+.buildora-platform-admin .pa-analytics-total {
+  margin-top: 18px;
+}
+
+.buildora-platform-admin .pa-analytics-stacked-bar {
+  margin-top: 17px;
+}
+
+.buildora-platform-admin .pa-analytics-segments {
+  margin-top: 17px;
+  gap: 12px;
+}
+
+.buildora-platform-admin .pa-analytics-footnote {
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+/* Reduce empty space before user growth */
+.buildora-platform-admin .pa-dashboard-growth {
+  margin-top: 24px;
+}
+
+.buildora-platform-admin .pa-signup-metrics {
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.buildora-platform-admin .pa-signup-metrics > div {
+  padding: 15px 18px;
+}
+
+/* Compact weekly chart */
+.buildora-platform-admin .pa-panel.pa-signup-chart-panel {
+  padding: 21px 24px;
+}
+
+.buildora-platform-admin .pa-signup-columns {
+  min-height: 220px;
+  margin-top: 16px;
+}
+
+.buildora-platform-admin .pa-signup-columns li {
+  height: 220px;
+}
+
+.buildora-platform-admin .pa-signup-column-track {
+  height: 150px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .buildora-platform-admin .pa-shell > .pa-container.pa-content {
+    padding: 18px 14px 28px;
+  }
+
+  .buildora-platform-admin .pa-dashboard-kpi {
+    min-height: 120px;
+    padding: 17px;
+  }
+
+  .buildora-platform-admin .pa-dashboard-kpi-value {
+    font-size: 30px;
+  }
+
+  .buildora-platform-admin .pa-analytics-card {
+    padding: 18px;
+  }
+}
+
+/* BUILDORA — UNIFIED BRAND COLOR THEME */
+
+/* Remove multicolor KPI borders */
+.buildora-platform-admin .pa-dashboard-kpi::before,
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(2)::before,
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(3)::before,
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(4)::before,
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(5)::before,
+.buildora-platform-admin .pa-dashboard-kpi:nth-child(6)::before {
+  background: #70475f;
+}
+
+/* Consistent card styling */
+.buildora-platform-admin .pa-dashboard-kpi {
+  border-color: #e9e1e7;
+  background: #ffffff;
+}
+
+/* Brand-colored analytics bars */
+.buildora-platform-admin .pa-analytics-bar-purple,
+.buildora-platform-admin .pa-analytics-bar-green {
+  background: #70475f;
+}
+
+.buildora-platform-admin .pa-analytics-bar-amber {
+  background: #c58b78;
+}
+
+/* Matching legend dots */
+.buildora-platform-admin .pa-analytics-dot-purple,
+.buildora-platform-admin .pa-analytics-dot-green {
+  background: #70475f;
+}
+
+.buildora-platform-admin .pa-analytics-dot-amber {
+  background: #c58b78;
+}
+
+/* Brand-colored weekly chart */
+.buildora-platform-admin .pa-signup-column-track > span {
+  background: #70475f;
+}
+
+.buildora-platform-admin
+.pa-signup-columns li.pa-signup-current
+.pa-signup-column-track > span {
+  background: #a96350;
+}
+
+/* BUILDORA — PROFESSIONAL WEEKLY CHART */
+
+.buildora-platform-admin .pa-weekly-chart {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.buildora-platform-admin .pa-weekly-chart-legend {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 18px;
+  color: #55475d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.buildora-platform-admin .pa-weekly-chart-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.buildora-platform-admin .pa-weekly-legend-dot {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 3px;
+  background: #70475f;
+}
+
+.buildora-platform-admin .pa-weekly-legend-dot.current {
+  background: #ad7869;
+}
+
+.buildora-platform-admin .pa-weekly-chart-body {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.buildora-platform-admin .pa-weekly-y-axis {
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  color: #62556a;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.buildora-platform-admin .pa-weekly-plot {
+  position: relative;
+  min-width: 0;
+}
+
+.buildora-platform-admin .pa-weekly-grid {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.buildora-platform-admin .pa-weekly-grid span {
+  display: block;
+  border-top: 1px solid #eae4ed;
+  width: 100%;
+}
+
+.buildora-platform-admin .pa-weekly-bars {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.buildora-platform-admin .pa-weekly-bars li {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buildora-platform-admin .pa-weekly-bar-area {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: default;
+  outline-offset: 3px;
+}
+
+.buildora-platform-admin .pa-weekly-bar {
+  width: min(42px, 68%);
+  min-height: 4px;
+  border-radius: 6px 6px 0 0;
+  background: #70475f;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.buildora-platform-admin .pa-weekly-bars li.is-current .pa-weekly-bar {
+  background: #ad7869;
+}
+
+.buildora-platform-admin .pa-weekly-bar.is-zero {
+  background: #cfc3d2;
+}
+
+.buildora-platform-admin .pa-weekly-bar-area:hover .pa-weekly-bar,
+.buildora-platform-admin .pa-weekly-bar-area:focus-visible .pa-weekly-bar {
+  opacity: 0.8;
+}
+
+.buildora-platform-admin .pa-weekly-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 12px);
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 125px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: #33253d;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 8px 24px #271d3533;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.buildora-platform-admin .pa-weekly-tooltip small {
+  color: #e7c9bd;
+}
+
+.buildora-platform-admin .pa-weekly-bar-area:hover .pa-weekly-tooltip,
+.buildora-platform-admin .pa-weekly-bar-area:focus-visible .pa-weekly-tooltip {
+  display: flex;
+}
+
+.buildora-platform-admin .pa-weekly-bars time {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #55475d;
+  white-space: nowrap;
+}
+
+.buildora-platform-admin .pa-weekly-current-label {
+  margin-top: 5px;
+  color: #875243;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .buildora-platform-admin .pa-weekly-bars {
+    gap: 4px;
+  }
+
+  .buildora-platform-admin .pa-weekly-bars time {
+    font-size: 9px;
+  }
+
+  .buildora-platform-admin .pa-weekly-legend-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* BUILDORA — VERIFICATION BREAKDOWN */
+
+.buildora-platform-admin .pa-verification-card {
+  margin-top: 18px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e9e1e7;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px #271d3509;
+}
+
+.buildora-platform-admin .pa-verification-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.buildora-platform-admin .pa-verification-heading h2 {
+  margin: 0;
+  color: #302439;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.buildora-platform-admin .pa-verification-heading p {
+  margin: 6px 0 0;
+  color: #62556a;
+  font-size: 12px;
+}
+
+.buildora-platform-admin .pa-verification-heading > strong {
+  color: #70475f;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.buildora-platform-admin .pa-verification-progress {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 13px;
+  margin-top: 25px;
+  background: #eee8ef;
+  border-radius: 20px;
+}
+
+.buildora-platform-admin .pa-verification-progress > span {
+  height: 100%;
+  min-width: 0;
+}
+
+.buildora-platform-admin .pa-verification-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  margin-top: 22px;
+}
+
+.buildora-platform-admin .pa-verification-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #493c52;
+  font-size: 12px;
+}
+
+.buildora-platform-admin .pa-verification-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.buildora-platform-admin .pa-verification-legend-item strong {
+  font-size: 13px;
+  color: #302439;
+}
+
+.buildora-platform-admin .pa-verification-legend-item small {
+  color: #62556a;
+  font-size: 11px;
+}
+
+/* BUILDORA — INTERACTIVE KPI CARDS */
+
+.buildora-platform-admin .pa-dashboard-kpi-grid {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi {
+  height: 100%;
+  min-height: 138px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-action {
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  appearance: none;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.buildora-platform-admin
+.pa-dashboard-kpi-action:not(:disabled):hover {
+  transform: translateY(-2px);
+  border-color: #b99cad;
+  box-shadow: 0 8px 24px #38253d16;
+}
+
+.buildora-platform-admin
+.pa-dashboard-kpi-action:focus-visible {
+  outline: 3px solid #a47795;
+  outline-offset: 3px;
+}
+
+.buildora-platform-admin
+.pa-dashboard-kpi-action:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.buildora-platform-admin .pa-kpi-cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  color: #70475f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildora-platform-admin .pa-dashboard-kpi-action {
+    transition: none;
+  }
+
+  .buildora-platform-admin
+  .pa-dashboard-kpi-action:hover {
+    transform: none;
+  }
+}
+
+.buildora-platform-admin .pa-kpi-cta {
+  display: inline-block;
+  margin-top: 10px;
+  color: #70475f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Weekly signup chart readability */
+
+.buildora-platform-admin .pa-weekly-bars li {
+  gap: 6px;
+}
+
+.buildora-platform-admin .pa-weekly-current-label {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.4;
+  color: #70475f;
+  font-weight: 700;
+}
+
+.buildora-platform-admin .pa-weekly-y-axis {
+  color: #665866;
+}
+
+.buildora-platform-admin .pa-weekly-bars time {
+  color: #665866;
+}
+
+.buildora-platform-admin .pa-signup-chart-panel > p {
+  color: #665866;
+}
+
+.buildora-platform-admin .pa-weekly-bar-area {
+  position: relative;
+}
+
+.buildora-platform-admin .pa-weekly-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.buildora-platform-admin .pa-weekly-bar-area:hover .pa-weekly-tooltip,
+.buildora-platform-admin .pa-weekly-bar-area:focus-visible .pa-weekly-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-detail,
+.buildora-platform-admin .pa-analytics-card p,
+.buildora-platform-admin .pa-signup-chart-panel > p,
+.buildora-platform-admin .pa-weekly-y-axis,
+.buildora-platform-admin .pa-weekly-bars time {
+  color: #5e515e;
+}
+
+.buildora-platform-admin .pa-analytics-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Project Distribution progress bar */
+.buildora-platform-admin .pa-analytics-stacked-bar {
+  display: flex;
+  width: 100%;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eee8f0;
+}
+
+.buildora-platform-admin .pa-analytics-stacked-bar > span {
+  display: block;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.buildora-platform-admin .pa-analytics-bar-primary {
+  background: #70475f;
+}
+
+.buildora-platform-admin .pa-analytics-bar-muted {
+  background: #b9a8bf;
+}
+/* Weekly chart current-week label spacing */
+.buildora-platform-admin .pa-weekly-bars li {
+  gap: 6px;
+}
+
+.buildora-platform-admin .pa-weekly-current-label {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.4;
+  color: #70475f;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Prevent long company details from overflowing */
+@media (max-width: 760px) {
+  .buildora-platform-admin .pa-company-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 760px) {
+  .pa-section-heading.pa-plans-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pa-plans-heading h1 {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .pa-plans-heading > button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .pa-page .pa-content,
+  .pa-page .pa-panel {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .pa-page .pa-plan-editor {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pa-page .pa-plan-editor input,
+  .pa-page .pa-plan-editor select,
+  .pa-page .pa-plan-editor textarea {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* =========================================
+   BUILDORA — UNIFIED PLATFORM DASHBOARD
+   ========================================= */
+
+.buildora-platform-admin .pa-signup-report {
+  --dash-ink: #3c2c43;
+  --dash-accent: #79516f;
+  --dash-border: #e7d9cf;
+  --dash-cream: #f8f2ed;
+  --dash-muted: #766a78;
+}
+
+/* Compact KPI cards */
+.buildora-platform-admin .pa-dashboard-kpi-grid {
+  gap: 14px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi {
+  min-height: 126px;
+  padding: 18px 20px;
+  border: 1px solid #e7d9cf;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.04);
+}
+
+.buildora-platform-admin .pa-dashboard-kpi::before {
+  height: 3px;
+  background: #79516f;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-label {
+  margin-bottom: 8px;
+  color: #766a78;
+  font-size: 12px;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-value {
+  color: #3c2c43;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.buildora-platform-admin .pa-dashboard-kpi-detail {
+  margin-top: 7px;
+  color: #766a78;
+  font-size: 12px;
+}
+
+/* Analytics cards */
+.buildora-platform-admin .pa-dashboard-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.buildora-platform-admin
+  .pa-dashboard-analytics-grid
+  > .pa-verification-card,
+.buildora-platform-admin
+  .pa-dashboard-analytics-grid
+  > .pa-analytics-card {
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 22px 24px;
+  border: 1px solid #e7d9cf;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.04);
+}
+
+/* Consistent section headings */
+.buildora-platform-admin .pa-verification-heading h2,
+.buildora-platform-admin .pa-analytics-card-header h2,
+.buildora-platform-admin .pa-dashboard-section-heading h2 {
+  color: #3c2c43;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin .pa-verification-heading p,
+.buildora-platform-admin .pa-analytics-card-header p {
+  color: #766a78;
+  font-size: 12px;
+}
+
+/* User growth */
+.buildora-platform-admin .pa-dashboard-growth {
+  margin-top: 26px;
+}
+
+.buildora-platform-admin .pa-signup-metrics > div,
+.buildora-platform-admin .pa-signup-chart-panel {
+  border: 1px solid #e7d9cf;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.04);
+}
+
+/* Quick actions */
+.buildora-platform-admin .pa-dashboard-quick-actions {
+  margin-top: 26px;
+}
+
+.buildora-platform-admin .pa-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.buildora-platform-admin .pa-quick-actions-grid button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 64px;
+  padding: 14px 18px;
+  border: 1px solid #e7d9cf;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #3c2c43;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.buildora-platform-admin
+  .pa-quick-actions-grid button > span:nth-child(2) {
+  flex: 1;
+}
+
+.buildora-platform-admin .pa-quick-actions-grid button:hover {
+  border-color: #79516f;
+  background: #f8f2ed;
+}
+
+.buildora-platform-admin .pa-quick-actions-grid button:focus-visible {
+  outline: 3px solid #79516f;
+  outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .buildora-platform-admin .pa-dashboard-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .buildora-platform-admin .pa-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-platform-admin
+    .pa-dashboard-analytics-grid
+    > .pa-verification-card,
+  .buildora-platform-admin
+    .pa-dashboard-analytics-grid
+    > .pa-analytics-card {
+    padding: 18px;
+  }
+}
+
+
+/* ==============================================
+   BUILDORA — UNIFIED PLATFORM ADMIN DASHBOARD
+   Deep Cocoa Plum + Warm Cream
+   ============================================== */
+
+.buildora-platform-admin .pa-unified-dashboard {
+  --pa-dash-plum: #3c2c43;
+  --pa-dash-accent: #79516f;
+  --pa-dash-cream: #f8f2ed;
+  --pa-dash-border: #e7d9cf;
+  --pa-dash-muted: #766a78;
+
+  width: 100%;
+}
+
+/* Section headings */
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 16px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-section-heading h2 {
+  margin: 0;
+  color: #3c2c43;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-section-heading > span {
+  color: #766a78;
+  font-size: 12px;
+}
+
+/* ==============================================
+   KPI CARDS
+   ============================================== */
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 132px;
+  padding: 18px 20px;
+  border: 1px solid #e7d9cf;
+  border-radius: 14px;
+  background: #fff;
+  color: #3c2c43;
+  text-align: left;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.035);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  width: auto;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: #79516f;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi:hover {
+  transform: translateY(-2px);
+  border-color: #c9b4c3;
+  box-shadow: 0 8px 22px rgba(60, 44, 67, 0.08);
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-kpi-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-label {
+  margin: 0;
+  color: #766a78;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-kpi-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #f2eaf0;
+  color: #79516f;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-value {
+  display: block;
+  margin: 0;
+  color: #3c2c43;
+  font-size: 31px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.7px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-detail {
+  display: block;
+  margin: 8px 0 0;
+  color: #766a78;
+  font-size: 12px;
+  font-weight: 450;
+  line-height: 1.45;
+}
+
+/* ==============================================
+   ANALYTICS — TWO MATCHING CARDS
+   ============================================== */
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-unified-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 23px 24px;
+  border: 1px solid #e7d9cf;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.035);
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-heading,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-heading h2,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-card-header h2 {
+  margin: 0 0 5px;
+  color: #3c2c43;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-heading p,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-card-header p {
+  margin: 0;
+  color: #766a78;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-heading > strong {
+  flex-shrink: 0;
+  color: #79516f;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-progress,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-stacked-bar {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 11px;
+  min-height: 11px;
+  margin: 14px 0 20px;
+  border-radius: 999px;
+  background: #f0e8e3;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-progress > span,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-stacked-bar > span {
+  display: block;
+  height: 100%;
+  min-width: 0;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-legend {
+  display: grid;
+  gap: 13px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  color: #6f6470;
+  font-size: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-dot,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-dot {
+  display: inline-block;
+  flex: 0 0 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-legend-item > span:nth-child(2) {
+  flex: 1;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-legend-item strong {
+  color: #3c2c43;
+  font-size: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-legend-item small {
+  min-width: 37px;
+  color: #766a78;
+  font-size: 11px;
+  text-align: right;
+}
+
+/* Project distribution */
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-total {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin: 0 0 10px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-total strong {
+  color: #3c2c43;
+  font-size: 31px;
+  font-weight: 800;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-total span {
+  color: #766a78;
+  font-size: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-segments {
+  display: grid;
+  gap: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-segment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-segment-info,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-segment-values {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-segment-values strong {
+  color: #3c2c43;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-footnote {
+  margin: auto 0 0;
+  padding-top: 18px;
+  color: #8a7e8a;
+  font-size: 11px;
+}
+
+/* ==============================================
+   USER GROWTH
+   ============================================== */
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-growth {
+  margin-top: 27px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-metrics > div {
+  min-width: 0;
+  margin: 0;
+  padding: 17px 20px;
+  border: 1px solid #e7d9cf;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.035);
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-metrics dt {
+  color: #766a78;
+  font-size: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-metrics dd {
+  margin: 7px 0 0;
+  color: #3c2c43;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-chart-panel {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid #e7d9cf;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.035);
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-chart-heading h2 {
+  margin: 0 0 5px;
+  color: #3c2c43;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-chart-heading p {
+  margin: 0 0 20px;
+  color: #766a78;
+  font-size: 12px;
+}
+
+/* ==============================================
+   QUICK ACTIONS
+   ============================================== */
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-quick-actions {
+  margin-top: 27px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-quick-actions-grid button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 65px;
+  padding: 15px 18px;
+  border: 1px solid #e7d9cf;
+  border-radius: 13px;
+  background: #fff;
+  color: #3c2c43;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-quick-actions-grid button > svg {
+  flex-shrink: 0;
+  color: #79516f;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-quick-actions-grid button > span:nth-child(2) {
+  flex: 1;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-quick-actions-grid button:hover {
+  border-color: #79516f;
+  background: #f8f2ed;
+}
+
+/* Accessibility */
+
+.buildora-platform-admin
+.pa-unified-dashboard button:focus-visible {
+  outline: 3px solid #79516f;
+  outline-offset: 3px;
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+
+@media (max-width: 1100px) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-signup-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-unified-card,
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-signup-chart-panel {
+    padding: 18px;
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-kpi,
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-quick-actions-grid button {
+    transition: none;
+  }
+}
+
+
+/* ================================================
+   BUILDORA DASHBOARD — FINAL LAYOUT CORRECTION
+   Match approved compact dashboard sample
+   ================================================ */
+
+/* Overall dashboard spacing */
+.buildora-platform-admin .pa-unified-dashboard {
+  width: 100%;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-overview {
+  margin-bottom: 0;
+}
+
+/* SIX KPI CARDS — ONE ROW ON DESKTOP */
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi {
+  min-width: 0;
+  min-height: 148px;
+  padding: 17px 14px 15px;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi::before {
+  left: 14px;
+  right: 14px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-kpi-top {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+  gap: 9px;
+  margin-bottom: 8px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-kpi-icon {
+  width: 32px;
+  height: 32px;
+  flex-basis: 32px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-label {
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-value {
+  margin-top: auto;
+  font-size: 29px;
+  line-height: 1.1;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-kpi-detail {
+  margin-top: 6px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+/* TWO ANALYTICS CARDS */
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-analytics-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-unified-card {
+  min-height: 205px;
+  height: auto;
+  padding: 20px 22px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-heading,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-card-header {
+  margin-bottom: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-progress,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-stacked-bar {
+  margin: 12px 0 17px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-verification-legend,
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-segments {
+  gap: 9px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-total {
+  margin-bottom: 0;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-total strong {
+  font-size: 25px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-analytics-footnote {
+  padding-top: 10px;
+  font-size: 10px;
+}
+
+/* USER GROWTH — ONE UNIFIED PANEL */
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-growth {
+  margin-top: 20px;
+  padding: 21px 22px;
+  border: 1px solid #e7d9cf;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(60, 44, 67, 0.035);
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-growth
+.pa-dashboard-section-heading {
+  margin-bottom: 15px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-metrics > div {
+  min-height: 76px;
+  padding: 13px 16px;
+  border: 1px solid #eadfe6;
+  border-radius: 11px;
+  background: #fbf8fa;
+  box-shadow: none;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-signup-metrics dd {
+  margin-top: 5px;
+  font-size: 24px;
+}
+
+/* Remove second outer card around chart */
+.buildora-platform-admin
+.pa-unified-dashboard .pa-panel.pa-signup-chart-panel {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-chart-heading h2 {
+  font-size: 15px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-chart-heading p {
+  margin-bottom: 10px;
+}
+
+/* QUICK ACTIONS — COMPACT */
+.buildora-platform-admin
+.pa-unified-dashboard .pa-dashboard-quick-actions {
+  margin-top: 20px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-quick-actions-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.buildora-platform-admin
+.pa-unified-dashboard .pa-quick-actions-grid button {
+  min-height: 56px;
+  padding: 12px 15px;
+  border-radius: 11px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1350px) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1351px) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-kpi-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-dashboard-growth {
+    padding: 16px;
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-signup-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-platform-admin
+  .pa-unified-dashboard .pa-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

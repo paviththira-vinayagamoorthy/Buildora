@@ -1,0 +1,721 @@
+
+/* =====================================================
+   BUILDORA — PROJECT WORKSPACE VISUAL POLISH
+   Shared across all projects
+   Import AFTER ProjectWorkspace.css
+   ===================================================== */
+
+.ws-page {
+  --ws-bg: #f7f7fa;
+  --ws-paper: #ffffff;
+  --ws-text: #352a3d;
+  --ws-muted: #796d80;
+  --ws-border: #e8e0e9;
+  --ws-plum: #3c2c43;
+  --ws-coral: #79516f;
+
+  background: var(--ws-bg);
+  color: var(--ws-text);
+}
+
+/* ---------- TOP NAVBAR ---------- */
+
+.ws-page .ws-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e8e0e9;
+}
+
+.ws-page .ws-topbar-inner {
+  max-width: 1480px;
+  min-height: 72px;
+  padding: 12px 36px;
+}
+
+.ws-page .ws-back,
+.ws-page .ws-icon-button {
+  background: #ffffff;
+  border-color: #e5dbe7;
+  color: #3c2c43;
+}
+
+.ws-page .ws-back:hover,
+.ws-page .ws-icon-button:hover {
+  background: #f5eff6;
+}
+
+.ws-page .ws-topbar-separator {
+  background: #e8e0e9;
+}
+
+.ws-page .ws-account-avatar {
+  background: #f0e9f1;
+  color: #3c2c43;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+
+.ws-page .ws-container {
+  max-width: 1480px;
+  padding: 26px 40px 28px;
+}
+
+.ws-page .ws-breadcrumb {
+  margin-bottom: 19px;
+  color: #84768a;
+}
+
+.ws-page .ws-breadcrumb button {
+  color: #79516f;
+}
+
+/* ---------- PROJECT HEADER ---------- */
+
+.ws-page .ws-project-header {
+  min-height: 116px;
+  margin-bottom: 22px;
+  padding: 16px 20px;
+  border: 1px solid #e8e0e9;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(53, 42, 61, 0.025);
+}
+
+.ws-page .ws-project-header::before {
+  display: none;
+}
+
+.ws-page .ws-project-identity {
+  gap: 16px;
+}
+
+.ws-page .ws-project-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 12px;
+  background: #f2ebf3;
+  border-color: #e8dce9;
+  color: #79516f;
+  overflow: hidden;
+}
+
+.ws-page .ws-title-line h1 {
+  font-size: clamp(25px, 2.1vw, 31px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  color: #352a3d;
+}
+
+.ws-page .ws-project-meta {
+  gap: 8px 12px;
+  margin-top: 11px;
+}
+
+.ws-page .ws-project-meta > span {
+  color: #786b7e;
+  font-size: 12px;
+}
+
+.ws-page .ws-status {
+  background: #f6f1f7;
+  border-color: #e4d8e5;
+  color: #6b536f;
+  border-radius: 7px;
+}
+
+.ws-page .ws-status-active {
+  background: #edf7ef;
+  border-color: #d2e7d8;
+  color: #32734c;
+}
+
+/* ---------- PROJECT TABS ---------- */
+
+.ws-page .ws-tabbar {
+  border-bottom: 1px solid #e5dce7;
+  gap: 4px;
+}
+
+.ws-page .ws-tab {
+  color: #75667d;
+  font-weight: 650;
+}
+
+.ws-page .ws-tab:hover {
+  color: #3c2c43;
+}
+
+.ws-page .ws-tab-active {
+  color: #3c2c43;
+}
+
+.ws-page .ws-tab-active::after {
+  background: #79516f;
+}
+
+.ws-page .ws-tab-panel {
+  min-width: 0;
+}
+
+/* ---------- KPI SUMMARY CARDS ---------- */
+
+.ws-page .ws-summary-strip {
+  gap: 14px;
+}
+
+.ws-page .ws-strip-stat {
+  min-width: 0;
+}
+
+.ws-page .ws-card,
+.ws-page .ws-summary-strip > * {
+  background: #ffffff;
+  border-color: #e8e0e9;
+  box-shadow: 0 3px 14px rgba(53, 42, 61, 0.025);
+}
+
+.ws-page .ws-card {
+  border-radius: 13px;
+}
+
+.ws-page .ws-strip-label {
+  color: #827589;
+}
+
+.ws-page .ws-strip-stat strong {
+  color: #352a3d;
+  overflow-wrap: break-word;
+  line-height: 1.22;
+}
+
+/* ---------- OVERVIEW DETAILS ---------- */
+
+.ws-page .ws-card-heading h2 {
+  color: #352a3d;
+  letter-spacing: -0.02em;
+}
+
+.ws-page .ws-card-symbol,
+.ws-page .ws-mini-icon {
+  background: #f2eaf3;
+  color: #79516f;
+}
+
+.ws-page .ws-eyebrow,
+.ws-page .ws-details-grid span {
+  color: #827589;
+}
+
+.ws-page .ws-description {
+  color: #6e6175;
+  line-height: 1.65;
+}
+
+.ws-page .ws-details-grid {
+  border-color: #ebe3eb;
+}
+
+.ws-page .ws-details-grid > div {
+  min-width: 0;
+}
+
+.ws-page .ws-details-grid strong {
+  color: #352a3d;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.ws-page .ws-button-primary {
+  background: #3c2c43;
+  border-color: #3c2c43;
+  color: #ffffff;
+}
+
+.ws-page .ws-button-secondary {
+  background: #ffffff;
+  border-color: #e1d6e3;
+  color: #3c2c43;
+}
+
+.ws-page .ws-button-secondary:hover {
+  background: #f5eff6;
+}
+
+.ws-page button:focus-visible,
+.ws-page input:focus-visible,
+.ws-page select:focus-visible {
+  outline-color: #79516f;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+  .ws-page .ws-container {
+    padding: 20px 22px 26px;
+  }
+
+  .ws-page .ws-topbar-inner {
+    padding: 12px 22px;
+  }
+
+  .ws-page .ws-project-header {
+    padding: 15px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+  .ws-page .ws-container {
+    padding: 16px 14px 24px;
+  }
+
+  .ws-page .ws-topbar-inner {
+    padding: 10px 14px;
+  }
+
+  .ws-page .ws-project-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .ws-page .ws-project-icon {
+    width: 62px;
+    height: 62px;
+  }
+
+  .ws-page .ws-title-line h1 {
+    font-size: 25px;
+  }
+
+  .ws-page .ws-summary-strip {
+    gap: 10px;
+  }
+}
+
+/* Progress & Reports — compact Buildora theme tabs */
+
+.pd-page .pd-report-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pd-page .pd-report-navigation button {
+  min-height: 32px;
+  padding: 6px 12px;
+  border: 1px solid #D9C8BA;
+  border-radius: 7px;
+  background: #FFFCF8;
+  color: #352A3D;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  box-shadow: none;
+}
+
+.pd-page .pd-report-navigation button:hover {
+  background: #F3ECE5;
+}
+
+.pd-page .pd-report-navigation button[aria-current="page"] {
+  background: #352A3D;
+  border-color: #352A3D;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+
+
+/* =========================================
+   BUILDORA — MEMBERS PAGE
+   Compact white layout
+   ========================================= */
+
+.pd-page .pw-members-page {
+  display: grid;
+  gap: 16px;
+  color: #352A3D;
+}
+
+/* Three main sections */
+.pd-page .pw-members-page > section {
+  margin: 0;
+  padding: 20px !important;
+  border: 1px solid #E4E5E8 !important;
+  border-radius: 12px !important;
+  background: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+/* Section headings */
+.pd-page .pw-members-page > section h2 {
+  margin: 0;
+  color: #352A3D;
+  font-size: 17px !important;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.pd-page .pw-members-page > section h2 + p {
+  margin-top: 5px;
+  color: #77717B;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Member counts */
+.pd-page .pw-members-page > section:first-child
+  > div > div:nth-child(3) {
+  gap: 16px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+
+/* Member rows */
+.pd-page .pw-members-page article {
+  padding: 11px 14px !important;
+  border: 1px solid #E6E7EA !important;
+  border-radius: 9px !important;
+  background: #FFFFFF !important;
+}
+
+.pd-page .pw-members-page article + article {
+  margin-top: 8px;
+}
+
+/* Avatar */
+.pd-page .pw-members-page article
+  span.rounded-full {
+  width: 34px;
+  height: 34px;
+  background: #F1F1F3 !important;
+  color: #352A3D !important;
+  font-size: 11px;
+}
+
+/* Member names */
+.pd-page .pw-members-page article h3 {
+  color: #352A3D;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Member emails */
+.pd-page .pw-members-page article p {
+  color: #7B7580;
+  font-size: 12px;
+}
+
+/* Role text */
+.pd-page .pw-members-page article > span {
+  color: #805140 !important;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Invite form */
+.pd-page .pw-members-page form {
+  margin-top: 16px;
+}
+
+.pd-page .pw-members-page form label {
+  color: #352A3D;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pd-page .pw-members-page form input,
+.pd-page .pw-members-page form select {
+  min-height: 39px;
+  padding: 8px 11px;
+  border: 1px solid #DDDDE2 !important;
+  border-radius: 7px !important;
+  background: #FFFFFF !important;
+  color: #352A3D;
+  font-size: 12px;
+}
+
+/* Buttons */
+.pd-page .pw-members-page button {
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+/* Invitation history rows */
+.pd-page .pw-members-page > section:last-child article {
+  padding: 12px 14px !important;
+}
+
+/* Smaller invitation metadata */
+.pd-page .pw-members-page > section:last-child small {
+  font-size: 11px;
+  color: #77717B;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .pd-page .pw-members-page > section {
+    padding: 15px !important;
+  }
+
+  .pd-page .pw-members-page article {
+    gap: 10px;
+  }
+}
+
+/* BUILDORA — COSTS & PAYMENTS COMPACT TABS */
+
+.pd-page .pd-cost-navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.pd-page .pd-cost-navigation button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 7px 13px;
+  border: 1px solid #D9C8BA;
+  border-radius: 7px;
+  background: #FFFFFF;
+  color: #352A3D;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.pd-page .pd-cost-navigation button:hover {
+  background: #F7F7F8;
+}
+
+.pd-page .pd-cost-navigation button[aria-current="page"] {
+  background: #352A3D;
+  border-color: #352A3D;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Preserve Progress & Reports tab styling */
+.pd-page .pd-report-navigation button {
+  min-height: 32px;
+}
+
+
+/* BUILDORA — COSTS & PAYMENTS POLISH */
+
+/* Main content panels */
+.pd-page .ct-page,
+.pd-page .vl-page,
+.pd-page .pm-page {
+  color: #352A3D;
+}
+
+/* Financial summary cards */
+.pd-page .ct-page .ct-stats > *,
+.pd-page .pm-page .pm-stats > *,
+.pd-page .vl-page .vl-stats > * {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 9px !important;
+  box-shadow: none !important;
+  padding: 13px 15px !important;
+}
+
+/* Tables */
+.pd-page .ct-page table,
+.pd-page .vl-page table,
+.pd-page .pm-page table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.pd-page .ct-page th,
+.pd-page .vl-page th,
+.pd-page .pm-page th {
+  padding: 10px 12px;
+  background: #F5F6F8;
+  color: #686575;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pd-page .ct-page td,
+.pd-page .vl-page td,
+.pd-page .pm-page td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #ECEEF0;
+  color: #352A3D;
+}
+
+/* Headings */
+.pd-page .ct-page h2,
+.pd-page .vl-page h2,
+.pd-page .pm-page h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #352A3D;
+}
+
+
+/* BUILDORA — COMPACT OVERVIEW */
+
+.pd-page .pd-metrics {
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pd-page .pd-stat-card {
+  padding: 16px !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 10px !important;
+  background: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.pd-page .pd-stat-card > span {
+  color: #77717B;
+  font-size: 12px;
+}
+
+.pd-page .pd-stat-card > strong {
+  color: #352A3D;
+  font-size: 22px;
+}
+
+.pd-page .pd-overview-grid {
+  gap: 14px;
+}
+
+.pd-page .pd-overview-grid .pd-panel {
+  padding: 18px !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 10px !important;
+  background: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.pd-page .pd-panel-heading h2,
+.pd-page .pd-guidance-heading h2 {
+  color: #352A3D;
+  font-size: 16px;
+}
+
+.pd-page .pd-description {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pd-page .pd-details {
+  gap: 12px;
+}
+
+
+/* Costs & Payments — table alignment */
+.pd-page table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.pd-page table th,
+.pd-page table td {
+  padding: 11px 12px;
+  vertical-align: middle;
+}
+
+.pd-page table th {
+  text-align: left;
+}
+
+.pd-page table td {
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* BUILDORA — COSTS & PAYMENTS FINAL POLISH */
+
+/* Only the three cost tabs */
+.pd-page:has(.pd-cost-navigation)
+  :is(.vl-page, .ct-page, .pm-page) {
+  color: #352A3D;
+}
+
+/* Consistent summary cards */
+.pd-page :is(.vl-page, .ct-page, .pm-page)
+  :is(.vl-stats, .ct-stats, .pm-stats) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  margin: 14px 0 18px;
+}
+
+.pd-page :is(.vl-page, .ct-page, .pm-page)
+  :is(.vl-stats, .ct-stats, .pm-stats) > * {
+  min-width: 0;
+  height: 100%;
+  padding: 14px 16px !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D9C8BA !important;
+  border-radius: 9px !important;
+  box-shadow: none !important;
+}
+
+/* Compact headings */
+.pd-page :is(.vl-page, .ct-page, .pm-page) h2 {
+  margin: 0 0 12px;
+  color: #352A3D;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Consistent table alignment */
+.pd-page :is(.vl-page, .ct-page, .pm-page) table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.pd-page :is(.vl-page, .ct-page, .pm-page) th,
+.pd-page :is(.vl-page, .ct-page, .pm-page) td {
+  padding: 11px 12px;
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+
+.pd-page :is(.vl-page, .ct-page, .pm-page) th {
+  background: #F7F7F8;
+  color: #655D69;
+  text-align: left;
+}
+
+.pd-page :is(.vl-page, .ct-page, .pm-page) td {
+  border-bottom: 1px solid #ECE8E5;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .pd-page :is(.vl-page, .ct-page, .pm-page)
+    :is(.vl-stats, .ct-stats, .pm-stats) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+

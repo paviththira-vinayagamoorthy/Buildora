@@ -1,0 +1,546 @@
+@import "./CertificatesPage.css";
+
+.mr-page .mr-form-panel {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.mr-page .mr-progress {
+  padding: 22px;
+  border: 1px solid #d5dfd0;
+  border-radius: 12px;
+  background: #e9efe5;
+}
+
+.mr-page .mr-progress > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mr-page .mr-progress span {
+  color: #62725d;
+  font-size: 13px;
+}
+
+.mr-page .mr-progress strong {
+  font-size: 26px;
+  letter-spacing: -0.03em;
+}
+
+.mr-page .mr-progress p {
+  margin: 14px 0 0;
+  color: #6c7967;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.mr-page progress {
+  display: block;
+  width: 100%;
+  height: 9px;
+  margin-top: 18px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 20px;
+  background: #d4dfcd;
+  accent-color: #7e9b77;
+}
+
+.mr-page progress::-webkit-progress-bar {
+  background: #d4dfcd;
+  border-radius: 20px;
+}
+
+.mr-page progress::-webkit-progress-value {
+  background: #7e9b77;
+  border-radius: 20px;
+}
+
+.mr-page progress::-moz-progress-bar {
+  background: #7e9b77;
+  border-radius: 20px;
+}
+
+.mr-page .mr-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin: 22px 0 30px;
+}
+
+.mr-page .mr-figures > div {
+  padding: 20px 0;
+  border-bottom: 1px solid #e6d8cc;
+}
+
+.mr-page .mr-figures dt {
+  color: #796877;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.mr-page .mr-figures dd {
+  margin: 10px 0 0;
+  color: #392d40;
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.mr-page .mr-content {
+  display: grid;
+  gap: 26px;
+}
+
+.mr-page .mr-content h3 {
+  margin: 0 0 10px;
+  color: #795780;
+  font-size: 13px;
+}
+
+.mr-page .mr-content p {
+  margin: 0;
+  color: #6d606b;
+  font-size: 14px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .mr-page .mr-figures {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 14px;
+  }
+
+  .mr-page .mr-progress {
+    padding: 18px;
+  }
+}
+
+.ct-page.mr-page.mr-embedded {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.mr-page.mr-embedded .ct-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mr-page.mr-embedded .ct-project-control[hidden] {
+  display: none;
+}
+
+.mr-page.mr-embedded .ct-toolbar {
+  justify-content: flex-end;
+}
+
+.mr-page.mr-embedded .ct-panel {
+  background: #fffaf5;
+  border-color: #ead6c6;
+}
+
+/* ==========================================
+   BUILDORA — MONTHLY REPORTS REFINEMENT
+   ========================================== */
+
+.mr-page {
+  color: #352a3d;
+}
+
+/* Embedded workspace spacing */
+.ct-page.mr-page.mr-embedded {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.mr-page.mr-embedded .ct-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mr-page.mr-embedded .ct-toolbar {
+  margin: 0 0 12px;
+  padding: 0;
+  min-height: 0;
+}
+
+/* Main report panel */
+.mr-page .ct-panel {
+  background: #ffffff;
+  border: 1px solid #e3d6ca;
+  border-radius: 12px;
+  padding: 22px 24px;
+  box-shadow: none;
+}
+
+.mr-page.mr-embedded .ct-panel {
+  background: #ffffff;
+  border-color: #e3d6ca;
+}
+
+/* Section heading */
+.mr-page .ct-section-heading {
+  margin-bottom: 18px;
+  padding: 0;
+}
+
+.mr-page .ct-section-heading h2 {
+  margin: 0;
+  color: #352a3d;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.mr-page .ct-section-heading p {
+  margin: 5px 0 0;
+  color: #786d76;
+  font-size: 12px;
+}
+
+/* Report history table */
+.mr-page .ct-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e8e0d9;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.mr-page .ct-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.mr-page .ct-table thead {
+  background: #f8f6f3;
+}
+
+.mr-page .ct-table th {
+  padding: 12px 15px;
+  background: #f8f6f3;
+  color: #665b65;
+  font-size: 11px;
+  font-weight: 650;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid #e8e0d9;
+}
+
+.mr-page .ct-table td {
+  padding: 13px 15px;
+  color: #352a3d;
+  font-size: 12px;
+  border-bottom: 1px solid #f0ece8;
+  vertical-align: middle;
+}
+
+.mr-page .ct-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mr-page .ct-table tbody tr:hover {
+  background: #fcfaf8;
+}
+
+.mr-page .ct-table td strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* Status badges */
+.mr-page .ct-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mr-page .ct-published {
+  background: #e9f1e9;
+  color: #42674c;
+  border: 1px solid #d3e2d4;
+}
+
+.mr-page .ct-draft {
+  background: #f4f0eb;
+  color: #75695f;
+  border: 1px solid #e6ded6;
+}
+
+/* Open report button */
+.mr-page .ct-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  padding: 0;
+  border: 1px solid #e3d6ca;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #352a3d;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.mr-page .ct-open:hover {
+  background: #f8f6f3;
+  border-color: #cdb9a9;
+}
+
+/* Report detail progress */
+.mr-page .mr-progress {
+  padding: 17px 19px;
+  background: #faf8f5;
+  border: 1px solid #e8e0d9;
+  border-radius: 9px;
+}
+
+.mr-page .mr-progress span {
+  color: #786d76;
+  font-size: 12px;
+}
+
+.mr-page .mr-progress strong {
+  color: #352a3d;
+  font-size: 23px;
+}
+
+.mr-page .mr-progress p {
+  margin-top: 10px;
+  color: #786d76;
+  font-size: 11px;
+}
+
+.mr-page progress {
+  height: 7px;
+  margin-top: 13px;
+  background: #e9e2dc;
+  accent-color: #805140;
+}
+
+.mr-page progress::-webkit-progress-bar {
+  background: #e9e2dc;
+}
+
+.mr-page progress::-webkit-progress-value {
+  background: #805140;
+}
+
+.mr-page progress::-moz-progress-bar {
+  background: #805140;
+}
+
+/* Financial figures */
+.mr-page .mr-figures {
+  gap: 0 24px;
+  margin: 18px 0 24px;
+}
+
+.mr-page .mr-figures > div {
+  padding: 15px 0;
+  border-bottom: 1px solid #ece5df;
+}
+
+.mr-page .mr-figures dt {
+  color: #786d76;
+  font-size: 11px;
+}
+
+.mr-page .mr-figures dd {
+  margin-top: 6px;
+  color: #352a3d;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Report content */
+.mr-page .mr-content {
+  gap: 20px;
+}
+
+.mr-page .mr-content h3 {
+  margin-bottom: 7px;
+  color: #352a3d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mr-page .mr-content p {
+  color: #665b65;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.mr-page .ct-button {
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.mr-page .ct-button.ct-primary {
+  background: #352a3d;
+  border-color: #352a3d;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .mr-page .ct-panel {
+    padding: 16px;
+  }
+
+  .mr-page .ct-table th,
+  .mr-page .ct-table td {
+    padding: 11px 12px;
+  }
+
+  .mr-page .mr-figures {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   BUILDORA — MONTHLY REPORT DETAIL POLISH
+   ========================================= */
+
+/* Compact report detail */
+.mr-page .mr-progress {
+  margin-top: 12px;
+  padding: 16px 18px;
+}
+
+/* Financial summary as compact cards */
+.mr-page .mr-figures {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+
+.mr-page .mr-figures > div {
+  min-width: 0;
+  padding: 16px;
+  background: #fffcf8;
+  border: 1px solid #e3d6ca;
+  border-radius: 9px;
+}
+
+.mr-page .mr-figures dt {
+  margin: 0;
+  color: #786d76;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.mr-page .mr-figures dd {
+  margin: 8px 0 0;
+  color: #352a3d;
+  font-size: clamp(15px, 1.5vw, 19px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Monthly narrative */
+.mr-page .mr-content {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mr-page .mr-content > section {
+  padding: 16px 18px;
+  border: 1px solid #e9e1da;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.mr-page .mr-content h3 {
+  margin: 0 0 8px;
+  color: #352a3d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mr-page .mr-content p {
+  margin: 0;
+  color: #665b65;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .mr-page .mr-figures {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .mr-page .mr-figures {
+    grid-template-columns: 1fr;
+  }
+
+  .mr-page .mr-content > section {
+    padding: 14px;
+  }
+}
+
+/* BUILDORA — clean report details */
+
+/* Four financial cards: pure white, no pink/peach */
+.mr-page .mr-figures > div {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+/* Card labels */
+.mr-page .mr-figures dt {
+  color: #667085;
+  font-size: 11px;
+}
+
+/* Card values */
+.mr-page .mr-figures dd {
+  color: #352a3d;
+  font-weight: 700;
+}
+
+/* Reduce spacing above report month */
+.mr-page .ct-section-heading {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* Remove pink/peach from summary sections */
+.mr-page .mr-content > section {
+  background: #ffffff;
+  border-color: #e5e7eb;
+}
+

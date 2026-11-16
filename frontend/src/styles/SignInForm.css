@@ -1,0 +1,189 @@
+.buildora-signin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 22px 32px 18px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.buildora-signin,
+.buildora-signin * {
+  box-sizing: border-box;
+}
+
+.buildora-signin > section {
+  flex-shrink: 0;
+}
+
+.buildora-signin > section h1 {
+  max-width: 370px;
+  margin-top: 9px;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.buildora-signin > section > p:last-child {
+  max-width: 350px;
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.buildora-signin > form {
+  flex-shrink: 0;
+  min-width: 0;
+  margin-top: 20px;
+}
+
+.buildora-signin form input:not([type="checkbox"]) {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  font-size: 13px;
+}
+
+.buildora-signin .signin-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.buildora-signin .signin-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #777177;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.buildora-signin .signin-remember input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #c25a43;
+}
+
+.buildora-signin .signin-forgot {
+  flex-shrink: 0;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: #c25a43;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buildora-signin .signin-forgot:hover {
+  text-decoration: underline;
+}
+
+.buildora-signin form > button[type="submit"] {
+  min-height: 46px;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+/* Google sign-in container */
+.buildora-signin form > div:last-of-type {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.buildora-signin iframe {
+  max-width: 100%;
+}
+
+/* Create-account section */
+.buildora-signin > div:last-of-type {
+  flex-shrink: 0;
+  margin-top: 18px;
+  padding: 12px 14px;
+}
+
+/* Remove the large space above the footer */
+.buildora-signin > p:last-child {
+  flex-shrink: 0;
+  margin-top: 16px;
+  margin-bottom: 0;
+  padding-top: 0;
+  font-size: 10px;
+}
+
+.buildora-signin :is(button, input):focus-visible {
+  outline: 2px solid #c25a43;
+  outline-offset: 3px;
+}
+
+@media (max-height: 800px) {
+  .buildora-signin {
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  .buildora-signin > section h1 {
+    font-size: 25px;
+  }
+
+  .buildora-signin > section > p:last-child {
+    margin-top: 9px;
+    line-height: 1.5;
+  }
+
+  .buildora-signin > form {
+    margin-top: 15px;
+  }
+
+  .buildora-signin > div:last-of-type {
+    margin-top: 14px;
+  }
+
+  .buildora-signin > p:last-child {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  .buildora-signin {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .buildora-signin > section h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .buildora-signin .signin-options {
+    flex-wrap: wrap;
+  }
+
+  .buildora-signin .signin-forgot {
+    margin-left: auto;
+  }
+}
+
+.buildora-signin .signin-options {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buildora-signin .signin-forgot {
+  display: block;
+  width: fit-content;
+  margin-left: auto !important;
+  text-align: right;
+}
