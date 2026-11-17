@@ -5,7 +5,7 @@ from fastapi import HTTPException
 from PIL import Image, ImageOps
 
 
-MAX_COVER_BYTES = 2 * 1024 * 1024
+MAX_COVER_BYTES = 5 * 1024 * 1024
 COVER_FORMATS = {
     "data:image/jpeg;base64": "JPEG",
     "data:image/png;base64": "PNG",
@@ -46,7 +46,7 @@ def prepare_project_cover(value: str | None) -> str | None:
     except (ValueError, OSError, Image.DecompressionBombError) as exc:
         raise HTTPException(
             status_code=422,
-            detail="Choose a valid JPG, PNG or WebP photo up to 2 MB and 20 megapixels.",
+            detail="Choose a valid JPG, PNG or WebP photo up to 5 MB and 20 megapixels.",
         ) from exc
 
     encoded_cover = base64.b64encode(output.getvalue()).decode("ascii")

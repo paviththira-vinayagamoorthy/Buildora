@@ -3065,3 +3065,11 @@ inset-inline: 0;
   opacity: 1;
   visibility: visible;
 }
+
+.bd-cover-error {
+  color: #a33b55;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}

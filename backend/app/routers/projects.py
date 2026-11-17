@@ -30,6 +30,9 @@ from app.schemas.project import (
 
 from app.services.project_cover import prepare_project_cover
 
+from app.models.organization_subscription import OrganizationSubscription
+from app.routers.billing import get_project_limit
+
 
 router = APIRouter(
     prefix="/projects",
@@ -144,6 +147,8 @@ def create_project(
     current_user: User = Depends(get_current_user),
 ):
     try:
+        print("BUILDORA CREATE PROJECT ENDPOINT HIT", flush=True)
+
         # Lock company while checking approval and creating project.
         organization = (
             db.query(Organization)
@@ -201,6 +206,39 @@ def create_project(
                 detail=messages.get(
                     organization.verification_status,
                     "Company approval is required to create projects.",
+                ),
+            )
+
+        # Enforce subscription project limit
+        sub = db.get(
+            OrganizationSubscription,
+            organization_id,
+        )
+
+        project_limit = get_project_limit(sub)
+
+        active_count = (
+            db.query(Project)
+            .filter(
+                Project.organization_id == organization_id,
+                Project.status == "active",
+            )
+            .count()
+        )
+
+        if project_limit == 0:
+            raise HTTPException(
+                status_code=403,
+                detail="An active subscription is required to create projects.",
+            )
+
+        if project_limit is not None and active_count >= project_limit:
+            raise HTTPException(
+                status_code=409,
+                detail=(
+                    f"Your subscription allows only {project_limit} "
+                    "active projects. Archive an existing project "
+                    "or upgrade your plan."
                 ),
             )
 
@@ -637,7 +675,7 @@ def edit_project(
         )
 
 class ProjectCoverUpdate(BaseModel):
-    cover_image: str = Field(max_length=2_796_240)
+    cover_image: str = Field(max_length=7_000_000)
 
 
 @router.patch("/{project_id}/cover")
@@ -826,6 +864,39 @@ def restore_project(
             raise HTTPException(
                 status_code=400,
                 detail="Only archived projects can be restored.",
+            )
+
+        # Check subscription limit before restoring a project
+        sub = db.get(
+            OrganizationSubscription,
+            project.organization_id,
+        )
+
+        project_limit = get_project_limit(sub)
+
+        active_count = (
+            db.query(Project)
+            .filter(
+                Project.organization_id == project.organization_id,
+                Project.status == "active",
+            )
+            .count()
+        )
+
+        if project_limit == 0:
+            raise HTTPException(
+                status_code=403,
+                detail="An active subscription is required to restore projects.",
+            )
+
+        if project_limit is not None and active_count >= project_limit:
+            raise HTTPException(
+                status_code=409,
+                detail=(
+                    f"Your subscription allows only {project_limit} "
+                    "active projects. Archive an existing project "
+                    "or upgrade your plan."
+                ),
             )
 
         project.status = "active"

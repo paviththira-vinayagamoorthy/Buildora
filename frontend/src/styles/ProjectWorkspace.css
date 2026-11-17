@@ -3953,3 +3953,18 @@
     margin-top: 6px;
   }
 }
+
+
+/* Project Overview — lavender KPI cards only */
+.pd-metrics > .pd-stat-card {
+  background-color: #F1EAFB;
+  border: 1px solid #E2D4F3;
+}
+
+
+/* Project Overview — top 4 cards only */
+.pd-page .pd-metrics > .pd-stat-card {
+  background: #F1EAFB !important;
+  border-color: #E2D4F3 !important;
+}
+

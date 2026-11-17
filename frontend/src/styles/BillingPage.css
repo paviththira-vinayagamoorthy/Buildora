@@ -1,167 +1,1302 @@
 
+/* BUILDORA — DEEP COCOA PLUM BILLING */
+
 .bd-billing {
+  --cream: #faf6f0;
+  --plum: #322638;
+  --plum-soft: #503a4b;
+  --muted: #786b74;
+  --beige: #d9c8bd;
+
   min-height: 100vh;
-  padding: 48px 6%;
-  background: #fffcf8;
-  color: #352a3d;
-  font-family: inherit;
+  overflow: hidden;
+  padding: 48px 20px 65px;
+  background: var(--cream);
+  color: var(--plum);
+  font-family: "Inter", sans-serif;
+}
+
+.bd-billing *,
+.bd-billing *::before,
+.bd-billing *::after {
+  box-sizing: border-box;
+}
+
+.bd-billing-content {
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .bd-billing-header {
-  max-width: 760px;
-  margin-bottom: 36px;
+  max-width: 750px;
+  margin: 0 auto 35px;
+  text-align: center;
 }
 
-.bd-eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #805140;
+.bd-eyebrow,
+.bd-section-label {
+  color: #765768;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
 }
 
 .bd-billing-header h1 {
-  margin: 12px 0;
-  font-size: clamp(28px, 4vw, 42px);
+  margin: 17px 0;
+  color: #322638;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -1.5px;
+}
+
+.bd-billing-header h1 span {
+  background: linear-gradient(90deg, #503448, #906d7c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .bd-billing-header p {
-  color: #6b6470;
-  line-height: 1.7;
+  margin: 0 auto;
+  color: #786b74;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
-.bd-org-section {
-  max-width: 480px;
-  margin-bottom: 28px;
-}
+/* Optional organization selector */
 
-.bd-org-section label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.bd-org-input {
+.bd-organization-picker {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 20px;
 }
 
-.bd-org-input input {
-  flex: 1;
-  min-width: 0;
-  padding: 12px;
-  border: 1px solid #d9c8ba;
-  border-radius: 8px;
-  background: white;
+.bd-organization-picker label {
+  color: #786b74;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.bd-org-input button,
-.bd-plan button {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
-  background: #352a3d;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.bd-org-input button:disabled,
-.bd-plan button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.bd-current-plan {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  padding: 16px 20px;
-  margin-bottom: 28px;
-  border: 1px solid #d9c8ba;
+.bd-organization-picker select {
+  min-height: 42px;
+  max-width: 260px;
+  padding: 0 13px;
+  border: 1px solid #d7c8bf;
   border-radius: 10px;
-  background: white;
+  background: #fffcf8;
+  color: #322638;
+  font: inherit;
 }
 
-.bd-plans {
+/* Small subscription status — no big white box */
+
+.bd-plan-summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 25px;
+  max-width: 900px;
+  margin: 0 auto 38px;
+  color: #786b74;
+  font-size: 12px;
+  text-align: center;
+}
+
+.bd-plan-summary strong {
+  color: #503448;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+/* Messages */
+
+.bd-message {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto 28px;
+  padding: 15px 18px;
+  border: 1px solid #d9c8bd;
+  border-radius: 13px;
+  background: #f2e9e5;
+  color: #503448;
+  font-size: 13px;
+}
+
+.bd-error {
+  border-color: #ecc3bb;
+  background: #fff0ed;
+  color: #9f3434;
+}
+
+.bd-activated {
+  border-color: #a9d9bf;
+  background: #e9f5ee;
+  color: #236447;
+  animation: bd-success 0.5s ease both;
+}
+
+.bd-activated strong {
+  display: block;
+  font-size: 16px;
+}
+
+.bd-activated p {
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.bd-success-icon {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(220px, 1fr)
-  );
-  gap: 18px;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #10b981;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.bd-spinner {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 3px solid #e5d7ce;
+  border-top-color: #503448;
+  border-radius: 50%;
+  animation: bd-spin 0.8s linear infinite;
+}
+
+@keyframes bd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bd-success {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pricing heading */
+
+.bd-pricing-heading {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.bd-pricing-heading h2 {
+  margin: 12px 0;
+  color: #322638;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(27px, 4vw, 37px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.bd-pricing-heading p {
+  margin: 0;
+  color: #786b74;
+  font-size: 13px;
+}
+
+/* 3D carousel */
+
+.bd-carousel {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  perspective: 1400px;
+  touch-action: pan-y;
+}
+
+.bd-carousel-stage {
+  position: relative;
+  height: 565px;
+  transform-style: preserve-3d;
 }
 
 .bd-plan {
+  position: absolute;
+  top: 27px;
+  left: 50%;
   display: flex;
   flex-direction: column;
-  padding: 26px;
-  border: 1px solid #d9c8ba;
-  border-radius: 14px;
-  background: white;
+  width: 340px;
+  height: 505px;
+  padding: 27px;
+  overflow: hidden;
+  border: 1px solid #806778;
+  border-radius: 24px;
+  background: linear-gradient(
+    155deg,
+    #503a4b 0%,
+    #392a3d 52%,
+    #281f30 100%
+  );
+  color: #fffaf5;
+  box-shadow: 0 25px 65px rgba(50, 38, 56, 0.24);
+  backface-visibility: hidden;
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s ease,
+    filter 0.7s ease,
+    box-shadow 0.7s ease;
 }
 
-.bd-plan h2 {
-  font-size: 20px;
-  margin: 0 0 20px;
+.bd-position-center {
+  z-index: 5;
+  opacity: 1;
+  filter: brightness(1);
+  transform:
+    translateX(-50%)
+    translateZ(100px)
+    scale(1);
+}
+
+.bd-position-left-one {
+  z-index: 4;
+  opacity: 0.85;
+  filter: brightness(0.8);
+  transform:
+    translateX(-50%)
+    translateX(-160px)
+    translateZ(-45px)
+    rotateY(17deg)
+    scale(0.86);
+}
+
+.bd-position-right-one {
+  z-index: 4;
+  opacity: 0.85;
+  filter: brightness(0.8);
+  transform:
+    translateX(-50%)
+    translateX(160px)
+    translateZ(-45px)
+    rotateY(-17deg)
+    scale(0.86);
+}
+
+.bd-position-left-two {
+  z-index: 3;
+  opacity: 0.58;
+  filter: brightness(0.62);
+  transform:
+    translateX(-50%)
+    translateX(-280px)
+    translateZ(-160px)
+    rotateY(25deg)
+    scale(0.7);
+}
+
+.bd-position-right-two {
+  z-index: 3;
+  opacity: 0.58;
+  filter: brightness(0.62);
+  transform:
+    translateX(-50%)
+    translateX(280px)
+    translateZ(-160px)
+    rotateY(-25deg)
+    scale(0.7);
+}
+
+.bd-plan-active {
+  border-color: #d9b9a7;
+  box-shadow:
+    0 35px 85px rgba(50, 38, 56, 0.32),
+    0 0 32px rgba(145, 105, 124, 0.13);
+}
+
+/* Card contents */
+
+.bd-plan-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 25px;
+  margin-bottom: 22px;
+}
+
+.bd-plan-tag {
+  padding: 7px 10px;
+  border: 1px solid rgba(229, 215, 206, 0.35);
+  border-radius: 30px;
+  background: rgba(229, 215, 206, 0.13);
+  color: #f0d9c9;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.bd-plan-current {
+  color: #a7f3d0;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.bd-plan h3 {
+  margin: 0 0 9px;
+  color: #fffaf5;
+  font-family: "Sora", sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.bd-plan-description {
+  min-height: 40px;
+  margin: 0 0 18px;
+  color: #e1d0d8;
+  font-size: 12px;
+  line-height: 1.65;
 }
 
 .bd-price {
-  font-size: 29px;
-  font-weight: 750;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 19px;
+}
+
+.bd-price strong {
+  color: #fffaf5;
+  font-family: "Sora", sans-serif;
+  font-size: 31px;
+  font-weight: 800;
 }
 
 .bd-price span {
-  font-size: 13px;
-  font-weight: 400;
-  color: #6b6470;
+  color: #e1d0d8;
+  font-size: 12px;
 }
 
-.bd-plan p {
-  color: #6b6470;
-  font-size: 14px;
-  line-height: 1.6;
+.bd-plan-divider {
+  height: 1px;
+  margin-bottom: 19px;
+  background: rgba(229, 215, 206, 0.25);
 }
 
 .bd-project-limit {
-  margin: 16px 0 26px;
-  font-weight: 600;
-}
-
-.bd-plan button {
-  margin-top: auto;
-  width: 100%;
-}
-
-.bd-notice,
-.bd-error {
-  padding: 14px 18px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.bd-notice {
-  border: 1px solid #d9c8ba;
-  background: white;
-}
-
-.bd-error {
-  border: 1px solid #c87979;
-  background: #fff5f5;
-  color: #922e2e;
-}
-
-.bd-footnote {
-  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+  color: #fff5ed;
   font-size: 13px;
-  color: #6b6470;
+  font-weight: 750;
 }
+
+.bd-project-icon {
+  color: #e6bfa9;
+  font-size: 19px;
+}
+
+.bd-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.bd-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #e1d0d8;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.bd-feature-check {
+  color: #e6bfa9;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.bd-choose-btn {
+  width: 100%;
+  min-height: 46px;
+  margin-top: auto;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #d9b9a7, #f0d8c5);
+  color: #322638;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bd-choose-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(217, 185, 167, 0.3);
+}
+
+.bd-choose-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Controls */
+
+.bd-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.bd-arrow {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  padding: 0 0 5px;
+  border: 1px solid #806778;
+  border-radius: 50%;
+  background: #322638;
+  color: #fffaf5;
+  font-size: 37px;
+  cursor: pointer;
+}
+
+.bd-arrow:hover {
+  background: #503a4b;
+}
+
+.bd-carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bd-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: #d7c8bf;
+  cursor: pointer;
+}
+
+.bd-dot-active {
+  width: 25px;
+  background: #503448;
+}
+
+.bd-carousel-counter {
+  margin: 17px 0 0;
+  color: #786b74;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+
+.bd-billing-footer {
+  max-width: 850px;
+  margin: 58px auto 0;
+  text-align: center;
+}
+
+.bd-footer-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 25px;
+  margin-bottom: 24px;
+  color: #65465b;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.bd-billing-footer > p {
+  color: #81737a;
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .bd-position-left-one {
+    transform:
+      translateX(-50%)
+      translateX(-115px)
+      translateZ(-45px)
+      rotateY(17deg)
+      scale(0.84);
+  }
+
+  .bd-position-right-one {
+    transform:
+      translateX(-50%)
+      translateX(115px)
+      translateZ(-45px)
+      rotateY(-17deg)
+      scale(0.84);
+  }
+
+  .bd-position-left-two {
+    transform:
+      translateX(-50%)
+      translateX(-190px)
+      translateZ(-160px)
+      rotateY(25deg)
+      scale(0.68);
+  }
+
+  .bd-position-right-two {
+    transform:
+      translateX(-50%)
+      translateX(190px)
+      translateZ(-160px)
+      rotateY(-25deg)
+      scale(0.68);
+  }
+}
+
+/* Mobile */
 
 @media (max-width: 600px) {
   .bd-billing {
-    padding: 28px 18px;
+    padding: 30px 14px 55px;
   }
 
-  .bd-org-input {
+  .bd-billing-header {
+    margin-bottom: 27px;
+  }
+
+  .bd-organization-picker {
     flex-direction: column;
   }
+
+  .bd-plan-summary {
+    gap: 8px 15px;
+    margin-bottom: 30px;
+  }
+
+  .bd-carousel-stage {
+    height: 535px;
+  }
+
+  .bd-plan {
+    top: 25px;
+    width: 300px;
+    height: 475px;
+    padding: 22px;
+  }
+
+  .bd-plan h3 {
+    font-size: 25px;
+  }
+
+  .bd-price strong {
+    font-size: 28px;
+  }
+
+  .bd-plan-top {
+    margin-bottom: 17px;
+  }
+
+  .bd-feature-list {
+    gap: 11px;
+  }
+
+  .bd-position-center {
+    transform:
+      translateX(-50%)
+      translateZ(100px)
+      scale(0.95);
+  }
+
+  .bd-position-left-one {
+    transform:
+      translateX(-50%)
+      translateX(-68px)
+      translateZ(-45px)
+      rotateY(17deg)
+      scale(0.79);
+  }
+
+  .bd-position-right-one {
+    transform:
+      translateX(-50%)
+      translateX(68px)
+      translateZ(-45px)
+      rotateY(-17deg)
+      scale(0.79);
+  }
+
+  .bd-position-left-two {
+    transform:
+      translateX(-50%)
+      translateX(-108px)
+      translateZ(-160px)
+      rotateY(25deg)
+      scale(0.63);
+  }
+
+  .bd-position-right-two {
+    transform:
+      translateX(-50%)
+      translateX(108px)
+      translateZ(-160px)
+      rotateY(-25deg)
+      scale(0.63);
+  }
+
+  .bd-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .bd-billing-footer {
+    margin-top: 45px;
+  }
 }
+
+@media (max-width: 360px) {
+  .bd-plan {
+    width: 275px;
+    padding: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bd-billing *,
+  .bd-billing *::before,
+  .bd-billing *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* BUILDORA — SAFE BILLING UI POLISH */
+
+.bd-billing {
+  padding-top: 28px;
+}
+
+.bd-billing-header {
+  margin-bottom: 22px;
+}
+
+.bd-billing-header h1 {
+  max-width: 900px;
+  margin: 12px auto 14px;
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -1.5px;
+}
+
+.bd-plan-summary {
+  margin-bottom: 24px;
+}
+
+.bd-pricing-heading {
+  margin-bottom: 8px;
+}
+
+.bd-pricing-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(25px, 3vw, 32px);
+}
+
+.bd-carousel-stage {
+  height: 540px;
+}
+
+/* Reduce overlap between side cards */
+
+.bd-position-left-one {
+  transform:
+    translateX(-50%)
+    translateX(-200px)
+    translateZ(-65px)
+    rotateY(16deg)
+    scale(0.83);
+}
+
+.bd-position-right-one {
+  transform:
+    translateX(-50%)
+    translateX(200px)
+    translateZ(-65px)
+    rotateY(-16deg)
+    scale(0.83);
+}
+
+.bd-position-left-two {
+  transform:
+    translateX(-50%)
+    translateX(-340px)
+    translateZ(-180px)
+    rotateY(23deg)
+    scale(0.66);
+}
+
+.bd-position-right-two {
+  transform:
+    translateX(-50%)
+    translateX(340px)
+    translateZ(-180px)
+    rotateY(-23deg)
+    scale(0.66);
+}
+
+/* Keep mobile layout stable */
+
+@media (max-width: 600px) {
+  .bd-billing-header h1 {
+    font-size: 30px;
+  }
+
+  .bd-carousel-stage {
+    height: 520px;
+  }
+
+  .bd-position-left-one {
+    transform:
+      translateX(-50%)
+      translateX(-68px)
+      translateZ(-45px)
+      rotateY(17deg)
+      scale(0.79);
+  }
+
+  .bd-position-right-one {
+    transform:
+      translateX(-50%)
+      translateX(68px)
+      translateZ(-45px)
+      rotateY(-17deg)
+      scale(0.79);
+  }
+
+  .bd-position-left-two {
+    transform:
+      translateX(-50%)
+      translateX(-108px)
+      translateZ(-160px)
+      rotateY(25deg)
+      scale(0.63);
+  }
+
+  .bd-position-right-two {
+    transform:
+      translateX(-50%)
+      translateX(108px)
+      translateZ(-160px)
+      rotateY(-25deg)
+      scale(0.63);
+  }
+}
+
+
+
+/* BUILDORA — MINIMAL SUBSCRIPTION PAGE */
+
+.bd-billing-header,
+.bd-pricing-heading {
+  display: none;
+}
+
+.bd-billing {
+  padding-top: 35px;
+}
+
+.bd-plan-summary {
+  margin-bottom: 12px;
+}
+
+
+/* BUILDORA — CLEAN PREMIUM PRICING GRID */
+
+.bd-billing .bd-pricing-section {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bd-billing .bd-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1120px;
+  margin: 24px auto 45px;
+  align-items: stretch;
+}
+
+.bd-billing .bd-grid-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 440px;
+  padding: 28px;
+  border: 1px solid rgba(217, 200, 189, 0.25);
+  border-radius: 25px;
+  background: linear-gradient(
+    155deg,
+    #433647 0%,
+    #2d2533 100%
+  );
+  color: #fffaf5;
+  box-shadow: 0 15px 35px rgba(50, 38, 56, 0.10);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.bd-billing .bd-grid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(50, 38, 56, 0.20);
+}
+
+/* Highlight Professional */
+
+.bd-billing .bd-grid-card-featured {
+  background: linear-gradient(
+    155deg,
+    #89647d 0%,
+    #503a55 52%,
+    #30263c 100%
+  );
+  border-color: #d9b9a7;
+  box-shadow:
+    0 20px 48px rgba(80, 58, 75, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.bd-billing .bd-grid-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 26px;
+  margin-bottom: 23px;
+}
+
+.bd-billing .bd-grid-tag {
+  color: #f0d9c9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.bd-billing .bd-grid-current {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: rgba(167, 243, 208, 0.14);
+  color: #a7f3d0;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.bd-billing .bd-grid-card h3 {
+  margin: 0 0 15px;
+  color: #fffaf5;
+  font-family: "Sora", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.bd-billing .bd-grid-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.bd-billing .bd-grid-price strong {
+  color: #fffaf5;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(25px, 2.5vw, 34px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.bd-billing .bd-grid-price span {
+  color: #e2d3dd;
+  font-size: 12px;
+}
+
+.bd-billing .bd-grid-description {
+  min-height: 42px;
+  margin: 0 0 20px;
+  color: #e1d0d8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.bd-billing .bd-grid-button {
+  width: 100%;
+  min-height: 45px;
+  margin: 0 0 23px;
+  border: 0;
+  border-radius: 30px;
+  background: #fffaf5;
+  color: #322638;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bd-billing .bd-grid-button:hover:not(:disabled) {
+  background: #f0d8c5;
+  transform: translateY(-2px);
+}
+
+.bd-billing .bd-grid-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.bd-billing .bd-grid-divider {
+  height: 1px;
+  margin-bottom: 22px;
+  background: rgba(255, 250, 245, 0.18);
+}
+
+.bd-billing .bd-grid-projects {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+  color: #fffaf5;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.bd-billing .bd-grid-projects span,
+.bd-billing .bd-grid-features li span {
+  color: #e8c4ac;
+  font-weight: 900;
+}
+
+.bd-billing .bd-grid-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bd-billing .bd-grid-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #e1d0d8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Tablet */
+
+@media (max-width: 950px) {
+  .bd-billing .bd-pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 720px;
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .bd-billing .bd-pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 390px;
+    gap: 18px;
+    margin-top: 15px;
+  }
+
+  .bd-billing .bd-grid-card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  .bd-billing .bd-grid-price strong {
+    font-size: 30px;
+  }
+}
+
+
+/* BUILDORA — COMPACT 5-CARD PRICING LAYOUT */
+
+@media (min-width: 1100px) {
+  .bd-billing {
+    padding: 18px 24px 12px !important;
+  }
+
+  .bd-billing .bd-billing-content {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .bd-billing .bd-plan-summary {
+    margin-bottom: 12px;
+  }
+
+  .bd-billing .bd-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 1500px;
+    margin: 12px auto 18px;
+  }
+
+  /* Override previous 3+2 alignment rules */
+  .bd-billing .bd-grid-card,
+  .bd-billing .bd-grid-card:nth-child(4),
+  .bd-billing .bd-grid-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .bd-billing .bd-grid-card {
+    min-height: 0;
+    padding: 19px 15px;
+    border-radius: 20px;
+  }
+
+  .bd-billing .bd-grid-card-top {
+    margin-bottom: 13px;
+    min-height: 20px;
+  }
+
+  .bd-billing .bd-grid-tag {
+    font-size: 9px;
+  }
+
+  .bd-billing .bd-grid-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .bd-billing .bd-grid-price {
+    margin-bottom: 10px;
+  }
+
+  .bd-billing .bd-grid-price strong {
+    font-size: clamp(20px, 1.8vw, 27px);
+  }
+
+  .bd-billing .bd-grid-price span {
+    font-size: 10px;
+  }
+
+  .bd-billing .bd-grid-description {
+    min-height: 40px;
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .bd-billing .bd-grid-button {
+    min-height: 38px;
+    margin-bottom: 15px;
+    font-size: 11px;
+  }
+
+  .bd-billing .bd-grid-divider {
+    margin-bottom: 15px;
+  }
+
+  .bd-billing .bd-grid-projects {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .bd-billing .bd-grid-features {
+    gap: 9px;
+  }
+
+  .bd-billing .bd-grid-features li {
+    font-size: 10px;
+    gap: 7px;
+  }
+
+  .bd-billing .bd-billing-footer {
+    margin-top: 8px;
+  }
+}
+
+/* Smaller screens: keep cards readable */
+@media (min-width: 701px) and (max-width: 1099px) {
+  .bd-billing .bd-pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bd-billing .bd-grid-card,
+  .bd-billing .bd-grid-card:nth-child(4),
+  .bd-billing .bd-grid-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .bd-billing .bd-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bd-billing .bd-grid-card,
+  .bd-billing .bd-grid-card:nth-child(4),
+  .bd-billing .bd-grid-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+
+
+/* BUILDORA — CENTER PRICING CARDS ON SCREEN */
+
+@media (min-width: 1100px) and (min-height: 700px) {
+  .bd-billing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bd-billing .bd-billing-content {
+    width: 100%;
+  }
+}
+
+
+/* BUILDORA — PRICING HEADING & STARTER CLARITY */
+
+.bd-billing .bd-grid-heading {
+  text-align: center;
+  margin: 0 auto 18px;
+}
+
+.bd-billing .bd-grid-heading h2 {
+  margin: 0 0 5px;
+  color: #322638;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(23px, 2.4vw, 30px);
+  font-weight: 800;
+}
+
+.bd-billing .bd-grid-heading p {
+  margin: 0;
+  color: #705f6d;
+  font-size: 13px;
+}
+
+.bd-billing .bd-starter-note {
+  margin: -5px 0 8px;
+  color: #f0d9c9;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.bd-billing .bd-billing-footer p {
+  color: #625365;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .bd-billing .bd-grid-heading {
+    margin-bottom: 18px;
+  }
+}
+
+
+
+/* BUILDORA — REMOVE CARD TOP LABELS */
+
+.bd-billing .bd-grid-card-top {
+  display: none;
+}
+
+
+
+/* BUILDORA — PREMIUM HEADING POLISH */
+
+.bd-billing .bd-plan-summary {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 auto 12px;
+}
+
+.bd-billing .bd-plan-summary > span {
+  padding: 9px 17px;
+  border: 1px solid #e8d7e6;
+  border-radius: 999px;
+  background: #f2e8f1;
+  color: #765768;
+  font-size: 12px;
+}
+
+.bd-billing .bd-plan-summary strong {
+  color: #322638;
+}
+
+.bd-billing .bd-grid-heading {
+  text-align: center;
+  margin: 0 auto 24px;
+}
+
+.bd-billing .bd-grid-heading h2 {
+  margin: 0 0 8px;
+  color: #322638;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(27px, 3vw, 39px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.bd-billing .bd-grid-heading p {
+  margin: 0;
+  color: #786a77;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* BUILDORA — ALIGN ALL PRICING BUTTONS */
+
+.bd-billing .bd-grid-description {
+  min-height: 58px;
+}
+
+.bd-billing .bd-starter-note {
+  margin-bottom: 0;
+}
+
+
+
+

@@ -318,9 +318,9 @@ async function changeCover(event) {
 
   if (
     !["image/jpeg", "image/png", "image/webp"].includes(file.type) ||
-    file.size > 2 * 1024 * 1024
+    file.size > 5 * 1024 * 1024
   ) {
-    setCoverError("Choose a JPG, PNG or WebP photo up to 2 MB.");
+    setCoverError("Choose a JPG, PNG or WebP photo up to 5 MB.");
     return;
   }
 
@@ -451,7 +451,11 @@ async function changeCover(event) {
           )}
         </div>
 
-{coverError && <p role="alert">{coverError}</p>}
+{coverError && (
+  <p className="bd-cover-error" role="alert">
+    {coverError}
+  </p>
+)}
         <div className="bd-project-footer">
           <span>{roleLabel(project.project_role)}</span>
 
@@ -2360,7 +2364,7 @@ onManage={(action, project) => {
           !["image/jpeg", "image/png", "image/webp"].includes(file.type) ||
           file.size > 2 * 1024 * 1024
         ) {
-          setModalError("Choose a JPG, PNG or WebP photo up to 2 MB.");
+          setModalError("Choose a JPG, PNG or WebP photo up to 5 MB.");
           return;
         }
 

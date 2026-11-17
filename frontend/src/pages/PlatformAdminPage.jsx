@@ -326,7 +326,10 @@ reviewDialogRef.current?.close();
           <h2>{company.name}</h2>
         </div>
 
-        <span className="pa-badge">
+        <span
+  className="pa-badge"
+  data-status={subscription.status}
+>
           {STATUS_LABELS[company.verification_status] ||
             company.verification_status}
         </span>
@@ -750,64 +753,35 @@ function PlatformAdminUsers({ initialFilter = "all" }) {
   aria-label="Registered users table"
   tabIndex={0}
 >
-  <table className="pa-users-table">
-    <thead>
-      <tr>
-        <th scope="col">User</th>
-        <th scope="col">Role</th>
-        <th scope="col">Account type</th>
-        <th scope="col">Status</th>
+  
+
+<table className="pa-users-table">
+  <thead>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {users.slice(0, PAGE_SIZE).map((user) => (
+      <tr key={user.id}>
+        <th scope="row">
+          {user.full_name || user.name || "—"}
+        </th>
+        <td>{user.email || "—"}</td>
+        <td>{getAdminUserRoleLabel(user)}</td>
+        <td>
+          <span className="pa-badge">
+            {user.is_active ? "Active" : "Inactive"}
+          </span>
+        </td>
       </tr>
-    </thead>
+    ))}
+  </tbody>
+</table>
 
-    <tbody>
-      {users.slice(0, PAGE_SIZE).map((user) => {
-        const name = user.full_name?.trim() || "Unnamed user";
-        const initials = name
-          .split(/\s+/)
-          .slice(0, 2)
-          .map((word) => word[0].toUpperCase())
-          .join("");
-
-        const accountType =
-          user.system_role === "platform_admin"
-            ? "Platform Admin"
-            : user.system_role === "user"
-              ? "User"
-              : user.system_role || "—";
-
-        return (
-          <tr key={user.id}>
-            <th scope="row">
-              <span className="pa-users-identity">
-                <span className="pa-users-avatar" aria-hidden="true">
-                  {user.photo_data ? (
-                    <img src={user.photo_data} alt="" />
-                  ) : (
-                    initials
-                  )}
-                </span>
-
-                <strong>{name}</strong>
-              </span>
-            </th>
-
-            <td>{getAdminUserRoleLabel(user)}</td>
-            <td>{accountType}</td>
-            <td>
-              <span
-                className={`pa-badge pa-user-status ${
-                  user.is_active ? "is-active" : "is-inactive"
-                }`}
-              >
-                {user.is_active ? "Active" : "Inactive"}
-              </span>
-            </td>
-          </tr>
-        );
-      })}
-    </tbody>
-  </table>
 </div>
         )}
 
@@ -1128,30 +1102,64 @@ function PlatformAdminOrganizationSubscriptions() {
           aria-label="Organization subscriptions table"
           tabIndex={0}
         >
-          <table className="pa-users-table">
-            <thead>
-              <tr>
-                <th scope="col">Company</th>
-                <th scope="col">Assigned plan</th>
-                <th scope="col">Subscription status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {subscriptions.map((subscription) => (
-                <tr key={subscription.organization_id}>
-                  <th scope="row">{subscription.organization_name}</th>
-                  <td>{subscription.plan ?? "Not configured"}</td>
-                  <td>
-                    <span className="pa-badge">
-                      {subscription.status === "setup_pending"
-                        ? "Setup pending"
-                        : subscription.status.replaceAll("_", " ")}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+
+<table className="pa-users-table">
+  <thead>
+    <tr>
+      <th scope="col">Company</th>
+      <th scope="col">Assigned plan</th>
+      <th scope="col">Subscription status</th>
+      <th scope="col">Period starts</th>
+      <th scope="col">Renews / Expires</th>
+    </tr>
+  </thead>
+  <tbody>
+    {subscriptions.map((subscription) => (
+      <tr key={subscription.organization_id}>
+        <th scope="row">
+          <strong>{subscription.organization_name}</strong>
+        </th>
+
+        <td>{subscription.plan ?? "Not configured"}</td>
+
+        <td>
+
+<span
+  className="pa-badge"
+  style={{
+    backgroundColor:
+      subscription.status === "active" ? "#DCFCE7" : "#FEF3C7",
+    color:
+      subscription.status === "active" ? "#166534" : "#92400E",
+    border:
+      subscription.status === "active"
+        ? "1px solid #86EFAC"
+        : "1px solid #FCD34D",
+  }}
+>
+  {subscription.status === "setup_pending"
+    ? "Setup pending"
+    : subscription.status.replaceAll("_", " ")}
+</span>
+
+        </td>
+
+        <td>
+          {subscription.activated_at
+            ? new Date(subscription.activated_at).toLocaleDateString("en-GB")
+            : "—"}
+        </td>
+
+        <td>
+          {subscription.expires_at
+            ? new Date(subscription.expires_at).toLocaleDateString("en-GB")
+            : "—"}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
         </div>
       )}
     </section>

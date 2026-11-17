@@ -37,6 +37,9 @@ from app.schemas.boq import (
     BOQImportConfirm,
 )
 
+from app.models.organization_subscription import OrganizationSubscription
+from app.routers.billing import can_write
+
 
 router = APIRouter(
     prefix="/boq",
@@ -136,6 +139,21 @@ def ensure_project_active(project):
             detail="Archived projects are read-only. Restore the project to make changes.",
         )
 
+def ensure_subscription_writable(db, project):
+    sub = db.get(
+        OrganizationSubscription,
+        project.organization_id,
+    )
+
+    if not can_write(sub):
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                "Your subscription is inactive or expired. "
+                "Renew your subscription to make changes."
+            ),
+        )
+
 def ensure_qs(db, project, current_user):
     role = get_access_role(db, project, current_user)
 
@@ -159,6 +177,7 @@ def get_boq_for_write(db, boq_id, current_user):
 
     ensure_qs(db, project, current_user)
     ensure_project_active(project)
+    ensure_subscription_writable(db, project)
 
     boq = db.scalar(
         select(BOQ)
@@ -509,6 +528,7 @@ def confirm_boq_import(
         project = get_project_or_404(db, project_id, lock=True)
         ensure_qs(db, project, current_user)
         ensure_project_active(project)
+        ensure_subscription_writable(db, project)
 
         source, revision = get_excel_import_target(
             db,
@@ -595,6 +615,7 @@ def create_boq(
         project = get_project_or_404(db, project_id, lock=True)
         ensure_qs(db, project, current_user)
         ensure_project_active(project)
+        ensure_subscription_writable(db, project)
         ensure_no_existing_boq(db, project_id)
 
         boq = BOQ(

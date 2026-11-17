@@ -34,6 +34,8 @@ from app.models.document import Document
 from app.routers.boq import get_access_role, get_project_or_404
 from app.schemas.document import DocumentCreate, DocumentResponse
 
+from app.routers.boq import ensure_subscription_writable
+
 
 logger = logging.getLogger(__name__)
 
@@ -360,9 +362,11 @@ def upload_project_document(
 
         if role not in {"qs", "organization_admin"}:
             raise HTTPException(
-                status_code=403,
-                detail="Only the assigned QS or Organization Admin can upload documents.",
+              status_code=403,
+              detail="Only the assigned QS or Organization Admin can upload documents.",
             )
+
+            ensure_subscription_writable(db, project)
 
         try:
             metadata = DocumentCreate(

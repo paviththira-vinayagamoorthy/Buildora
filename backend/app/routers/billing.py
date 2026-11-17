@@ -232,6 +232,7 @@ def find_subscription_by_stripe_id(db, stripe_id):
 
 
 def sync_stripe_subscription(db, stripe_sub):
+    stripe_sub = stripe_sub.to_dict()
     stripe_id = stripe_sub.get("id")
 
     if not stripe_id:
@@ -678,6 +679,123 @@ def create_checkout(
 # STRIPE WEBHOOK
 # ============================================================
 
+# ============================================================
+# VERIFY STRIPE CHECKOUT AFTER FRONTEND REDIRECT
+# ============================================================
+
+@router.post(
+    "/organizations/{organization_id}/verify-checkout"
+)
+def verify_checkout(
+    organization_id: int,
+    session_id: str,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    require_admin(db, organization_id, current_user.id)
+    stripe_config()
+
+    if not session_id.startswith("cs_"):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid Checkout session ID.",
+        )
+
+    try:
+        checkout = stripe.checkout.Session.retrieve(session_id)
+        checkout = checkout.to_dict()
+    except stripe.error.StripeError:
+        raise HTTPException(
+            status_code=400,
+            detail="Unable to verify Stripe Checkout session.",
+        )
+
+    metadata = checkout.get("metadata") or {}
+
+    if (
+        checkout.get("client_reference_id") != str(organization_id)
+        or metadata.get("organization_id") != str(organization_id)
+    ):
+        raise HTTPException(
+            status_code=403,
+            detail="Checkout does not belong to this organization.",
+        )
+
+    plan_code = metadata.get("plan_code")
+    plan = PLANS.get(plan_code)
+
+    if not plan or plan_code == "free_trial":
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid Checkout plan.",
+        )
+
+    if checkout.get("mode") != plan["mode"]:
+        raise HTTPException(
+            status_code=400,
+            detail="Checkout mode does not match plan.",
+        )
+
+    if (
+        checkout.get("status") != "complete"
+        or checkout.get("payment_status") != "paid"
+    ):
+        return {
+            "verified": False,
+            "status": checkout.get("status"),
+            "payment_status": checkout.get("payment_status"),
+            "message": "Payment is not confirmed yet.",
+        }
+
+    sub = db.get(
+        OrganizationSubscription,
+        organization_id,
+    )
+
+    if (
+        sub
+        and sub.stripe_checkout_session_id
+        and sub.stripe_checkout_session_id != session_id
+        and subscription_state(sub) in ("active", "canceling")
+    ):
+        raise HTTPException(
+            status_code=409,
+            detail="Another paid checkout is already active.",
+        )
+
+    try:
+        process_checkout_completed(db, checkout)
+        db.commit()
+    except ValueError as exc:
+        db.rollback()
+        raise HTTPException(
+            status_code=409,
+            detail=str(exc),
+        )
+    except Exception:
+        db.rollback()
+
+        import traceback
+        traceback.print_exc()
+
+        raise HTTPException(
+            status_code=500,
+            detail="Subscription verification failed.",
+        )
+
+    sub = db.get(
+        OrganizationSubscription,
+        organization_id,
+    )
+
+    return {
+        "verified": True,
+        "organization_id": organization_id,
+        "plan": sub.plan_code if sub else None,
+        "status": subscription_state(sub),
+        "payment_status": checkout.get("payment_status"),
+    }
+
 @router.post("/stripe/webhook")
 async def stripe_webhook(
     request: Request,
@@ -716,7 +834,7 @@ async def stripe_webhook(
 
     event_id = event["id"]
     event_type = event["type"]
-    obj = event["data"]["object"]
+    obj = event["data"]["object"].to_dict()
 
     already_processed = db.execute(
         text(
@@ -748,13 +866,22 @@ async def stripe_webhook(
             stripe_id = obj.get("id")
 
             if stripe_id:
-                # Read the current Stripe state so an old
-                # event cannot restore an outdated status.
-                retrieve_and_sync_subscription(
-                    db,
-                    stripe_id,
-                )
+                if event_type == "customer.subscription.deleted":
+                    sub = find_subscription_by_stripe_id(
+                        db,
+                        stripe_id,
+                    )
 
+                    if sub is not None:
+                        sub.status = "expired"
+                        sub.current_period_end = utcnow()
+
+                else:
+                    retrieve_and_sync_subscription(
+                        db,
+                        stripe_id,
+                    )
+                    
         elif event_type in (
             "invoice.paid",
             "invoice.payment_failed",

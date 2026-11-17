@@ -22,6 +22,8 @@ from app.routers.boq import (
     get_project_or_404,
 )
 
+from app.routers.boq import ensure_subscription_writable
+
 def ensure_project_active(project):
     if project.status != "active":
         raise HTTPException(
@@ -293,6 +295,7 @@ def create_project_valuation(
         )
 
         ensure_project_active(project)
+        ensure_subscription_writable(db, project)
 
         role = get_access_role(db, project, current_user)
 
@@ -490,6 +493,7 @@ def update_valuation_item(
         )
 
         ensure_project_active(project)
+        ensure_subscription_writable(db, project)
 
         role = get_access_role(db, project, current_user)
 
@@ -633,6 +637,7 @@ def publish_valuation(
         )
 
         ensure_project_active(project)
+        ensure_subscription_writable(db, project)
 
         role = get_access_role(db, project, current_user)
 
@@ -836,6 +841,7 @@ def update_valuation_period(
         )
 
         ensure_project_active(project)
+        ensure_subscription_writable(db, project)
 
         role = get_access_role(db, project, current_user)
 

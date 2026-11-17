@@ -586,6 +586,8 @@ def list_organization_subscriptions(db: Session = Depends(get_db)):
             Organization.name,
             OrganizationSubscription.plan_code,
             OrganizationSubscription.status,
+            OrganizationSubscription.current_period_start,
+            OrganizationSubscription.current_period_end,
             SubscriptionPlan.name.label("plan_name"),
         )
         .outerjoin(
@@ -606,10 +608,19 @@ def list_organization_subscriptions(db: Session = Depends(get_db)):
             "organization_name": organization_name,
             "plan": plan_name or plan_code,
             "status": subscription_status or "setup_pending",
+            "activated_at": period_start.isoformat() if period_start else None,
+            "expires_at": period_end.isoformat() if period_end else None,
         }
-        for organization_id, organization_name, plan_code, subscription_status,
-        plan_name in rows
-    ]    
+        for (
+            organization_id,
+            organization_name,
+            plan_code,
+            subscription_status,
+            period_start,
+            period_end,
+            plan_name,
+        ) in rows
+    ]
 @router.get("/reports/weekly-signups")
 def get_weekly_signups(db: Session = Depends(get_db)):
     colombo = timezone(timedelta(hours=5, minutes=30))

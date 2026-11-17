@@ -5797,3 +5797,113 @@
   }
 }
 
+
+
+/* Organization subscriptions — status colours only */
+
+.pa-users-panel .pa-badge[data-status="active"]{
+  background: #e5f6eb;
+  color: #17663b;
+  border: 1px solid #b9e4c8;
+}
+
+.pa-users-panel .pa-badge[data-status="setup_pending"] {
+  background: #fff2db;
+  color: #9a5a10;
+  border: 1px solid #f2d49b;
+}
+
+
+/* Organization subscription status colours */
+
+.pa-users-panel .pa-badge[data-status="active"] {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.pa-users-panel .pa-badge[data-status="setup_pending"] {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+/* Organization Subscriptions — compact status pills */
+.pa-users-table .pa-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: auto;
+  min-width: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pa-users-table .pa-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Only Organization Subscriptions typography */
+.pa-users-panel:has(#pa-org-subscriptions-title) {
+  font-family: inherit;
+}
+
+.pa-users-panel:has(#pa-org-subscriptions-title) h1,
+.pa-users-panel:has(#pa-org-subscriptions-title) dt,
+.pa-users-panel:has(#pa-org-subscriptions-title) dd,
+.pa-users-panel:has(#pa-org-subscriptions-title) th,
+.pa-users-panel:has(#pa-org-subscriptions-title) td {
+  font-family: inherit !important;
+  letter-spacing: normal;
+}
+
+
+/* Responsive — Organization Subscriptions ONLY */
+
+@media (max-width: 768px) {
+  .pa-users-panel:has(#pa-org-subscriptions-title) {
+    min-width: 0;
+    padding: 18px 14px;
+  }
+
+  .pa-users-panel:has(#pa-org-subscriptions-title)
+  .pa-subscription-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pa-users-panel:has(#pa-org-subscriptions-title)
+  .pa-users-table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pa-users-panel:has(#pa-org-subscriptions-title)
+  .pa-users-table {
+    min-width: 760px;
+  }
+
+  .pa-users-panel:has(#pa-org-subscriptions-title)
+  #pa-org-subscriptions-title {
+    font-size: 22px;
+  }
+}
+
+
+
+
+
+
+
+
