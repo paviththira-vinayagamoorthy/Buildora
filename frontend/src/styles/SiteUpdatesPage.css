@@ -473,3 +473,248 @@
   }
 }
 
+
+/* BUILDORA — COMPACT NEW UPDATE BUTTON */
+
+.su-new-update-btn.ct-primary {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 36px !important;
+  padding: 8px 13px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+
+  background: #392b43 !important;
+  border: 1px solid #392b43 !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+.su-new-update-btn.ct-primary:hover:not(:disabled) {
+  background: #503b5e !important;
+  border-color: #503b5e !important;
+}
+
+.su-new-update-btn.ct-primary svg {
+  width: 14px;
+  height: 14px;
+}
+
+.su-new-update-btn.ct-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* BUILDORA — SITE UPDATE POPUP */
+
+.su-page .su-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 24, 38, 0.48);
+}
+
+.su-page .su-modal {
+  width: min(100%, 650px);
+  max-width: 650px;
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 24px 28px;
+  border: 1px solid #e9e1ed;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 20px 65px rgba(31, 22, 40, 0.2);
+}
+
+.su-page .su-modal .ct-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee8f0;
+}
+
+.su-page .su-modal .ct-eyebrow {
+  color: #956681;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.su-page .su-modal .ct-section-heading h2 {
+  margin: 7px 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #302438;
+}
+
+.su-page .su-modal-close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e9dfeb;
+  border-radius: 9px;
+  background: #f8f4f9;
+  color: #57445d;
+  cursor: pointer;
+}
+
+.su-page .su-modal .ct-field {
+  gap: 6px;
+  margin-bottom: 13px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.su-page .su-modal .ct-field input {
+  min-height: 39px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.su-page .su-modal .ct-field textarea {
+  min-height: 65px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.su-page .su-modal .ct-form-grid {
+  gap: 14px;
+}
+
+.su-page .su-modal .ct-footnote {
+  margin: 8px 0 14px;
+  padding-top: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.su-page .su-modal .ct-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.su-page .su-modal .ct-actions .ct-button {
+  width: auto;
+  min-height: 38px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.su-page .su-modal .ct-actions .ct-primary {
+  background: #392b43 !important;
+  border-color: #392b43 !important;
+  color: #fff !important;
+}
+
+.su-page .su-modal .ct-actions .ct-primary:hover:not(:disabled) {
+  background: #503b5c !important;
+}
+
+@media (max-width: 700px) {
+  .su-page .su-modal-overlay {
+    padding: 12px;
+  }
+
+  .su-page .su-modal {
+    padding: 20px 16px;
+    max-height: calc(100dvh - 24px);
+  }
+}
+
+
+/* BUILDORA — DISCARD CONFIRMATION CARD */
+
+.su-discard-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(27, 21, 34, 0.42);
+}
+
+.su-discard-card {
+  width: min(100%, 410px);
+  padding: 25px;
+  border: 1px solid #e8dfea;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 20px 65px rgba(30, 22, 40, 0.22);
+}
+
+.su-discard-card h3 {
+  margin: 0 0 10px;
+  color: #302438;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.su-discard-card p {
+  margin: 0;
+  color: #776d80;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.su-discard-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.su-discard-actions button {
+  min-height: 37px;
+  padding: 8px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.su-discard-keep {
+  border: 1px solid #e3d8e5;
+  background: #faf7fb;
+  color: #4a3953;
+}
+
+.su-discard-confirm {
+  border: 1px solid #392b43;
+  background: #392b43;
+  color: #ffffff;
+}
+
+.su-discard-confirm:hover {
+  background: #503b5e;
+}
+
+@media (max-width: 480px) {
+  .su-discard-actions {
+    flex-direction: column;
+  }
+}
+
+
+

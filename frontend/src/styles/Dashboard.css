@@ -3073,3 +3073,196 @@ inset-inline: 0;
   margin: 8px 0;
   overflow-wrap: anywhere;
 }
+
+
+/* BUILDORA — WELCOME DASHBOARD CARD COLOURS */
+
+.bd-shell .bd-setup .bd-setup-card {
+  --card-glow: #eee7f3;
+  --card-accent: #594365;
+
+  background: #ffffff;
+  border: 1px solid #e6ddec;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgb(57 43 67 / 5%);
+}
+
+.bd-shell .bd-setup .bd-setup-card.bd-setup-primary {
+  --card-glow: #eae0f0;
+  --card-accent: #493452;
+
+  background: #f8f5fb;
+  border-color: #e3d8eb;
+}
+
+/* Icon backgrounds */
+
+.bd-shell .bd-setup .bd-setup-icon {
+  background: #eae0f0;
+  color: #493452;
+  border: 1px solid #e2d5e8;
+}
+
+/* Step numbers */
+
+.bd-shell .bd-setup .bd-setup-steps li::before {
+  background: #f0e9f4;
+  color: #594365;
+  border-color: #e5d8ed;
+}
+
+/* Primary button */
+
+.bd-shell .bd-setup .bd-setup-button.bd-primary {
+  background: #392b43;
+  border-color: #392b43;
+  color: #ffffff;
+}
+
+.bd-shell .bd-setup .bd-setup-button.bd-primary:hover {
+  background: #503b5e;
+  border-color: #503b5e;
+}
+
+/* Secondary button */
+
+.bd-shell .bd-setup .bd-setup-outline {
+  background: #faf8fc;
+  border: 1px solid #d9cddd;
+  color: #392b43;
+}
+
+.bd-shell .bd-setup .bd-setup-outline:hover {
+  background: #f0e9f4;
+  border-color: #bca8c6;
+  color: #392b43;
+}
+
+/* Card hover */
+
+@media (hover: hover) {
+  .bd-shell .bd-setup .bd-setup-card:hover {
+    border-color: #bca8c6;
+    box-shadow: 0 12px 28px rgb(57 43 67 / 10%);
+  }
+}
+
+
+/* BUILDORA — DASHBOARD FONT CONSISTENCY */
+
+.bd-shell {
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.bd-shell .bd-welcome h1 {
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.bd-shell .bd-setup-card h2,
+.bd-shell .bd-setup-card h3 {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.bd-shell .bd-setup-card p,
+.bd-shell .bd-setup-card li {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.bd-shell .bd-setup-card button {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* BUILDORA — WORKSPACE DASHBOARD SPACING POLISH */
+
+/* Welcome section breathing space */
+.bd-shell .bd-welcome {
+  margin-bottom: 30px;
+}
+
+/* Workspace setup card */
+.bd-shell .bd-empty.bd-empty-onboarding {
+  margin-bottom: 30px;
+}
+
+/* Left section */
+.bd-shell .bd-onboarding-intro {
+  padding: 42px 44px;
+}
+
+.bd-shell .bd-onboarding-intro h3 {
+  margin: 14px 0 12px;
+  line-height: 1.35;
+}
+
+/* Checklist spacing */
+.bd-shell .bd-onboarding-intro ul {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.bd-shell .bd-onboarding-intro li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.bd-shell .bd-onboarding-intro li:last-child {
+  margin-bottom: 0;
+}
+
+/* Verify company button */
+.bd-shell .bd-onboarding-cta {
+  margin-top: 26px;
+}
+
+/* Right section */
+.bd-shell .bd-onboarding-progress {
+  gap: 10px;
+  padding: 34px 32px;
+}
+
+.bd-shell .bd-onboarding-progress-title {
+  margin-bottom: 14px;
+}
+
+.bd-shell .bd-onboarding-step {
+  min-height: 52px;
+  padding: 11px 12px;
+  gap: 13px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .bd-shell .bd-onboarding-intro {
+    padding: 28px 24px;
+  }
+
+  .bd-shell .bd-onboarding-progress {
+    padding: 26px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bd-shell .bd-onboarding-intro {
+    padding: 24px 18px;
+  }
+
+  .bd-shell .bd-onboarding-progress {
+    padding: 22px 18px;
+  }
+
+  .bd-shell .bd-onboarding-step {
+    min-height: 48px;
+  }
+}
+

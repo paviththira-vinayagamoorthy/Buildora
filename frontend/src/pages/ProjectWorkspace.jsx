@@ -286,6 +286,7 @@ function ProjectMembers({
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("qs");
   const [busy, setBusy] = useState("");
+  const [inviteOpen, setInviteOpen] = useState(false);
 
   const actionRef = useRef(false);
   const mountedRef = useRef(false);
@@ -438,11 +439,12 @@ function ProjectMembers({
       );
 
       if (!mountedRef.current) return;
+setEmail("");
+setInviteOpen(false);
 
-      setEmail("");
-      setSuccess(
-        "Invitation email sent. Project access is added only after acceptance."
-      );
+setSuccess(
+  "Invitation email sent. Project access is added only after acceptance."
+);
     } catch (err) {
       if (!mountedRef.current) return;
 
@@ -542,19 +544,20 @@ function ProjectMembers({
             </p>
           </div>
 
-          <button
-            type="button"
-            className={BUTTON}
-            disabled={!canInvite || loading || Boolean(busy)}
-            onClick={refreshTeam}
-          >
-            <RefreshCw
-              size={16}
-              className={loading ? "animate-spin" : ""}
-              aria-hidden="true"
-            />
-            Refresh team
-          </button>
+<div className="flex flex-wrap items-center justify-end gap-3">
+  {isCompanyAdmin && (
+    <button
+      type="button"
+      className={PRIMARY_BUTTON}
+      disabled={!canInvite || loading || Boolean(busy)}
+      onClick={() => setInviteOpen(true)}
+    >
+      <Users size={16} aria-hidden="true" />
+      + Invite Member
+    </button>
+  )}
+</div>
+
         </div>
 
         {error && (
@@ -636,67 +639,94 @@ function ProjectMembers({
 
       {isCompanyAdmin && (
         <>
-          <section className="rounded-2xl border border-[#E3D6CA] bg-[#FFFCF8] p-6">
-            <h2 className="text-[22px] font-bold text-[#352A3D]">
-              Invite a member
-            </h2>
+          {inviteOpen && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+    onMouseDown={(event) => {
+      if (event.target === event.currentTarget && !busy) {
+        setInviteOpen(false);
+      }
+    }}
+  >
+    <section
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="invite-member-title"
+      className="w-full max-w-xl rounded-2xl border border-[#E3D6CA] bg-[#FFFCF8] p-6 shadow-2xl"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <h2
+          id="invite-member-title"
+          className="text-[22px] font-bold text-[#352A3D]"
+        >
+          Invite a member
+        </h2>
 
-            <p className="mt-2 text-[14px] leading-7 text-[#6D646C]">
-              An invitation link will be emailed to the person.
-              They must sign in with that email and accept it.
-            </p>
+        <button
+          type="button"
+          disabled={Boolean(busy)}
+          onClick={() => setInviteOpen(false)}
+          className="text-2xl text-[#6D646C] hover:text-[#352A3D]"
+          aria-label="Close invitation popup"
+        >
+          ×
+        </button>
+      </div>
 
-            {!canInvite && (
-              <p className="mt-4 text-[14px] leading-7 text-[#963F2D]">
-                {!companyApproved
-                  ? "Your company must be approved before sending invitations."
-                  : "New invitations require an active project."}
-              </p>
-            )}
+      <p className="mt-2 text-[14px] leading-7 text-[#6D646C]">
+        An invitation link will be emailed to the person.
+        They must sign in with that email and accept it.
+      </p>
 
-            <form onSubmit={handleInvite} className="mt-5">
-              <fieldset
-                disabled={!canInvite || loading || Boolean(busy)}
-                className="min-w-0"
+      <form onSubmit={handleInvite} className="mt-5">
+        <fieldset disabled={!canInvite || loading || Boolean(busy)}>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="text-[14px] font-semibold text-[#352A3D]">
+              Email address
+              <input
+                type="email"
+                autoComplete="email"
+                value={email}
+                maxLength={255}
+                required
+                className={`${INPUT} mt-2`}
+                placeholder="member@example.com"
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </label>
+
+            <label className="text-[14px] font-semibold text-[#352A3D]">
+              Project role
+              <select
+                className={`${INPUT} mt-2`}
+                value={role}
+                onChange={(event) => setRole(event.target.value)}
               >
-                <div className="grid gap-4 md:grid-cols-2">
-                  <label className="text-[14px] font-semibold text-[#352A3D]">
-                    Email address
-                    <input
-                      type="email"
-                      autoComplete="email"
-                      value={email}
-                      maxLength={255}
-                      required
-                      className={`${INPUT} mt-2`}
-                      placeholder="member@example.com"
-                      onChange={(event) => setEmail(event.target.value)}
-                    />
-                  </label>
+                <option value="qs">Quantity Surveyor</option>
+                <option value="building_owner">Building Owner</option>
+              </select>
+            </label>
+          </div>
 
-                  <label className="text-[14px] font-semibold text-[#352A3D]">
-                    Project role
-                    <select
-                      className={`${INPUT} mt-2`}
-                      value={role}
-                      onChange={(event) => setRole(event.target.value)}
-                    >
-                      <option value="qs">Quantity Surveyor</option>
-                      <option value="building_owner">Building Owner</option>
-                    </select>
-                  </label>
-                </div>
+          <div className="mt-6 flex justify-end gap-3">
+            <button
+              type="button"
+              className={BUTTON}
+              onClick={() => setInviteOpen(false)}
+            >
+              Cancel
+            </button>
 
-                <button
-                  type="submit"
-                  className={`${PRIMARY_BUTTON} mt-5`}
-                >
-                  <Mail size={16} aria-hidden="true" />
-                  {busy === "create" ? "Sending…" : "Send invitation"}
-                </button>
-              </fieldset>
-            </form>
-          </section>
+            <button type="submit" className={PRIMARY_BUTTON}>
+              <Mail size={16} aria-hidden="true" />
+              {busy === "create" ? "Sending…" : "Send invitation"}
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </div>
+)}
 
           <section className="rounded-2xl border border-[#E3D6CA] bg-[#FFFCF8] p-6">
             <h2 className="text-[22px] font-bold text-[#352A3D]">

@@ -550,9 +550,6 @@ export default function VariationsPage({
           >
             <div className="vr-drawer-header">
               <div>
-                <span className="vr-eyebrow">
-                  PROJECT VARIATION
-                </span>
 
                 <h2 id="vr-drawer-title">
                   {drawerMode === "create"
@@ -647,7 +644,7 @@ export default function VariationsPage({
 
                     <button
                       type="submit"
-                      className="ct-button ct-primary"
+                      className="ct-button ct-primary vr-submit-button"
                       disabled={busy}
                     >
                       {busy

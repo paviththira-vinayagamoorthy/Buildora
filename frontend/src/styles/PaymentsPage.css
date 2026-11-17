@@ -407,3 +407,197 @@ table th {
 }
 
 
+/* =========================================
+   BUILDORA — PAYMENTS FINAL UI POLISH
+   ========================================= */
+
+/* Main workspace */
+.ct-page.pm-embedded .ct-container:has(> .ct-summary) {
+  padding: 20px 24px 24px !important;
+  border: 1px solid #e8e3ed;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+/* Compact top action area */
+.ct-page.pm-embedded .ct-toolbar {
+  min-height: 0;
+  margin: 0 0 16px !important;
+  padding: 0 0 14px !important;
+  border-bottom: 1px solid #eeeaf1;
+  justify-content: flex-end;
+}
+
+.ct-page.pm-embedded .ct-toolbar .ct-button {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 38px !important;
+  padding: 9px 15px !important;
+  border-radius: 9px !important;
+  font-size: 12px !important;
+  font-weight: 600;
+  gap: 7px;
+}
+
+.ct-page.pm-embedded .ct-toolbar .ct-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Summary cards */
+.ct-page.pm-embedded .ct-container > .ct-summary {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.ct-page.pm-embedded .ct-summary > div {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: auto !important;
+  min-height: 82px !important;
+  padding: 13px 16px !important;
+  border: 1px solid #e9e5ed !important;
+  border-radius: 10px !important;
+  background: #faf9fb !important;
+}
+
+.ct-page.pm-embedded .ct-summary > div:nth-child(3) {
+  background: #fff9f1 !important;
+  border: 1px solid #ead9bb !important;
+  border-left: 3px solid #bd8740 !important;
+}
+
+.ct-page.pm-embedded .ct-summary dt {
+  margin: 0 !important;
+  color: #7e7487 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+.ct-page.pm-embedded .ct-summary dd {
+  margin: 0 !important;
+  color: #30253d !important;
+  font-size: clamp(17px, 1.7vw, 22px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.4px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Section spacing */
+.ct-page.pm-embedded .ct-container > .pm-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.ct-page.pm-embedded .pm-section > .ct-section-heading {
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.ct-page.pm-embedded .pm-section .ct-section-heading h2 {
+  margin: 0 !important;
+  color: #30253d;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+}
+
+.ct-page.pm-embedded .ct-container > .pm-section + .pm-section {
+  margin-top: 18px !important;
+  padding-top: 17px !important;
+  border-top: 1px solid #eeeaf1 !important;
+}
+
+/* Tables */
+.ct-page.pm-embedded .pm-section .ct-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #e9e5ed !important;
+  border-radius: 10px !important;
+  overflow-x: auto;
+}
+
+.ct-page.pm-embedded .pm-section .ct-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ct-page.pm-embedded .pm-section .ct-table th {
+  padding: 10px 13px !important;
+  background: #f7f6f9 !important;
+  color: #777080 !important;
+  font-size: 11px !important;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ct-page.pm-embedded .pm-section .ct-table td {
+  padding: 11px 13px !important;
+  background: #ffffff !important;
+  color: #382d42;
+  font-size: 12px !important;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0edf2 !important;
+}
+
+.ct-page.pm-embedded .pm-section .ct-table tbody tr:hover td {
+  background: #fcfafd !important;
+}
+
+/* Keep amounts readable */
+.ct-page.pm-embedded .pm-section .ct-table td strong {
+  color: #30253d;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Compact payment action button */
+.ct-page.pm-embedded .pm-section .pm-small-button {
+  width: auto !important;
+  min-height: 34px !important;
+  padding: 7px 12px !important;
+  border-radius: 8px !important;
+  font-size: 11px !important;
+  white-space: nowrap;
+}
+
+/* Reference and notes */
+.ct-page.pm-embedded .pm-reference-cell {
+  line-height: 1.5 !important;
+  overflow-wrap: anywhere;
+}
+
+.ct-page.pm-embedded .pm-reference-cell small {
+  display: block;
+  margin-top: 4px;
+  color: #8b8291;
+  font-size: 11px;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .ct-page.pm-embedded .ct-container:has(> .ct-summary) {
+    padding: 16px !important;
+  }
+
+  .ct-page.pm-embedded .ct-container > .ct-summary {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ct-page.pm-embedded .pm-section .ct-table {
+    min-width: 700px;
+  }
+}
+
+
+

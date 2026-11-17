@@ -544,3 +544,204 @@
   border-color: #e5e7eb;
 }
 
+/* MONTHLY REPORT — GUIDANCE CARD */
+
+.mr-page .mr-guidance {
+  margin: 18px 0;
+  padding: 20px;
+  background: #faf8fc;
+  border: 1px solid #e9e0ed;
+  border-radius: 12px;
+}
+
+.mr-page .mr-guidance h3 {
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #35263e;
+}
+
+.mr-page .mr-guidance-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.mr-page .mr-guidance-step:last-child {
+  margin-bottom: 0;
+}
+
+.mr-page .mr-guidance-step > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #eee5f1;
+  color: #684b70;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mr-page .mr-guidance-step strong {
+  display: block;
+  font-size: 13px;
+  color: #35263e;
+}
+
+.mr-page .mr-guidance-step p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #777080;
+}
+
+
+/* BUILDORA — AI REPORT EXPLANATION */
+
+.mr-ai-card {
+  margin-top: 22px;
+  padding: 22px 24px;
+  background: #fbf9fc;
+  border: 1px solid #e8dfea;
+  border-radius: 13px;
+}
+
+.mr-ai-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e9e2ed;
+}
+
+.mr-ai-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #34263e;
+}
+
+.mr-ai-header p {
+  margin: 7px 0 0;
+  font-size: 12px;
+  color: #807487;
+}
+
+.mr-ai-badge {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  background: #eee6f2;
+  border: 1px solid #e4d9e9;
+  border-radius: 20px;
+  color: #6e527a;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mr-ai-content h4 {
+  margin: 18px 0 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #493653;
+}
+
+.mr-ai-content h4:first-child {
+  margin-top: 0;
+}
+
+.mr-ai-content p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #63566c;
+}
+
+@media (max-width: 600px) {
+  .mr-ai-card {
+    padding: 18px 16px;
+  }
+
+  .mr-ai-header {
+    flex-direction: column;
+  }
+}
+
+
+/* BUILDORA — AI EXPLANATION BUTTON POLISH */
+
+.mr-page .mr-explain-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: auto;
+  min-width: 0;
+  min-height: 38px;
+  padding: 9px 16px;
+
+  background: #392b43;
+  border: 1px solid #392b43;
+  border-radius: 9px;
+
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.mr-page .mr-explain-button:hover:not(:disabled) {
+  background: #503b5e;
+  border-color: #503b5e;
+  color: #ffffff;
+}
+
+.mr-page .mr-explain-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* AI explanation card refinements */
+
+.mr-page .mr-ai-card:not(:has(.mr-ai-header)) {
+  display: none;
+}
+
+.mr-page .mr-ai-card {
+  margin-top: 14px;
+  padding: 20px 22px;
+  background: #faf8fc;
+  border: 1px solid #e6ddea;
+  border-radius: 12px;
+}
+
+.mr-page .mr-ai-header {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+}
+
+.mr-page .mr-ai-content h4 {
+  margin: 14px 0 6px;
+  font-size: 13px;
+}
+
+.mr-page .mr-ai-content p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .mr-page .mr-ai-card {
+    padding: 16px;
+  }
+}
+
+
+

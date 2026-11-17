@@ -962,9 +962,6 @@ export default function DocumentsPage({
                 >
                   <div className="dc-drawer-header">
                     <div>
-                      <span className="ct-eyebrow">
-                        PROJECT FILE
-                      </span>
 
                       <h2 id="dc-drawer-title">
                         Upload document
@@ -998,6 +995,24 @@ export default function DocumentsPage({
                     )}
 
                     <form onSubmit={handleUpload}>
+                      <div className="dc-ai-intro">
+  <div className="dc-ai-intro-heading">
+    <span className="dc-ai-icon">✦</span>
+
+    <div>
+      <h3>AI Invoice Extraction</h3>
+      <p>
+        Upload an invoice and let AI fill in the available
+        details automatically.
+      </p>
+    </div>
+  </div>
+
+  <p className="dc-ai-hint">
+    Select <strong>Invoices</strong> as the category,
+    choose your file, then click Extract details.
+  </p>
+</div>
                       <div className="ct-form-grid">
                         <label className="ct-field">
                           Document title
@@ -1106,9 +1121,16 @@ export default function DocumentsPage({
                       {form.category === "invoice" &&
                         file && (
                           <div className="dc-invoice-extraction">
+                            <div className="dc-ai-ready">
+  <strong>✦ Ready for AI extraction</strong>
+  <p>
+    Extract invoice information automatically.
+    Review the results before uploading.
+  </p>
+</div>
                             <button
                               type="button"
-                              className="ct-button"
+                              className="ct-button dc-ai-extract-button"
                               onClick={
                                 handleExtractInvoice
                               }

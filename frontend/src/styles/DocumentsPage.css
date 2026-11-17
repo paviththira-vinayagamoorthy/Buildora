@@ -1014,4 +1014,228 @@
 }
 
 
+/* ==========================================
+   BUILDORA — DOCUMENT UPLOAD DRAWER THEME
+   ========================================== */
+
+/* Drawer */
+.dc-page .dc-upload-drawer {
+  background: #ffffff;
+  box-shadow: -16px 0 45px rgba(49, 35, 58, 0.15);
+}
+
+/* Header */
+.dc-page .dc-drawer-header {
+  background: #fbf8fc;
+  border-bottom: 1px solid #e9e0eb;
+}
+
+.dc-page .dc-drawer-header h2 {
+  color: #35283d;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.dc-page .dc-drawer-header p {
+  color: #817087;
+}
+
+.dc-page .dc-drawer-header .ct-eyebrow {
+  color: #84658f;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Close button */
+.dc-page .dc-drawer-close {
+  background: #f4eef6;
+  border: 1px solid #e8ddec;
+  color: #574360;
+}
+
+.dc-page .dc-drawer-close:hover {
+  background: #ebe1ef;
+}
+
+/* Form */
+.dc-page .dc-drawer-body {
+  background: #ffffff;
+}
+
+.dc-page .dc-drawer-body .ct-field {
+  color: #4c3b56;
+  font-weight: 600;
+}
+
+/* Inputs */
+.dc-page .dc-drawer-body input:not([type="file"]),
+.dc-page .dc-drawer-body select,
+.dc-page .dc-drawer-body textarea {
+  background: #ffffff;
+  color: #35283d;
+  border: 1px solid #e1d5e5;
+  border-radius: 9px;
+}
+
+.dc-page .dc-drawer-body input:focus,
+.dc-page .dc-drawer-body select:focus,
+.dc-page .dc-drawer-body textarea:focus {
+  border-color: #9574a1;
+  outline: 2px solid rgba(149, 116, 161, 0.15);
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+/* File upload box */
+.dc-page .dc-drawer-body .dc-file-field {
+  padding: 15px;
+  background: #f8f3fa;
+  border: 1px dashed #cdb9d5;
+  border-radius: 10px;
+}
+
+.dc-page .dc-drawer-body input[type="file"] {
+  background: #ffffff;
+  border: 1px solid #e3d9e7;
+  color: #594b61;
+}
+
+.dc-page .dc-drawer-body input[type="file"]::file-selector-button {
+  background: #ede3f1;
+  color: #594367;
+  border-radius: 7px;
+}
+
+.dc-page .dc-drawer-body input[type="file"]::file-selector-button:hover {
+  background: #e3d4e9;
+}
+
+/* Footnote */
+.dc-page .dc-drawer-body .ct-footnote {
+  color: #817388;
+  border-color: #ece5ee;
+}
+
+/* Action buttons */
+.dc-page .dc-drawer-body .ct-actions {
+  border-color: #ece5ee;
+}
+
+.dc-page .dc-drawer-body .ct-actions .ct-primary {
+  background: #392b43;
+  border-color: #392b43;
+  color: #ffffff;
+}
+
+.dc-page .dc-drawer-body .ct-actions .ct-primary:hover:not(:disabled) {
+  background: #2d2135;
+  border-color: #2d2135;
+}
+
+.dc-page .dc-drawer-body .ct-actions .ct-button:not(.ct-primary) {
+  background: #ffffff;
+  border: 1px solid #e3d7e7;
+  color: #51405a;
+}
+
+.dc-page .dc-drawer-body .ct-actions .ct-button:not(.ct-primary):hover {
+  background: #f7f2f9;
+}
+
+/* AI extraction section */
+.dc-page .dc-invoice-extraction {
+  padding: 13px;
+  border: 1px solid #e8ddeb;
+  border-radius: 10px;
+  background: #faf7fb;
+}
+
+.dc-page .dc-invoice-extraction small,
+.dc-page .dc-invoice-extraction p {
+  color: #76677e;
+}
+
+/* BUILDORA — AI INVOICE EXTRACTION */
+
+.dc-page .dc-ai-intro {
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #f8f4fa;
+  border: 1px solid #e8dced;
+  border-radius: 12px;
+}
+
+.dc-page .dc-ai-intro-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dc-page .dc-ai-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #eee3f2;
+  color: #725182;
+  font-size: 22px;
+}
+
+.dc-page .dc-ai-intro h3 {
+  margin: 0 0 5px;
+  color: #382a43;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dc-page .dc-ai-intro p {
+  margin: 0;
+  color: #766880;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dc-page .dc-ai-hint {
+  margin-top: 12px !important;
+  padding-top: 11px;
+  border-top: 1px solid #e8dced;
+}
+
+.dc-page .dc-ai-ready {
+  margin-bottom: 12px;
+}
+
+.dc-page .dc-ai-ready strong {
+  color: #624677;
+  font-size: 13px;
+}
+
+.dc-page .dc-ai-ready p {
+  margin: 5px 0 0;
+  color: #81738a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.dc-page .dc-ai-extract-button {
+  min-height: 40px;
+  padding: 10px 16px;
+  background: #392b43;
+  border: 1px solid #392b43;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dc-page .dc-ai-extract-button:hover:not(:disabled) {
+  background: #503b5e;
+  color: #ffffff;
+}
+
+
+
 

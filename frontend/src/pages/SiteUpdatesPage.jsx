@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   ClipboardCheck,
   Plus,
+  X,
 } from "lucide-react";
 
 import {
@@ -114,6 +115,8 @@ export default function SiteUpdatesPage({
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const [showDiscardConfirm, setShowDiscardConfirm] = useState(false);
 
   const canManage = access?.can_manage === true;
 
@@ -317,17 +320,17 @@ export default function SiteUpdatesPage({
   }
 
   function cancelForm() {
-    if (actionRef.current) return;
+  if (actionRef.current) return;
+  setShowDiscardConfirm(true);
+}
 
-    if (
-      !window.confirm("Discard this unsaved site update form?")
-    ) {
-      return;
-    }
+function confirmDiscard() {
+  if (actionRef.current) return;
 
-    setShowForm(false);
-    setError("");
-  }
+  setShowDiscardConfirm(false);
+  setShowForm(false);
+  setError("");
+}
 
   function storeRecord(record) {
     setUpdates((previous) =>
@@ -544,7 +547,7 @@ export default function SiteUpdatesPage({
                 !selected && (
                   <button
                     type="button"
-                    className="ct-button ct-primary"
+                    className="ct-button ct-primary su-new-update-btn"
                     onClick={startCreate}
                     disabled={Boolean(busy)}
                   >
@@ -606,24 +609,39 @@ export default function SiteUpdatesPage({
                 </button>
               </div>
             ) : showForm ? (
-              <section className="ct-panel su-form-panel">
+<div className="su-modal-overlay">
+  <section
+    className="ct-panel su-form-panel su-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="su-modal-title"
+  >
                 <div className="ct-section-heading">
-                  <div>
+  <div>
                     <span className="ct-eyebrow">
                       SITE UPDATE DRAFT
                     </span>
 
-                    <h2>
-                      {selected
-                        ? "Edit site update"
-                        : "New site update"}
-                    </h2>
+                    <h2 id="su-modal-title">
+  {selected ? "Edit site update" : "New site update"}
+</h2>
 
-                    <p>{project?.name}</p>
-                  </div>
-                </div>
+<p>{project?.name}</p>
+</div>
 
-                <form onSubmit={handleSave}>
+<button
+  type="button"
+  className="su-modal-close"
+  onClick={cancelForm}
+  disabled={Boolean(busy)}
+  aria-label="Close site update form"
+>
+  <X size={19} />
+</button>
+
+</div>
+
+<form onSubmit={handleSave}>
                   <label className="ct-field">
                     Title
                     <input
@@ -726,9 +744,46 @@ export default function SiteUpdatesPage({
                         : "Save draft"}
                     </button>
                   </div>
-                </form>
-              </section>
-            ) : selected ? (
+</form>
+</section>
+{showDiscardConfirm && (
+  <div className="su-discard-overlay">
+    <div
+      className="su-discard-card"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="su-discard-title"
+      aria-describedby="su-discard-description"
+    >
+      <h3 id="su-discard-title">Discard changes?</h3>
+
+      <p id="su-discard-description">
+        Discard this unsaved site update form?
+        Any unsaved changes will be lost.
+      </p>
+
+      <div className="su-discard-actions">
+        <button
+          type="button"
+          className="su-discard-keep"
+          onClick={() => setShowDiscardConfirm(false)}
+        >
+          Keep editing
+        </button>
+
+        <button
+          type="button"
+          className="su-discard-confirm"
+          onClick={confirmDiscard}
+        >
+          Discard changes
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+</div>
+) : selected ? (
               <section className="ct-panel">
                 <button
                   type="button"

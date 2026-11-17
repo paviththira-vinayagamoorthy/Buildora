@@ -11,7 +11,10 @@ import {
   Calculator,
   ChevronLeft,
   ChevronRight,
+  CheckCircle2,
+  CalendarDays,
   ClipboardCheck,
+  ChevronDown,
   FolderKanban,
   LockKeyhole,
   Plus,
@@ -168,6 +171,8 @@ export default function ValuationsPage({
   const [editingDates, setEditingDates] = useState(false);
 const [editPeriodStart, setEditPeriodStart] = useState("");
 const [editPeriodEnd, setEditPeriodEnd] = useState("");
+
+const [showPublishConfirm, setShowPublishConfirm] = useState(false);
 
   useEffect(() => {
     mountedRef.current = true;
@@ -350,13 +355,13 @@ const canManage =
 });
 
   function confirmLeave() {
-    return (
-      dirtyItems.length === 0 ||
-      window.confirm(
-        "You have unsaved quantities. Discard these changes?"
-      )
-    );
-  }
+  return (
+    dirtyItems.length === 0 ||
+    window.confirm(
+      "You have unsaved quantities. Discard these changes?"
+    )
+  );
+}
 
   function openRecord(record) {
     if (actionRef.current || !confirmLeave()) return;
@@ -501,52 +506,55 @@ const canManage =
     }
   }
 
-  async function handlePublish() {
-    if (actionRef.current || !editable) return;
+  function handlePublish() {
+  if (actionRef.current || !editable || busy) return;
 
-    if (dirtyItems.length > 0) {
-      setError("Save all changed quantities before publishing.");
-      return;
-    }
-
-    if (
-      !window.confirm(
-        "Publish this valuation? Its quantities will become read-only."
-      )
-    ) {
-      return;
-    }
-
-    actionRef.current = true;
-    setBusy("publish");
-    setError("");
-    setSuccess("");
-
-    try {
-      const record = await publishProjectValuation(
-        selected.id
-      );
-
-      if (!mountedRef.current) return;
-
-      replaceRecord(record);
-      setInputs(getInputs(record));
-      setSuccess(
-        "Valuation published. The assigned Owner can now view it."
-      );
-    } catch (err) {
-      if (mountedRef.current) {
-        setError(
-          err?.message || "Unable to publish valuation."
-        );
-      }
-    } finally {
-      actionRef.current = false;
-
-      if (mountedRef.current) setBusy("");
-    }
+  if (dirtyItems.length > 0) {
+    setError("Save all changed quantities before publishing.");
+    return;
   }
 
+  setError("");
+  setShowPublishConfirm(true);
+}
+
+async function confirmPublish() {
+  if (actionRef.current || !editable || busy) return;
+
+  if (dirtyItems.length > 0) {
+    setShowPublishConfirm(false);
+    setError("Save all changed quantities before publishing.");
+    return;
+  }
+
+  actionRef.current = true;
+  setShowPublishConfirm(false);
+  setBusy("publish");
+  setError("");
+  setSuccess("");
+
+  try {
+    const record = await publishProjectValuation(selected.id);
+
+    if (!mountedRef.current) return;
+
+    replaceRecord(record);
+    setInputs(getInputs(record));
+    setSuccess(
+      "Valuation published. The assigned Owner can now view it."
+    );
+  } catch (err) {
+    if (mountedRef.current) {
+      setError(err?.message || "Unable to publish valuation.");
+    }
+  } finally {
+    actionRef.current = false;
+
+    if (mountedRef.current) {
+      setBusy("");
+    }
+  }
+}
   function startEditingDates() {
   if (!selected || busy || actionRef.current) return;
 
@@ -1138,25 +1146,24 @@ return (
                         />
                       </label>
 
-                      <div className="vl-actions">
-                        <button
-                          type="button"
-                          className="vl-button"
-                          disabled={Boolean(busy)}
-                          onClick={() => setShowCreate(false)}
-                        >
-                          Cancel
-                        </button>
+<div className="vl-actions">
+  <button
+    type="button"
+    className="vl-button vl-small-btn"
+    disabled={Boolean(busy)}
+    onClick={() => setShowCreate(false)}
+  >
+    Cancel
+  </button>
 
-                        <button
-                          type="submit"
-                          className="vl-button vl-primary"
-                          disabled={Boolean(busy)}
-                        >
-                          {busy === "create"
-                            ? "Creating…"
-                            : "Create draft"}
-                        </button>
+  <button
+    type="submit"
+    className="vl-button vl-primary vl-small-btn"
+    disabled={Boolean(busy)}
+  >
+    {busy === "create" ? "Creating…" : "Create draft"}
+  </button>
+
                       </div>
                     </form>
                   </section>
@@ -1181,206 +1188,215 @@ return (
                       Valuation history
                     </button>
 
-                    <div className="vl-section-heading">
-                      <div>
-                        <h2>
-                          Valuation #{selected.valuation_no}
-                        </h2>
-                        <p>
-                          {dateLabel(selected.period_start)}
-                          {" – "}
-                          {dateLabel(selected.period_end)}
-                        </p>
-                      </div>
 
-                      <span
-                        className={`vl-badge ${
-                          selected.status === "published"
-                            ? "vl-published"
-                            : "vl-draft"
-                        }`}
-                      >
-                        {selected.status}
-                      </span>
-                    </div>
+<details className="vl-details-card" open>
+  <summary className="vl-details-toggle">
+  <span>
+    <CalendarDays size={16} />
+    Valuation {String(selected.valuation_no).padStart(2, "0")}
+  </span>
+<span className="vl-details-chevron" aria-hidden="true">
+  <ChevronDown size={18} />
+</span>
+</summary>
+  <div className="vl-section-heading vl-details-heading">
+    <div className="vl-details-title">
+      <p>
+        <CalendarDays size={15} aria-hidden="true" />
+        {dateLabel(selected.period_start)}
+        {" – "}
+        {dateLabel(selected.period_end)}
+      </p>
+    </div>
 
-                    {selected.notes && (
-                      <p className="vl-notice">
-                        {selected.notes}
-                      </p>
-                    )}
-
-                    {editable && (
-  <div style={{ marginBottom: "20px" }}>
-    {!editingDates ? (
-      <button
-        type="button"
-        className="vl-button"
-        disabled={Boolean(busy)}
-        onClick={startEditingDates}
-      >
-        Edit dates
-      </button>
-    ) : (
-      <form onSubmit={handleSaveDates}>
-        <div className="vl-form-grid">
-          <label>
-            Period start
-            <input
-              type="date"
-              required
-              value={editPeriodStart}
-              disabled={Boolean(busy)}
-              onChange={(event) =>
-                setEditPeriodStart(event.target.value)
-              }
-            />
-          </label>
-
-          <label>
-            Period end
-            <input
-              type="date"
-              required
-              min={editPeriodStart || undefined}
-              value={editPeriodEnd}
-              disabled={Boolean(busy)}
-              onChange={(event) =>
-                setEditPeriodEnd(event.target.value)
-              }
-            />
-          </label>
-        </div>
-
-        <div className="vl-form-actions">
-          <button
-            type="button"
-            className="vl-button"
-            disabled={Boolean(busy)}
-            onClick={() => setEditingDates(false)}
-          >
-            Cancel
-          </button>
-
-          <button
-            type="submit"
-            className="vl-button vl-button-primary"
-            disabled={Boolean(busy)}
-          >
-            {busy === "period" ? "Saving…" : "Save dates"}
-          </button>
-        </div>
-      </form>
-    )}
+    <span
+      className={`vl-badge ${
+        selected.status === "published"
+          ? "vl-published"
+          : "vl-draft"
+      }`}
+    >
+      {selected.status}
+    </span>
   </div>
-)}
 
-                    <p className="vl-table-help">
-                      {editable
-                        ? "Enter total completed quantities to date. Save each changed row. Previous work is deducted automatically."
-                        : "This valuation is read-only."}
-                    </p>
+  {selected.notes && (
+    <div className="vl-details-notes">
+      <span className="vl-details-label">DESCRIPTION</span>
+      <p>{selected.notes}</p>
+    </div>
+  )}
 
-                    <div className="vl-table-scroll">
-                      <table className="vl-table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Item / Description</th>
-                            <th scope="col">Unit</th>
-                            <th scope="col">BOQ qty</th>
-                            <th scope="col">Rate (LKR)</th>
-                            <th scope="col">Previous qty</th>
-                            <th scope="col">Completed to date</th>
-                            <th scope="col">This period qty</th>
-                            <th scope="col">Amount (LKR)</th>
-                            {editable && (
-                              <th scope="col">Save</th>
-                            )}
-                          </tr>
-                        </thead>
+  {editable && (
+    <div className="vl-details-actions">
+      {!editingDates ? (
+        <button
+          type="button"
+          className="vl-button vl-small-btn"
+          disabled={Boolean(busy)}
+          onClick={startEditingDates}
+        >
+          <CalendarDays size={14} aria-hidden="true" />
+          Edit dates
+        </button>
+      ) : (
+        <form
+          className="vl-details-date-form"
+          onSubmit={handleSaveDates}
+        >
+          <div className="vl-form-grid">
+            <label>
+              Period start
+              <input
+                type="date"
+                required
+                value={editPeriodStart}
+                disabled={Boolean(busy)}
+                onChange={(event) =>
+                  setEditPeriodStart(event.target.value)
+                }
+              />
+            </label>
 
-                        <tbody>
-                          {(selected.items || []).map((item) => {
-                            const changed =
-                              String(inputs[item.id] ?? "") !==
-                              String(item.cumulative_quantity);
+            <label>
+              Period end
+              <input
+                type="date"
+                required
+                min={editPeriodStart || undefined}
+                value={editPeriodEnd}
+                disabled={Boolean(busy)}
+                onChange={(event) =>
+                  setEditPeriodEnd(event.target.value)
+                }
+              />
+            </label>
+          </div>
 
-                            return (
-                              <tr key={item.id}>
-                                <td>
-                                  <strong>{item.item_no}</strong>
-                                  <span className="vl-description">
-                                    {item.description}
-                                  </span>
-                                </td>
-                                <td>{item.unit}</td>
-                                <td>
-                                  {quantity(item.boq_quantity)}
-                                </td>
-                                <td>{money(item.rate)}</td>
-                                <td>
-                                  {quantity(item.previous_quantity)}
-                                </td>
-                                <td>
-                                  {editable ? (
-                                    <input
-                                      className={
-                                        changed
-                                          ? "vl-quantity vl-changed"
-                                          : "vl-quantity"
-                                      }
-                                      type="text"
-                                      inputMode="decimal"
-                                      maxLength={17}
-                                      value={inputs[item.id] ?? ""}
-                                      aria-label={
-                                        `Total completed quantity for item ${item.item_no}`
-                                      }
-                                      disabled={Boolean(busy)}
-                                      onChange={(event) =>
-                                        setInputs((current) => ({
-                                          ...current,
-                                          [item.id]:
-                                            event.target.value,
-                                        }))
-                                      }
-                                    />
-                                  ) : (
-                                    quantity(
-                                      item.cumulative_quantity
-                                    )
-                                  )}
-                                </td>
-                                <td>
-                                  {quantity(item.current_quantity)}
-                                </td>
-                                <td>{money(item.amount)}</td>
-                                {editable && (
-                                  <td>
-                                    <button
-                                      className="vl-save-row"
-                                      type="button"
-                                      disabled={
-                                        !changed || Boolean(busy)
-                                      }
-                                      onClick={() => saveItem(item)}
-                                      aria-label={
-                                        `Save item ${item.item_no}`
-                                      }
-                                    >
-                                      <Save size={16} />
-                                      {busy === `item-${item.id}`
-                                        ? "Saving…"
-                                        : "Save"}
-                                    </button>
-                                  </td>
-                                )}
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
+          <div className="vl-form-actions">
+            <button
+              type="button"
+              className="vl-button vl-small-btn"
+              disabled={Boolean(busy)}
+              onClick={() => setEditingDates(false)}
+            >
+              Cancel
+            </button>
+
+            <button
+              type="submit"
+              className="vl-button vl-primary vl-small-btn"
+              disabled={Boolean(busy)}
+            >
+              {busy === "period" ? "Saving…" : "Save dates"}
+            </button>
+          </div>
+        </form>
+      )}
+    </div>
+  )}
+</details>
+
+<div className="vl-work-section">
+  <div className="vl-work-heading">
+    <div>
+      <h3>Work Progress</h3>
+      <p>
+        Update the total work completed so far. We'll calculate
+        the new work automatically.
+      </p>
+    </div>
+  </div>
+
+  <div className="vl-work-list">
+    {(selected.items || []).map((item) => {
+      const changed =
+        String(inputs[item.id] ?? "") !==
+        String(item.cumulative_quantity);
+
+      return (
+        <div className="vl-work-card" key={item.id}>
+          <div className="vl-work-card-top">
+            <div>
+              <span className="vl-work-item-no">
+                Item {item.item_no}
+              </span>
+              <h4>{item.description}</h4>
+            </div>
+
+            <span className="vl-work-unit">
+              {item.unit}
+            </span>
+          </div>
+
+          <div className="vl-work-stats">
+            <div>
+              <span>BOQ total</span>
+              <strong>{quantity(item.boq_quantity)}</strong>
+            </div>
+
+            <div>
+              <span>Previously completed</span>
+              <strong>{quantity(item.previous_quantity)}</strong>
+            </div>
+
+            <div>
+              <span>Rate per unit</span>
+              <strong>{money(item.rate)}</strong>
+            </div>
+          </div>
+
+          <div className="vl-work-entry">
+            <label>
+              Total completed so far
+              {editable ? (
+                <input
+                  className={changed ? "vl-quantity vl-changed" : "vl-quantity"}
+                  type="text"
+                  inputMode="decimal"
+                  maxLength={17}
+                  value={inputs[item.id] ?? ""}
+                  aria-label={`Total completed quantity for item ${item.item_no}`}
+                  disabled={Boolean(busy)}
+                  onChange={(event) =>
+                    setInputs((current) => ({
+                      ...current,
+                      [item.id]: event.target.value,
+                    }))
+                  }
+                />
+              ) : (
+                <strong>{quantity(item.cumulative_quantity)}</strong>
+              )}
+            </label>
+
+            <div className="vl-work-result">
+              <span>New work this period</span>
+              <strong>{quantity(item.current_quantity)} {item.unit}</strong>
+            </div>
+
+            {editable && (
+              <button
+                type="button"
+                className="vl-button vl-row-save-btn"
+                disabled={!changed || Boolean(busy)}
+                onClick={() => saveItem(item)}
+              >
+                <Save size={15} />
+                {busy === `item-${item.id}` ? "Saving…" : "Save"}
+              </button>
+            )}
+          </div>
+
+          <div className="vl-work-amount">
+            <span>Saved amount for this item</span>
+            <strong>{money(item.amount)}</strong>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
 
                     <footer className="vl-total-footer">
                       <div>
@@ -1419,6 +1435,55 @@ return (
             )}
           </>
         )}
+  
+  <div className="vl-page">
+
+
+    {showPublishConfirm && (
+      <div className="vl-modal-overlay">
+        <div
+          className="vl-publish-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="vl-publish-title"
+        >
+          <div className="vl-publish-modal-icon">
+            <CheckCircle2 size={23} aria-hidden="true" />
+          </div>
+
+          <h2 id="vl-publish-title">Publish valuation?</h2>
+
+          <p className="vl-publish-modal-subtitle">
+            Valuation {String(selected?.valuation_no ?? "").padStart(2, "0")}
+          </p>
+
+          <p className="vl-publish-modal-description">
+            Once published, the valuation quantities will become
+            read-only. Please confirm before proceeding.
+          </p>
+
+          <div className="vl-publish-modal-actions">
+            <button
+              type="button"
+              className="vl-button vl-small-btn"
+              onClick={() => setShowPublishConfirm(false)}
+            >
+              Cancel
+            </button>
+
+            <button
+              type="button"
+              className="vl-button vl-primary vl-small-btn"
+              onClick={confirmPublish}
+            >
+              Publish valuation
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
+  </div>
       </div>
     </div>
   );

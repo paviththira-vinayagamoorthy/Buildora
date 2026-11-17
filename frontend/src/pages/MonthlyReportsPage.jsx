@@ -666,10 +666,39 @@ useEffect(() => {
                   </label>
 
 {!selected && (
-  <div className="ct-message ct-success">
-    Select a month to generate a draft from published
-    site updates, certificates and recorded payments.
-    You can review and edit it before publishing.
+  <div className="mr-guidance">
+    <h3>How monthly reports work</h3>
+
+    <div className="mr-guidance-step">
+      <span>1</span>
+      <div>
+        <strong>Select reporting month</strong>
+        <p>Choose the month you want to prepare.</p>
+      </div>
+    </div>
+
+    <div className="mr-guidance-step">
+      <span>2</span>
+      <div>
+        <strong>Generate and review</strong>
+        <p>
+          Buildora generates a draft using available
+          published site updates, certificates and payments.
+          Review the figures before publishing.
+        </p>
+      </div>
+    </div>
+
+    <div className="mr-guidance-step">
+      <span>3</span>
+      <div>
+        <strong>Publish report</strong>
+        <p>
+          Verify the generated report and publish it
+          for the Building Owner.
+        </p>
+      </div>
+    </div>
   </div>
 )}
 
@@ -848,7 +877,7 @@ useEffect(() => {
 {!(explanations[selected.id] || selected.ai_explanation) && (
       <button
         type="button"
-        className="ct-button"
+        className="ct-button mr-explain-button"
         onClick={handleExplain}
         disabled={explainingId !== null}
       >
@@ -862,16 +891,44 @@ useEffect(() => {
       <p role="alert">{explanationError.message}</p>
     )}
 
-<div role="status">
+
+<div className="mr-ai-card" role="status">
   {(explanations[selected.id] || selected.ai_explanation) && (
     <>
-      <h3>AI explanation</h3>
-      <p style={{ whiteSpace: "pre-wrap" }}>
-        {explanations[selected.id] || selected.ai_explanation}
-      </p>
+      <div className="mr-ai-header">
+        <div>
+          <h3> AI Report Explanation</h3>
+          <p>
+            Understand this monthly report in simple language.
+          </p>
+        </div>
+        <span className="mr-ai-badge">AI generated</span>
+      </div>
+
+      <div className="mr-ai-content">
+        {(explanations[selected.id] || selected.ai_explanation)
+          .split("\n")
+          .filter((line) => line.trim())
+          .map((line, index) => {
+            const trimmed = line.trim();
+
+const heading = trimmed.match(/^\*\*(.+?)\*\*$/);
+
+            if (heading) {
+              return (
+                <h4 key={index}>
+                  {heading[1]}
+                </h4>
+              );
+            }
+
+            return <p key={index}>{trimmed}</p>;
+          })}
+      </div>
     </>
   )}
 </div>
+
   </section>
 )}
                 <p className="ct-footnote">

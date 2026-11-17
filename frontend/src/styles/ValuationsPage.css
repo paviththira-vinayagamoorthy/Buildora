@@ -2790,6 +2790,503 @@ table th {
   }
 }
 
+/* Small Cancel and Create Draft buttons */
+.vl-small-btn {
+  width: fit-content !important;
+  min-width: 0 !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 4px 10px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  border-radius: 7px !important;
+  white-space: nowrap;
+}
+
+/* Compact Cancel and Create Draft buttons */
+.vl-button.vl-small-btn {
+  width: auto !important;
+  min-width: 0 !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 4px 10px !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  border-radius: 7px !important;
+  white-space: nowrap;
+}
+
+/* BOQ row Save button - enabled */
+.vl-row-save-btn:not(:disabled) {
+  background: #35283e !important;
+  color: #ffffff !important;
+  border: 1px solid #35283e !important;
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+/* BOQ row Save button - disabled */
+.vl-row-save-btn:disabled {
+  background: #f0edf2 !important;
+  color: #948b9c !important;
+  border: 1px solid #e2dce6 !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+}
+
+.vl-row-save-btn {
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* Clean valuation details layout */
+
+.vl-work-section {
+  margin-top: 24px;
+}
+
+.vl-work-heading h3 {
+  margin: 0 0 6px;
+  color: #35283e;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.vl-work-heading p {
+  margin: 0 0 20px;
+  color: #77717e;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.vl-work-list {
+  display: grid;
+  gap: 16px;
+}
+
+.vl-work-card {
+  padding: 20px;
+  border: 1px solid #e5dfe9;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.vl-work-card-top,
+.vl-work-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.vl-work-card-top h4 {
+  margin: 6px 0 0;
+  color: #35283e;
+  font-size: 15px;
+}
+
+.vl-work-item-no {
+  color: #765880;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.vl-work-unit {
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: #f3eff5;
+  color: #66516e;
+  font-size: 12px;
+}
+
+.vl-work-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.vl-work-stats > div {
+  padding: 14px;
+  border: 1px solid #ebe6ed;
+  border-radius: 9px;
+  background: #faf9fb;
+}
+
+.vl-work-stats span,
+.vl-work-result span,
+.vl-work-amount span {
+  display: block;
+  color: #77717e;
+  font-size: 12px;
+}
+
+.vl-work-stats strong,
+.vl-work-result strong {
+  display: block;
+  margin-top: 6px;
+  color: #35283e;
+  font-size: 15px;
+}
+
+.vl-work-entry {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.vl-work-entry label {
+  display: grid;
+  gap: 8px;
+  color: #51465b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vl-work-entry .vl-quantity {
+  width: 150px;
+  height: 40px;
+  background: #fff;
+}
+
+.vl-work-result {
+  flex: 1;
+  min-width: 150px;
+}
+
+.vl-work-amount {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 9px;
+  background: #f3eef6;
+}
+
+.vl-work-amount strong {
+  color: #35283e;
+  font-size: 18px;
+}
+
+.vl-work-entry .vl-row-save-btn:not(:disabled) {
+  background: #35283e;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .vl-work-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .vl-work-entry {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .vl-work-entry .vl-quantity {
+    width: 100%;
+  }
+
+  .vl-work-amount {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.vl-details-heading {
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.vl-details-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #806d89;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.vl-details-title h2 {
+  margin: 0 0 8px;
+  color: #35283e;
+  font-size: 22px;
+}
+
+.vl-details-title p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #817888;
+  font-size: 13px;
+}
+
+
+/* Valuation details card */
+
+.vl-details-card {
+  background: #ffffff;
+  border: 1px solid #e8e1eb;
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 18px 0 24px;
+}
+
+.vl-details-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.vl-details-eyebrow,
+.vl-details-label {
+  display: block;
+  color: #806d89;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.vl-details-title h2 {
+  margin: 7px 0;
+  color: #35283e;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.vl-details-title p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #807788;
+  font-size: 13px;
+}
+
+.vl-details-notes {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: #f8f5fa;
+  border: 1px solid #eee8f1;
+  border-radius: 10px;
+}
+
+.vl-details-notes p {
+  margin: 8px 0 0;
+  color: #51445c;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.vl-details-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.vl-details-actions > .vl-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: auto !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+}
+
+.vl-details-date-form {
+  width: 100%;
+}
+
+.vl-details-date-form .vl-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.vl-details-date-form .vl-form-actions .vl-button {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 32px !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+}
+
+@media (max-width: 600px) {
+  .vl-details-card {
+    padding: 16px;
+  }
+
+  .vl-details-heading {
+    align-items: flex-start;
+  }
+}
+
+.vl-details-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  color: #35283e;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.vl-details-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.vl-details-toggle > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.vl-details-toggle-hint {
+  color: #877b90;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.vl-details-heading {
+  margin-top: 20px;
+}
+
+.vl-details-heading {
+  margin-top: 14px;
+}
+
+.vl-details-title h2 {
+  margin-top: 0;
+}
+
+/* Valuation dropdown arrow */
+
+.vl-details-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.vl-details-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #765880;
+  transition: transform 0.2s ease;
+}
+
+/* Expanded - arrow points up */
+.vl-details-card[open] .vl-details-chevron {
+  transform: rotate(180deg);
+}
+
+/* Collapsed - arrow points down */
+.vl-details-card:not([open]) .vl-details-chevron {
+  transform: rotate(0deg);
+}
+
+/* Publish confirmation modal */
+
+.vl-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30, 22, 37, 0.48);
+}
+
+.vl-publish-modal {
+  width: 100%;
+  max-width: 430px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e8e1eb;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(30, 22, 37, 0.18);
+}
+
+.vl-publish-modal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  color: #6d5278;
+  background: #f3eef6;
+  border-radius: 12px;
+}
+
+.vl-publish-modal h2 {
+  margin: 0;
+  color: #35283e;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.vl-publish-modal-subtitle {
+  margin: 7px 0 0;
+  color: #806d89;
+  font-size: 13px;
+}
+
+.vl-publish-modal-description {
+  margin: 20px 0 24px;
+  color: #62586a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vl-publish-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.vl-publish-modal-actions .vl-button {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 34px !important;
+  height: 34px !important;
+  padding: 7px 13px !important;
+  font-size: 12px !important;
+}
+
+.vl-publish-modal-actions .vl-primary {
+  color: #ffffff !important;
+  background: #35283e !important;
+  border-color: #35283e !important;
+}
+
+@media (max-width: 480px) {
+  .vl-publish-modal {
+    padding: 22px;
+  }
+
+  .vl-publish-modal-actions {
+    flex-wrap: wrap;
+  }
+}
+
+
 
 
 

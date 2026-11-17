@@ -91,6 +91,7 @@ export default function CertificatesPage({
 
   const [selected, setSelected] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const [showDiscardConfirm, setShowDiscardConfirm] = useState(false);
   const [form, setForm] = useState(emptyForm);
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
@@ -101,6 +102,16 @@ export default function CertificatesPage({
   );
 
   const canManage = access?.can_manage === true;
+  console.log("Certificate debug:", {
+  access,
+  canManage,
+  loading,
+  loadError,
+  selected,
+  showForm,
+  valuations,
+  certificates,
+});
 
   const published = certificates.filter(
     (item) => item.status === "published"
@@ -116,13 +127,15 @@ export default function CertificatesPage({
   ).length;
 
   const availableValuations = valuations.filter(
-    (valuation) =>
-      valuation.status === "published" &&
-      !certificates.some(
-        (certificate) =>
-          certificate.valuation_id === valuation.id
-      )
-  );
+  (valuation) =>
+    valuation.status === "published" &&
+    !certificates.some(
+      (certificate) =>
+        String(certificate.valuation_id) === String(valuation.id)
+    )
+);
+
+console.log("Available valuations:", availableValuations);
 
   const formValuation = valuations.find(
     (item) => String(item.id) === form.valuation_id
@@ -307,6 +320,7 @@ export default function CertificatesPage({
 
     setSelected(null);
     setForm(emptyForm());
+    setShowDiscardConfirm(false);
     setShowForm(true);
     setError("");
     setSuccess("");
@@ -347,13 +361,17 @@ export default function CertificatesPage({
 
 
   function cancelForm() {
-    if (actionRef.current) return;
+  if (actionRef.current) return;
+  setShowDiscardConfirm(true);
+}
 
-    if (window.confirm("Discard this unsaved certificate form?")) {
-      setShowForm(false);
-      setError("");
-    }
-  }
+function confirmDiscard() {
+  if (actionRef.current) return;
+
+  setShowDiscardConfirm(false);
+  setShowForm(false);
+  setError("");
+}
 
 
   function storeRecord(record) {
@@ -383,7 +401,6 @@ export default function CertificatesPage({
     }
 
     const decimalPattern = /^\d+(?:\.\d{1,2})?$/;
-
     if (
       !form.valuation_id ||
       !decimalPattern.test(form.retention_percentage) ||
@@ -603,24 +620,8 @@ export default function CertificatesPage({
             ) : (
               <>
                 <div className="ct-toolbar">
-                  {projectControl}
-
-                  {!loading &&
-                    !loadError &&
-                    canManage &&
-                    !selected &&
-                    !showForm && (
-                      <button
-                        type="button"
-                        className="ct-button ct-primary"
-                        onClick={startCreate}
-                        disabled={availableValuations.length === 0}
-                      >
-                        <Plus size={17} aria-hidden="true" />
-                        New certificate
-                      </button>
-                    )}
-                </div>
+  {projectControl}
+</div>
 
                 {error && (
                   <div className="ct-message ct-error" role="alert">
@@ -652,13 +653,11 @@ export default function CertificatesPage({
                       Try again
                     </button>
                   </div>
-                ) : showForm ? (
-                  <section className="ct-panel">
+             ) : showForm ? (
+              <div className="ct-form-modal-overlay">
+                <section className="ct-panel ct-certificate-form-panel ct-form-modal">
                     <div className="ct-section-heading">
                       <div>
-                        <span className="ct-eyebrow">
-                          CERTIFICATE DRAFT
-                        </span>
                         <h2>
                           {selected
                             ? `Edit certificate #${selected.certificate_no}`
@@ -669,7 +668,17 @@ export default function CertificatesPage({
                       <span className="ct-badge ct-draft">Draft</span>
                     </div>
 
-                    <form onSubmit={handleSave}>
+<button
+  type="button"
+  className="ct-modal-close"
+  onClick={cancelForm}
+  disabled={Boolean(busy)}
+  aria-label="Close certificate form"
+>
+  ×
+</button>
+
+                    <form className="ct-certificate-form" onSubmit={handleSave}>
                       {!selected && (
                         <label className="ct-field">
                           Published valuation
@@ -756,6 +765,7 @@ export default function CertificatesPage({
                       </label>
 
                       <div className="ct-preview">
+                        <h3 className="ct-preview-title">Payment Summary</h3>
                         <div>
                           <span>Estimated retention</span>
                           <strong>
@@ -795,9 +805,54 @@ export default function CertificatesPage({
                           {busy === "save" ? "Saving…" : "Save draft"}
                         </button>
                       </div>
-                    </form>
-                  </section>
-                ) : selected ? (
+
+</form>
+</section>
+
+{showDiscardConfirm && (
+  <div className="ct-discard-overlay">
+    <div
+      className="ct-discard-card"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="ct-discard-title"
+      aria-describedby="ct-discard-description"
+    >
+      <div className="ct-discard-icon">!</div>
+
+      <h3 id="ct-discard-title">
+        Discard Certificate?
+      </h3>
+
+      <p id="ct-discard-description">
+        Your unsaved certificate changes will be lost.
+        Are you sure you want to discard them?
+      </p>
+
+      <div className="ct-discard-actions">
+        <button
+          type="button"
+          className="ct-discard-keep"
+          onClick={() => setShowDiscardConfirm(false)}
+        >
+          Keep Editing
+        </button>
+
+        <button
+          type="button"
+          className="ct-discard-confirm"
+          onClick={confirmDiscard}
+        >
+          Discard
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+</div>
+) : selected ? (
+
                   <section className="ct-panel">
                     <button
                       type="button"
@@ -907,9 +962,30 @@ export default function CertificatesPage({
                   </section>
                 ) : (
                   <>
-                     <div className="cert-valuation-style">
-                      <header className="ct-heading">
-</header>
+<div className="cert-valuation-style">
+  <header className="ct-heading">
+    {canManage && (
+      <div className="ct-certificate-actions">
+        <button
+          type="button"
+          className="ct-button ct-primary ct-new-certificate-btn"
+          onClick={startCreate}
+          disabled={
+            Boolean(busy) ||
+            availableValuations.length === 0
+          }
+          title={
+            availableValuations.length === 0
+              ? "Publish a new valuation to create a certificate"
+              : "Create new certificate"
+          }
+        >
+          <Plus size={16} aria-hidden="true" />
+          New certificate
+        </button>
+      </div>
+    )}
+  </header>
                     <dl className="ct-summary">
                       <div>
                         <dt>Published certificates</dt>

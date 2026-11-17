@@ -2126,3 +2126,107 @@
 }
 
 
+/* BUILDORA — BOQ TABLE WIDTH & ALIGNMENT FIX */
+
+.bq-root .bq-sheet,
+.bq-root .bq-item-group {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.bq-root .bq-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.bq-root .bq-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.bq-root .bq-table th,
+.bq-root .bq-table td {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 12px 10px;
+  vertical-align: middle;
+}
+
+/* Item number */
+.bq-root .bq-table th:nth-child(1),
+.bq-root .bq-table td:nth-child(1) {
+  width: 9%;
+}
+
+/* Description */
+.bq-root .bq-table th:nth-child(2),
+.bq-root .bq-table td:nth-child(2) {
+  width: 29%;
+  overflow-wrap: anywhere;
+}
+
+/* Unit */
+.bq-root .bq-table th:nth-child(3),
+.bq-root .bq-table td:nth-child(3) {
+  width: 8%;
+}
+
+/* Quantity */
+.bq-root .bq-table th:nth-child(4),
+.bq-root .bq-table td:nth-child(4) {
+  width: 11%;
+}
+
+/* Rate */
+.bq-root .bq-table th:nth-child(5),
+.bq-root .bq-table td:nth-child(5) {
+  width: 15%;
+}
+
+/* Amount */
+.bq-root .bq-table th:nth-child(6),
+.bq-root .bq-table td:nth-child(6) {
+  width: 17%;
+}
+
+/* Actions — only when editable */
+.bq-root .bq-table:has(.bq-row-actions) th:nth-child(7),
+.bq-root .bq-table:has(.bq-row-actions) td:nth-child(7) {
+  width: 11%;
+  text-align: center;
+}
+
+.bq-root .bq-table .bq-number {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.bq-root .bq-table .bq-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.bq-root .bq-table .bq-row-actions .bq-icon-button {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+/* Narrow screens can scroll without overlapping */
+@media (max-width: 900px) {
+  .bq-root .bq-table {
+    min-width: 760px;
+  }
+}
+
+
+
